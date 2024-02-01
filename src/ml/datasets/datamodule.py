@@ -1,4 +1,5 @@
 import lightning as L
+from lightning.pytorch.utilities.types import EVAL_DATALOADERS
 import pandas as pd
 import os
 from torch.utils.data import DataLoader
@@ -22,7 +23,7 @@ class DEEPscreenDataModule(L.LightningDataModule):
         else:
             self.imgs_path = os.path.join(self.result_path,target_id,"imgs")
         
-        if data_split_mode in ("random_split","non_random_split","scaffold_split"):
+        if data_split_mode in ("random_split","non_random_split","scaffold_split","predict"):
             self.data_split = data_split_mode
         else:
             raise Exception("data split mode sholud be one of random_split/non_random_split/scaffold_split")
@@ -55,10 +56,10 @@ class DEEPscreenDataModule(L.LightningDataModule):
                 raise InvalidDataframeException("Invalid tags or missing tags for data spliting in non random datasplit")
             
             try:
-                train = self.data[self.data["data_split"] == "train"]
-                validate = self.data[self.data["data_split"] == "validation"]
-                test = self.data[self.data["data_split"] == "test"]
-                logger.info(f"non_random_split datasets splited train={len(train)},validation={len(validate)},test={len(test)}")
+                self.train = self.data[self.data["data_split"] == "train"]
+                self.validate = self.data[self.data["data_split"] == "validation"]
+                self.test = self.data[self.data["data_split"] == "test"]
+                logger.info(f"non_random_split datasets splited train={len(self.train)},validation={len(validate)},test={len(test)}")
             except Exception as e:
                 logger.error(f"Unable to create non_random_split datasets {e}")
                 raise RuntimeError("non_random_split dataloader type generator failed")
@@ -67,19 +68,25 @@ class DEEPscreenDataModule(L.LightningDataModule):
             #TODO
             raise NotImplementedError
         
-        self.training_dataset = DEEPScreenDatasetTrain(self.imgs_path, train)
-        self.validation_dataset = DEEPScreenDatasetTrain(self.imgs_path, validate)
-        self.test_dataset = DEEPScreenDatasetTrain(self.imgs_path, test)
 
     def train_dataloader(self):
         hyperparameters = configs.get_hyperparameters()
+        self.training_dataset = DEEPScreenDatasetTrain(self.imgs_path, self.train)
+        
         return DataLoader(self.training_dataset,batch_size=hyperparameters["batch_size"])
     
     def val_dataloader(self):
         hyperparameters = configs.get_hyperparameters()
+        self.validation_dataset = DEEPScreenDatasetTrain(self.imgs_path, self.validate)
         return DataLoader(self.validation_dataset,batch_size=hyperparameters["batch_size"])
     
     def test_dataloader(self):
         hyperparameters = configs.get_hyperparameters()
+        self.predict_dataset = DEEPScreenDatasetTrain(self.imgs_path, self.test)
         return DataLoader(self.test_dataset,batch_size=hyperparameters["batch_size"])
+    
+    def predict_dataloader(self):
+        hyperparameters = configs.get_hyperparameters()
+        self.predict_dataset = DEEPScreenDatasetPredict(self.imgs_path, self.data)
+        return DataLoader(self.predict_dataset,batch_size=hyperparameters["batch_size"])
         
