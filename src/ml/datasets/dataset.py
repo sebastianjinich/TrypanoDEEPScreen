@@ -5,61 +5,48 @@ import cv2
 import random
 from torch.utils.data import Dataset
 from rdkit.Chem import Draw, MolFromSmiles
-from ..utils.constants import RANDOM_STATE, DEFAULT_IMG_SIZE, DEFAULT_ATOM_LABEL_FONTSIZE, DEFAULT_BOND_LINE_WIDTH, DEFAULT_DOTS_PER_ANGSTROM
+from ..utils.constants import RANDOM_STATE
 from ..utils.logging_deepscreen import logger
+from ..utils.configurations import configs
+from ..utils.exceptions import InvalidDataframeException
 
 random.seed(RANDOM_STATE)
 
 class DEEPScreenDataset(Dataset):
-    def __init__(self, path_tmp_files:str, df_compid_smiles_bioactivity:pd.DataFrame, smiles_column = 'smiles', compound_id_column = 'comp_id', bioactivity_label_column = 'bioactivity_label'):
-            self.path = path_tmp_files
-            self.path_imgs = os.path.join(self.path,'imgs')
+    def __init__(self, path_imgs_files:str, df_compid_smiles_bioactivity:pd.DataFrame):
+            super().__init__()
+
+            self.path_imgs = path_imgs_files
             self.df = df_compid_smiles_bioactivity.copy()
-            self.compid_column = compound_id_column
-            self.smiles_column = smiles_column
-            self.label_column  = bioactivity_label_column
+            self.config = configs
+
             if not os.path.exists(self.path_imgs):
                 os.makedirs(self.path_imgs)
 
             # creating molecules images -> path will be stored in 'img_molecule' column
-            self.df['img_molecule'] = self.df.apply(lambda x: self.smiles_to_img_png(x[compound_id_column],x[smiles_column],self.path_imgs),axis=1)
-            logger.debug(f'Dataset created in {path_tmp_files}')
+            self.df['img_molecule'] = self.df.apply(lambda x: self.smiles_to_img_png(x["comp_id"],x["smiles"],self.path_imgs),axis=1)
+            logger.debug(f'Dataset created in {self.path_imgs}')
 
     def __len__(self):
         return len(self.df.index)
     
-    def smiles_to_img_png(self, comp_id:str, smiles:str, output_path:str, IMG_SIZE:int=DEFAULT_IMG_SIZE, atomLabelFontSize:int=DEFAULT_ATOM_LABEL_FONTSIZE, dotsPerAngstrom:int=DEFAULT_DOTS_PER_ANGSTROM, bondLineWidth:int=DEFAULT_BOND_LINE_WIDTH)->str:
+    def smiles_to_img_png(self, comp_id:str, smiles:str, output_path:str)->str:
         '''
         Given an id and an output path the function will create a image with the 2D molecule. 
 
         Returns: the path to the file i.e. /output_path/comp_id.png
         '''
         mol = MolFromSmiles(smiles)
-        opt = Draw.MolDrawOptions()
-        opt.atomLabelFontSize = atomLabelFontSize
-        opt.dotsPerAngstrom = dotsPerAngstrom
-        opt.bondLineWidth = bondLineWidth
+        opt = self.config.get_mol_draw_options()
+        img_size = self.config.get_img_size()
+
         output_file = os.path.join(output_path, f"{comp_id}.png")
-        Draw.MolToFile(mol, output_file, size= (IMG_SIZE, IMG_SIZE), options=opt)
+        Draw.MolToFile(mol, output_file, size=img_size, options=opt)
         return output_file
 
 
 class DEEPScreenDatasetPredict(DEEPScreenDataset):
-    def __init__(self, path_tmp_files:str, df_compid_smiles_bioactivity:pd.DataFrame, smiles_column = 'smiles', compound_id_column = 'comp_id', bioactivity_label_column = 'bioactivity_label'):
-            self.path = path_tmp_files
-            self.path_imgs = os.path.join(self.path,'imgs')
-            self.df = df_compid_smiles_bioactivity.copy()
-            self.compid_column = compound_id_column
-            self.smiles_column = smiles_column
-            self.label_column  = bioactivity_label_column
-            if not os.path.exists(self.path_imgs):
-                os.makedirs(self.path_imgs)
-
-            # creating molecules images -> path will be stored in 'img_molecule' column
-            self.df['img_molecule'] = self.df.apply(lambda x: self.smiles_to_img_png(x[compound_id_column],x[smiles_column],self.path_imgs),axis=1)
-            logger.debug(f'Dataset created in {path_tmp_files}')
-
-
+    
     def __getitem__(self, index):
         row = self.df.iloc[index]
         comp_id = row[self.compid_column]
@@ -70,19 +57,6 @@ class DEEPScreenDatasetPredict(DEEPScreenDataset):
         return img_arr, comp_id
 
 class DEEPScreenDatasetTrain(DEEPScreenDataset):
-    def __init__(self, path_tmp_files:str, df_compid_smiles_bioactivity:pd.DataFrame, smiles_column = 'smiles', compound_id_column = 'comp_id', bioactivity_label_column = 'bioactivity_label'):
-            self.path = path_tmp_files
-            self.path_imgs = os.path.join(self.path,'imgs')
-            self.df = df_compid_smiles_bioactivity.copy()
-            self.compid_column = compound_id_column
-            self.smiles_column = smiles_column
-            self.label_column  = bioactivity_label_column
-            if not os.path.exists(self.path_imgs):
-                os.makedirs(self.path_imgs)
-
-            # creating molecules images -> path will be stored in 'img_molecule' column
-            self.df['img_molecule'] = self.df.apply(lambda x: self.smiles_to_img_png(x[compound_id_column],x[smiles_column],self.path_imgs),axis=1)
-            logger.debug(f'Dataset created in {path_tmp_files}')
 
     def __getitem__(self, index):
         row = self.df.iloc[index]
