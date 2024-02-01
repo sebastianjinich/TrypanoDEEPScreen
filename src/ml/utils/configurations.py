@@ -28,12 +28,11 @@ class configurations:
         return (img_size,img_size)
     
     def get_hyperparameters(self):
-        
         return self.hyperparameters
     
     def set_hyperparameters(self,new_hyperparamenters:dict):
         self.hyperparameters = new_hyperparamenters
-        logger.info(f"Hyperparameters witched to {self.hyperparameters}")
+        logger.info(f"Hyperparameters switched to {self.hyperparameters}")
 
         #TODO santity seted checking hyperparameters
         return self.hyperparameters

@@ -6,6 +6,7 @@ import tempfile
 from dataset import DEEPScreenDatasetPredict, DEEPScreenDatasetTrain
 from ..utils.logging_deepscreen import logger
 from ..utils.exceptions import InvalidDataframeException
+from ..utils.configurations import configs
 
 
 class DEEPscreenDataModule(L.LightningDataModule):
@@ -27,6 +28,11 @@ class DEEPscreenDataModule(L.LightningDataModule):
             raise Exception("data split mode sholud be one of random_split/non_random_split/scaffold_split")
 
         self.data = data
+
+        if not {"comp_id","smiles","bioactivity"}.issubset(set(self.data.columns)):
+            logger.error("invalid columns of df")
+            raise InvalidDataframeException
+
 
     def setup(self):
         
@@ -56,12 +62,24 @@ class DEEPscreenDataModule(L.LightningDataModule):
             except Exception as e:
                 logger.error(f"Unable to create non_random_split datasets {e}")
                 raise RuntimeError("non_random_split dataloader type generator failed")
-
-            training_dataset = DEEPScreenDatasetTrain(self.imgs_path, train)
-            validation_dataset = DEEPScreenDatasetTrain(self.imgs_path, validate)
-            test_dataset = DEEPScreenDatasetTrain(self.imgs_path, test)
             
-        
         if self.data_split == "scaffold_split":
             #TODO
             raise NotImplementedError
+        
+        self.training_dataset = DEEPScreenDatasetTrain(self.imgs_path, train)
+        self.validation_dataset = DEEPScreenDatasetTrain(self.imgs_path, validate)
+        self.test_dataset = DEEPScreenDatasetTrain(self.imgs_path, test)
+
+    def train_dataloader(self):
+        hyperparameters = configs.get_hyperparameters()
+        return DataLoader(self.training_dataset,batch_size=hyperparameters["batch_size"])
+    
+    def val_dataloader(self):
+        hyperparameters = configs.get_hyperparameters()
+        return DataLoader(self.validation_dataset,batch_size=hyperparameters["batch_size"])
+    
+    def test_dataloader(self):
+        hyperparameters = configs.get_hyperparameters()
+        return DataLoader(self.test_dataset,batch_size=hyperparameters["batch_size"])
+        
