@@ -1,20 +1,23 @@
+# External imports
 import os
 import pandas as pd
 import numpy as np
 import cv2
 import random
 from torch.utils.data import Dataset
+import torch
 from rdkit.Chem import Draw, MolFromSmiles
-from ..utils.constants import RANDOM_STATE
-from ..utils.logging_deepscreen import logger
-from ..utils.configurations import configs
-from ..utils.exceptions import InvalidDataframeException
+
+# Internal Imports
+from utils.constants import RANDOM_STATE
+from utils.logging_deepscreen import logger
+from utils.configurations import configs
 
 random.seed(RANDOM_STATE)
 
 class DEEPScreenDataset(Dataset):
     def __init__(self, path_imgs_files:str, df_compid_smiles_bioactivity:pd.DataFrame):
-            super().__init__()
+            super(DEEPScreenDataset, self).__init__()
 
             self.path_imgs = path_imgs_files
             self.df = df_compid_smiles_bioactivity.copy()
@@ -26,6 +29,7 @@ class DEEPScreenDataset(Dataset):
             # creating molecules images -> path will be stored in 'img_molecule' column
             self.df['img_molecule'] = self.df.apply(lambda x: self.smiles_to_img_png(x["comp_id"],x["smiles"],self.path_imgs),axis=1)
             logger.debug(f'Dataset created in {self.path_imgs}')
+
 
     def __len__(self):
         return len(self.df.index)
@@ -49,18 +53,19 @@ class DEEPScreenDatasetPredict(DEEPScreenDataset):
     
     def __getitem__(self, index):
         row = self.df.iloc[index]
-        comp_id = row[self.compid_column]
+        comp_id = row["comp_id"]
         img_path = row['img_molecule']
         img_arr = cv2.imread(img_path)
         img_arr = np.array(img_arr) / 255.0
         img_arr = img_arr.transpose((2, 0, 1))
-        return img_arr, comp_id
+        return torch.tensor(img_arr).type(torch.FloatTensor), comp_id
+    
 
 class DEEPScreenDatasetTrain(DEEPScreenDataset):
 
     def __getitem__(self, index):
         row = self.df.iloc[index]
-        comp_id = row[self.compid_column]
+        comp_id = row["comp_id"]
         img_path = row['img_molecule']
         img_arr = cv2.imread(img_path)
         if random.random()>=0.50:
@@ -71,8 +76,20 @@ class DEEPScreenDatasetTrain(DEEPScreenDataset):
                                              borderValue=(255, 255, 255))  # cv2.BORDER_CONSTANT, 255)
         img_arr = np.array(img_arr) / 255.0
         img_arr = img_arr.transpose((2, 0, 1))
-        label = row[self.label_column]
+        label = row["bioactivity"]
 
-        return img_arr, label, comp_id
+        return torch.tensor(img_arr).type(torch.FloatTensor), torch.tensor(label), comp_id
     
-    
+
+class DEEPScreenDatasetTest(DEEPScreenDataset):
+
+    def __getitem__(self, index):
+        row = self.df.iloc[index]
+        comp_id = row["comp_id"]
+        img_path = row['img_molecule']
+        img_arr = cv2.imread(img_path)
+        img_arr = np.array(img_arr) / 255.0
+        img_arr = img_arr.transpose((2, 0, 1))
+        label = row["bioactivity"]
+
+        return torch.tensor(img_arr).type(torch.FloatTensor), torch.tensor(label), comp_id
