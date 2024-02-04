@@ -80,10 +80,10 @@ class DEEPScreenClassifier(L.LightningModule):
         self.train_pres(preds,label)
         
         self.log('train_loss', loss)
-        self.log('train_acc', self.train_acc, on_step=False, on_epoch=True)
-        self.log('train_f1', self.train_f1, on_step=False, on_epoch=True)
-        self.log('train_mcc', self.train_mcc, on_step=False, on_epoch=True)
-        self.log('train_pres', self.train_pres, on_step=False, on_epoch=True)
+        self.log('train_acc', self.train_acc, on_step=False, on_epoch=True, batch_size=self.hparams.batch_size)
+        self.log('train_f1', self.train_f1, on_step=False, on_epoch=True, batch_size=self.hparams.batch_size)
+        self.log('train_mcc', self.train_mcc, on_step=False, on_epoch=True, batch_size=self.hparams.batch_size)
+        self.log('train_pres', self.train_pres, on_step=False, on_epoch=True, batch_size=self.hparams.batch_size)
         return loss
     
     def validation_step(self,val_batch,batch_idx):
@@ -98,10 +98,10 @@ class DEEPScreenClassifier(L.LightningModule):
         self.val_pres(preds,label)
         
         self.log('val_loss', loss)
-        self.log('val_acc', self.val_acc, on_step=False, on_epoch=True)
-        self.log('val_f1', self.val_f1, on_step=False, on_epoch=True)
-        self.log('val_mcc', self.val_mcc, on_step=False, on_epoch=True)
-        self.log('val_pres', self.val_pres, on_step=False, on_epoch=True)
+        self.log('val_acc', self.val_acc, on_step=False, on_epoch=True, batch_size=self.hparams.batch_size)
+        self.log('val_f1', self.val_f1, on_step=False, on_epoch=True, batch_size=self.hparams.batch_size)
+        self.log('val_mcc', self.val_mcc, on_step=False, on_epoch=True, batch_size=self.hparams.batch_size)
+        self.log('val_pres', self.val_pres, on_step=False, on_epoch=True, batch_size=self.hparams.batch_size)
 
     def test_step(self,test_batch,batch_idx):
         img_arrs, label, comp_id = test_batch
