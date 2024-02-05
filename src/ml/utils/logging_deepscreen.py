@@ -9,8 +9,7 @@ if not isExist:
    # Create a new directory because it does not exist
    os.makedirs(path)
 
-logger = logging.Logger("logging_trypanosomatics")
-
+logger = logging.getLogger("lightning.pytorch")
 #logger.setLevel(logging.DEBUG)
 
 formatter = logging.Formatter('%(asctime)s:%(levelname)-8s - %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
