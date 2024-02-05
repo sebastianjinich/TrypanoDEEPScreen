@@ -4,6 +4,8 @@ from torch.nn import functional as F
 import torch.nn as nn
 import lightning as L
 from torchmetrics import classification
+import torchmetrics
+
 
 # Internal imports
 from utils.configurations import configs
@@ -108,7 +110,17 @@ class DEEPScreenClassifier(L.LightningModule):
         y_pred = self.forward(img_arrs)
         _, preds = torch.max(y_pred,1)
         loss = self.cross_entropy_loss(y_pred.squeeze(),label)
-        self.log('test_loss', loss)
+        accuracy = torchmetrics.functional.accuracy(preds,label,task="binary")
+        precision = torchmetrics.functional.precision(preds,label,task="binary")
+        mcc = torchmetrics.functional.matthews_corrcoef(preds,label,task="binary")
+        f1 = torchmetrics.functional.f1_score(preds,label,task="binary")
+
+        self.log('test_loss', loss, batch_size=self.hparams.batch_size)
+        self.log('test_accuracy', accuracy, batch_size=self.hparams.batch_size)
+        self.log('test_precision', precision, batch_size=self.hparams.batch_size)
+        self.log('test_mcc', mcc, batch_size=self.hparams.batch_size)
+        self.log('test_f1', f1, batch_size=self.hparams.batch_size)
+
 
     def predict_step(self, batch, batch_idx, dataloader_idx=None):
         x, _ = batch
