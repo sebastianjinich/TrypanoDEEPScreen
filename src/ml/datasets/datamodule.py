@@ -14,7 +14,7 @@ from utils.configurations import configs
 
 class DEEPscreenDataModule(L.LightningDataModule):
     
-    def __init__(self, data:pd.DataFrame, target_id:str, batch_size:int, experiment_result_path:str, data_split_mode:str, tmp_imgs:bool = False):
+    def __init__(self, data:str, target_id:str, batch_size:int, experiment_result_path:str, data_split_mode:str, tmp_imgs:bool = False):
 
         super(DEEPscreenDataModule, self).__init__()
 
@@ -30,9 +30,9 @@ class DEEPscreenDataModule(L.LightningDataModule):
         if data_split_mode in ("random_split","non_random_split","scaffold_split","predict"):
             self.data_split = data_split_mode
         else:
-            raise Exception("data split mode sholud be one of random_split/non_random_split/scaffold_split")
+            raise Exception("data split mode sholud be one of random_split/non_random_split/scaffold_split/predict")
 
-        self.data = data
+        self.data = pd.read_csv(data)
 
         if not {"comp_id","smiles","bioactivity"}.issubset(set(self.data.columns)):
             logger.error("invalid columns of df")
