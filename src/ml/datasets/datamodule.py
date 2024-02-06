@@ -73,6 +73,9 @@ class DEEPscreenDataModule(L.LightningDataModule):
             if self.data_split == "scaffold_split":
                 #TODO
                 raise NotImplementedError
+        
+        if stage == "predict":
+            self.predict = self.data
 
     def train_dataloader(self):
         self.training_dataset = DEEPScreenDatasetTrain(self.imgs_path, self.train)
@@ -87,6 +90,6 @@ class DEEPscreenDataModule(L.LightningDataModule):
         return DataLoader(self.test_dataset,batch_size=self.hparams.batch_size)
     
     def predict_dataloader(self):
-        self.predict_dataset = DEEPScreenDatasetPredict(self.imgs_path, self.data)
+        self.predict_dataset = DEEPScreenDatasetPredict(self.imgs_path, self.predict)
         return DataLoader(self.predict_dataset,batch_size=self.hparams.batch_size)
         
