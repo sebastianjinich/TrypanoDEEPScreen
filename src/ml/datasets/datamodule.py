@@ -32,7 +32,7 @@ class DEEPscreenDataModule(L.LightningDataModule):
         else:
             raise Exception("data split mode sholud be one of random_split/non_random_split/scaffold_split/predict")
 
-        self.data = pd.read_csv(data)
+        self.data = data
 
         if not {"comp_id","smiles","bioactivity"}.issubset(set(self.data.columns)):
             logger.error("invalid columns of df")

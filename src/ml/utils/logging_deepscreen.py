@@ -22,8 +22,6 @@ file_handler_debug.setLevel(logging.DEBUG)
 file_handler_info = logging.FileHandler(os.path.join(path,f'{date_now}_info.log'))
 file_handler_info.setLevel(logging.INFO)
 
-console_handler = logging.StreamHandler()
-console_handler.setLevel(logging.INFO)
     
 logger.addHandler(file_handler_debug)
 logger.addHandler(file_handler_info)
