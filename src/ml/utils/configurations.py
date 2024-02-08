@@ -16,6 +16,11 @@ class configurations:
     def get_img_size(self):
         img_size = 200
         return (img_size,img_size)
+
+    def get_use_tmp_imgs(self):
+        # Choose to store the images used to train or not
+        use_tmp_imgs = False
+        return use_tmp_imgs
     
 
     
