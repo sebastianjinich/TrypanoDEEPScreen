@@ -1,6 +1,7 @@
 from rdkit.Chem.Draw import MolDrawOptions
 from utils.logging_deepscreen import logger
-
+import multiprocessing
+import torch
 
 class configurations:
     def __init__(self):
@@ -22,6 +23,16 @@ class configurations:
         use_tmp_imgs = False
         return use_tmp_imgs
     
+    def get_cpu_number(self):
+        cores = multiprocessing.cpu_count() # Count the number of cores in a computer
+        gpus = torch.cuda.device_count()
+        if gpus*4 >= cores:
+            return gpus*4
+        else:
+            return cores
+
+    def get_gpu_number(self):
+        return torch.cuda.device_count()
 
     
 configs = configurations()
