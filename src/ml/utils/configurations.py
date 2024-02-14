@@ -26,7 +26,7 @@ class configurations:
     def get_cpu_number(self):
         cores = multiprocessing.cpu_count() # Count the number of cores in a computer
         gpus = torch.cuda.device_count()
-        if gpus*4 >= cores:
+        if gpus*4 <= cores:
             return gpus*4
         else:
             return cores
