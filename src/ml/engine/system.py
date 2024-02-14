@@ -47,7 +47,6 @@ class DEEPScreenClassifier(L.LightningModule):
         self.train_pres = classification.BinaryPrecision()
         self.val_pres = classification.BinaryPrecision()
         self.test_pres = classification.BinaryPrecision()
-        
 
         self.train_f1 = classification.BinaryF1Score()
         self.val_f1 = classification.BinaryF1Score()
