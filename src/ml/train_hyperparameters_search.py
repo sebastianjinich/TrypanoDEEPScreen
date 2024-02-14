@@ -10,5 +10,5 @@ search_space_deepscreen = {
         'batch_size': tune.choice([32, 64]),
         'drop_rate': tune.choice([0.5, 0.6, 0.8]),
     }
-tuner = deepscreen_hyperparameter_tuneing(data,search_space_deepscreen,"chembl5567",num_samples=300)
+tuner = deepscreen_hyperparameter_tuneing(data,search_space_deepscreen,"chembl5567",num_samples=250)
 result = tuner.tune_deepscreen()
