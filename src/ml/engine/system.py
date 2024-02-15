@@ -109,7 +109,7 @@ class DEEPScreenClassifier(L.LightningModule):
         self.val_mcc(preds,label)
         self.val_pres(preds,label)
         
-        self.log('val_loss', loss, batch_size=self.hparams.batch_size)
+        self.log('val_loss', loss, batch_size=self.hparams.batch_size, sync_dist=True)
         self.log('val_acc', self.val_acc, on_step=False, on_epoch=True, batch_size=self.hparams.batch_size)
         self.log('val_f1', self.val_f1, on_step=False, on_epoch=True, batch_size=self.hparams.batch_size)
         self.log('val_mcc', self.val_mcc, on_step=False, on_epoch=True, batch_size=self.hparams.batch_size)

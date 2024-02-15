@@ -23,7 +23,22 @@ class configurations:
         use_tmp_imgs = False
         return use_tmp_imgs
     
-    def get_cpu_number(self):
+    def get_raytune_scaleing_config(self):
+        if configs._get_gpu_number() > 0:
+            scaleing_config = {
+                "num_workers":1,
+                "use_gpu":True,
+                "resources_per_worker":{"CPU": self._get_cpu_number(), "GPU": self._get_gpu_number()}
+            }
+            return scaleing_config
+        else:
+            scaleing_config = {
+                "num_workers":1,
+                "use_gpu":False,
+            }
+            return scaleing_config
+
+    def _get_cpu_number(self):
         cores = multiprocessing.cpu_count() # Count the number of cores in a computer
         gpus = torch.cuda.device_count()
         if gpus*4 <= cores:
@@ -31,8 +46,9 @@ class configurations:
         else:
             return cores
 
-    def get_gpu_number(self):
+    def _get_gpu_number(self):
         return torch.cuda.device_count()
+        
 
     
 configs = configurations()

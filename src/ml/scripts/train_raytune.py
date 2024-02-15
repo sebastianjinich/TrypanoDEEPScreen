@@ -31,7 +31,6 @@ class deepscreen_hyperparameter_tuneing:
         self.max_epochs = max_epochs
         if not os.path.exists(self.experiment_result_path):
                 os.makedirs(self.experiment_result_path)
-        self.use_gpu = configs.get_gpu_number() > 0
 
         self.scheduler = HyperBandForBOHB(
                             time_attr="epoch",
@@ -40,9 +39,7 @@ class deepscreen_hyperparameter_tuneing:
                             stop_last_trials=True,
                         )
 
-        self.scaling_config = ScalingConfig(
-            num_workers=1, use_gpu=self.use_gpu, resources_per_worker={"CPU": configs.get_cpu_number(), "GPU": configs.get_gpu_number()}
-            )
+        self.scaling_config = ScalingConfig(**configs.get_raytune_scaleing_config())
 
         self.search_algorithm = TuneBOHB()
 
