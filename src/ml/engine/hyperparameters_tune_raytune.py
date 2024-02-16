@@ -97,4 +97,4 @@ class deepscreen_hyperparameter_tuneing:
                 search_alg=self.search_algorithm
             ),
         )
-        return tuner.fit()
+        return tuner.fit(verbose=1)
