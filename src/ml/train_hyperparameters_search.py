@@ -1,6 +1,6 @@
 import pandas as pd
 from ray import tune
-from scripts.train_raytune import deepscreen_hyperparameter_tuneing
+from engine.hyperparameters_tune_raytune import deepscreen_hyperparameter_tuneing
 
 data = pd.read_csv("../../.data/processed/CHEMBL5567.csv")
 search_space_deepscreen = {
