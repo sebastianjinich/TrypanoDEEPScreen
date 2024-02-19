@@ -37,9 +37,9 @@ class configurations:
                 "use_gpu":False,
             }
             return scaleing_config
-
+        
     def _get_cpu_number(self):
-        cores = multiprocessing.cpu_count() # Count the number of cores in a computer
+        cores = multiprocessing.cpu_count()
         gpus = torch.cuda.device_count()
         if gpus*4 <= cores:
             return gpus*4
