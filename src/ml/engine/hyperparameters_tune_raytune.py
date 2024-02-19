@@ -51,7 +51,6 @@ class deepscreen_hyperparameter_tuneing:
                 checkpoint_score_order=mode,
 
             ),
-            progress_reporter=CLIReporter(max_column_length=10,max_report_frequency=15)
             )
 
         self.ray_trainer = TorchTrainer(
@@ -97,4 +96,4 @@ class deepscreen_hyperparameter_tuneing:
                 search_alg=self.search_algorithm
             ),
         )
-        return tuner.fit(verbose=1)
+        return tuner.fit()

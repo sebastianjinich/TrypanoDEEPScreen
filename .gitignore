@@ -162,3 +162,5 @@ cython_debug/
 .experiments/
 .data/raw/*
 *log*
+*ray_results*
+*.zip
