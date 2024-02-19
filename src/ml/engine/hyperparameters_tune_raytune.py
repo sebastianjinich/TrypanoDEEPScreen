@@ -17,7 +17,7 @@ from engine.system import DEEPScreenClassifier
 
 
 class deepscreen_hyperparameter_tuneing:
-    def __init__(self,data:pd.DataFrame,search_space:dict,target:str,max_epochs:int = 200,data_split_mode:str="non_random_split", grace_period:int=90,metric:str="val_mcc",mode:str="max",num_workers:int=1,num_samples:int=10,experiments_result_path="../../.experiments/"):
+    def __init__(self,data:pd.DataFrame,search_space:dict,target:str,max_epochs:int = 200,data_split_mode:str="non_random_split", grace_period:int=50,metric:str="val_mcc",mode:str="max",num_workers:int=1,num_samples:int=10,experiments_result_path="../../.experiments/"):
         seed_everything(RANDOM_STATE,True)
 
         self.data = data
