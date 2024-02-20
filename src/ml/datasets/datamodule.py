@@ -36,7 +36,7 @@ class DEEPscreenDataModule(L.LightningDataModule):
 
         if not {"comp_id","smiles","bioactivity"}.issubset(set(self.data.columns)):
             logger.error("invalid columns of df")
-            raise InvalidDataframeException
+            raise InvalidDataframeException("must contain the following columns {'comp_id','smiles','bioactivity'}")
 
 
     def setup(self,stage:str):

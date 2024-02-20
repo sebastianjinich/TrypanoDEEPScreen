@@ -1,4 +1,4 @@
-comp_id,CHEMBL2581,data_split,smiles
+comp_id,bioactivity,data_split,smiles
 CHEMBL104783,1,validation,COc1ccc(CN[C@@H](C(=O)N[C@H](C(=O)NCc2ccccc2)C(C)C)[C@H](O)[C@H](Cc2ccccc2)NC(=O)[C@@H](NC(=O)OCc2ccccc2)C(C)C)cc1
 CHEMBL104966,1,validation,CC(C)[C@H](NC(=O)[C@H](NCc1ccccc1)[C@H](O)[C@H](Cc1ccccc1)NC(=O)[C@@H](NC(=O)OCc1ccccc1)C(C)(C)C)C(=O)NCc1ccccc1
 CHEMBL1076901,1,train,CC(C)[C@H](NC(=O)[C@H](C)C[C@H](O)[C@H](COCc1ccccc1)NC(=O)c1cc(C(=O)N[C@H](C)c2ccccc2)cc(N(C)S(C)(=O)=O)c1)C(=O)NCc1ccccc1
