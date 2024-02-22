@@ -17,7 +17,7 @@ from engine.system import DEEPScreenClassifier
 
 
 class deepscreen_hyperparameter_tuneing:
-    def __init__(self,data:pd.DataFrame,search_space:dict,target:str,max_epochs:int = 200,data_split_mode:str="non_random_split", grace_period:int=3,metric:str="val_mcc",mode:str="max",num_workers:int=1,num_samples:int=10,experiments_result_path="../../.experiments/"):
+    def __init__(self,data:pd.DataFrame,search_space:dict,target:str,max_epochs:int = 200,data_split_mode:str="non_random_split", grace_period:int=35,metric:str="val_mcc",mode:str="max",num_workers:int=1,num_samples:int=10,experiments_result_path="../../.experiments/"):
         seed_everything(RANDOM_STATE,True)
 
         self.data = data
@@ -25,8 +25,8 @@ class deepscreen_hyperparameter_tuneing:
         self.num_samples =  num_samples
         self.target = target
         self.data_split_mode = data_split_mode
-        self.experiment_path = experiments_result_path
-        self.experiment_result_path = os.path.join(experiments_result_path,self.target)
+        self.experiment_path_abs = os.path.abspath(experiments_result_path)
+        self.experiment_result_path = os.path.join( self.experiment_path_abs,self.target)
         self.max_epochs = max_epochs
         self.grace_period = grace_period
 
@@ -50,7 +50,7 @@ class deepscreen_hyperparameter_tuneing:
                 num_to_keep=2,
                 checkpoint_score_attribute=metric,
                 checkpoint_score_order=mode
-            ),
+            )
             )
 
         self.ray_trainer = TorchTrainer(
@@ -70,6 +70,8 @@ class deepscreen_hyperparameter_tuneing:
         
         model = DEEPScreenClassifier(**config,experiment_result_path=self.experiment_result_path)
 
+        number_training_batches = round(len(self.data)*0.64/config["batch_size"])
+
         trainer = Trainer(
             devices="auto",
             accelerator="auto",
@@ -79,7 +81,8 @@ class deepscreen_hyperparameter_tuneing:
             deterministic=True,
             enable_progress_bar=False,
             enable_model_summary=False,
-            max_epochs = self.max_epochs
+            max_epochs = self.max_epochs,
+            log_every_n_steps=number_training_batches
         )
         trainer = prepare_trainer(trainer)
         trainer.fit(model, datamodule=dm)

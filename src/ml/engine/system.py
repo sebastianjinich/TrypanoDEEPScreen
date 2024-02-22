@@ -97,16 +97,16 @@ class DEEPScreenClassifier(L.LightningModule):
         y_pred = self.forward(img_arrs)
         _, preds = torch.max(y_pred,1)
         loss = self.cross_entropy_loss(y_pred.squeeze(),label)
-        self.log('train_loss', loss, batch_size=self.hparams.batch_size, prog_bar=True)
+        self.log('train_loss', loss, batch_size=self.hparams.batch_size, prog_bar=True, sync_dist=True)
 
         output = self.train_metrics(preds.int(),label.int())
-        self.log_dict(output,on_step=False,on_epoch=True, batch_size=self.hparams.batch_size)
+        self.log_dict(output,on_step=False,on_epoch=True, batch_size=self.hparams.batch_size, sync_dist=True)
         self.train_metrics.update(preds.int(),label.int())
         
         return loss
     
     def on_training_epoch_end(self, outputs):
-        self.log_dict(self.train_metrics.compute(), on_step=False, on_epoch=True, batch_size=self.hparams.batch_size)
+        self.log_dict(self.train_metrics.compute(), on_step=False, on_epoch=True, batch_size=self.hparams.batch_size,  sync_dist=True)
         self.train_metrics.reset()
     
     def validation_step(self,val_batch,batch_idx):
@@ -114,14 +114,14 @@ class DEEPScreenClassifier(L.LightningModule):
         y_pred = self.forward(img_arrs)
         _, preds = torch.max(y_pred,1)
         loss = self.cross_entropy_loss(y_pred.squeeze(),label)
-        self.log('val_loss', loss, batch_size=self.hparams.batch_size, prog_bar=True)
+        self.log('val_loss', loss, batch_size=self.hparams.batch_size, prog_bar=True, sync_dist=True)
 
         output = self.val_metrics(preds.int(),label.int())
-        self.log_dict(output,on_step=False,on_epoch=True,batch_size=self.hparams.batch_size)
+        self.log_dict(output,on_step=False,on_epoch=True,batch_size=self.hparams.batch_size,  sync_dist=True)
         self.val_metrics.update(preds.int(),label.int())
     
     def on_validation_epoch_end(self):
-        self.log_dict(self.val_metrics.compute(), on_step=False, on_epoch=True,batch_size=self.hparams.batch_size)
+        self.log_dict(self.val_metrics.compute(), on_step=False, on_epoch=True,batch_size=self.hparams.batch_size,  sync_dist=True)
         self.val_metrics.reset()
 
     def test_step(self,test_batch,batch_idx):
