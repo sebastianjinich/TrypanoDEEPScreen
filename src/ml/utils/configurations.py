@@ -2,6 +2,8 @@ from rdkit.Chem.Draw import MolDrawOptions
 from utils.logging_deepscreen import logger
 import multiprocessing
 import torch
+from ray import tune
+import warnings
 
 class configurations:
     def __init__(self):
@@ -19,11 +21,34 @@ class configurations:
         return (img_size,img_size)
 
     def get_use_tmp_imgs(self):
-        # Choose to store the images used to train or not
+        # Choose to store the images used to train or not (False = Store images)
         use_tmp_imgs = False
         return use_tmp_imgs
     
+    def get_hyperparameters_search(self):
+        hyperparams_choices = {
+        'fully_layer_1': tune.choice([16, 32, 128, 256, 512]),
+        'fully_layer_2': tune.choice([16, 32, 128, 256, 512]),
+        'learning_rate': tune.choice([0.0005, 0.0001, 0.005, 0.001, 0.01]),
+        'batch_size': tune.choice([32, 64]),
+        'drop_rate': tune.choice([0.2, 0.3, 0.5, 0.6]),
+        }
+        return hyperparams_choices
+    
+    def get_hyperparameters_search_setup(self):
+        setup = {
+           "max_epochs": 10,
+           "grace_period": 2,
+           "metric_to_optimize": "val_mcc",
+           "optimize_mode":"max",
+           "num_samples":10,
+           "asha_reduction_factor":3,
+           "number_ckpts_keep":2
+        }
+        return setup
+
     def get_raytune_scaleing_config(self):
+
         if configs._get_gpu_number() > 0:
             scaleing_config = {
                 "num_workers":1,
@@ -37,9 +62,9 @@ class configurations:
                 "use_gpu":False,
             }
             return scaleing_config
-
+        
     def _get_cpu_number(self):
-        cores = multiprocessing.cpu_count() # Count the number of cores in a computer
+        cores = multiprocessing.cpu_count()
         gpus = torch.cuda.device_count()
         if gpus*4 <= cores:
             return gpus*4
