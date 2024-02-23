@@ -33,6 +33,7 @@ class deepscreen_hyperparameter_tuneing:
         self.mode = optimize_mode
         self.reduction_factor = asha_reduction_factor
 
+
         if not os.path.exists(self.experiment_result_path):
                 os.makedirs(self.experiment_result_path)
 
@@ -97,7 +98,7 @@ class deepscreen_hyperparameter_tuneing:
             param_space={"train_loop_config": self.search_space},
             tune_config=tune.TuneConfig(         
                 num_samples=self.num_samples,
-                scheduler=self.scheduler,
+                scheduler=self.scheduler
             ),
         )
         return tuner.fit()

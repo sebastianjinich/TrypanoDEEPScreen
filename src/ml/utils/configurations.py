@@ -48,7 +48,6 @@ class configurations:
         return setup
 
     def get_raytune_scaleing_config(self):
-        warnings.filterwarnings("ignore", ".*Consider increasing the value of the `num_workers` argumen*")
 
         if configs._get_gpu_number() > 0:
             scaleing_config = {
