@@ -17,7 +17,7 @@ from engine.system import DEEPScreenClassifier
 
 
 class deepscreen_hyperparameter_tuneing:
-    def __init__(self,data:pd.DataFrame,search_space:dict,target:str,max_epochs:int = 200,data_split_mode:str="non_random_split", grace_period:int=35,metric:str="val_mcc",mode:str="max",num_workers:int=1,num_samples:int=10,experiments_result_path="../../.experiments/"):
+    def __init__(self,data:pd.DataFrame,search_space:dict,target:str,max_epochs:int,data_split_mode:str,grace_period:int,metric_to_optimize:str,optimize_mode:str,num_samples:int,experiments_result_path:str,asha_reduction_factor:int,number_ckpts_keep:int):
         seed_everything(RANDOM_STATE,True)
 
         self.data = data
@@ -29,17 +29,20 @@ class deepscreen_hyperparameter_tuneing:
         self.experiment_result_path = os.path.join( self.experiment_path_abs,self.target)
         self.max_epochs = max_epochs
         self.grace_period = grace_period
+        self.metric = metric_to_optimize
+        self.mode = optimize_mode
+        self.reduction_factor = asha_reduction_factor
 
         if not os.path.exists(self.experiment_result_path):
                 os.makedirs(self.experiment_result_path)
 
         self.scheduler = ASHAScheduler(
             time_attr="epoch",
-            metric="val_mcc",
-            mode="max",
+            metric=self.metric,
+            mode=self.mode,
             max_t=self.max_epochs,
             grace_period=self.grace_period,
-            reduction_factor=3,
+            reduction_factor=self.reduction_factor,
             )
 
         self.scaling_config = ScalingConfig(**configs.get_raytune_scaleing_config())
@@ -47,9 +50,9 @@ class deepscreen_hyperparameter_tuneing:
         self.run_config = RunConfig(
             stop={"training_iteration": self.max_epochs},
             checkpoint_config=CheckpointConfig(
-                num_to_keep=2,
-                checkpoint_score_attribute=metric,
-                checkpoint_score_order=mode
+                num_to_keep=number_ckpts_keep,
+                checkpoint_score_attribute=self.metric,
+                checkpoint_score_order=self.mode
             )
             )
 
@@ -70,7 +73,7 @@ class deepscreen_hyperparameter_tuneing:
         
         model = DEEPScreenClassifier(**config,experiment_result_path=self.experiment_result_path)
 
-        number_training_batches = round(len(self.data)*0.64/config["batch_size"])
+        number_training_batches = dm.get_number_training_batches()
 
         trainer = Trainer(
             devices="auto",

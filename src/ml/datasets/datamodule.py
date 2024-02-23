@@ -22,6 +22,8 @@ class DEEPscreenDataModule(L.LightningDataModule):
     
         self.result_path = experiment_result_path
 
+        self.batch_size = batch_size
+
         if tmp_imgs:
             self.imgs_path = tempfile.TemporaryDirectory().name
         else:
@@ -37,7 +39,6 @@ class DEEPscreenDataModule(L.LightningDataModule):
         if not {"comp_id","smiles","bioactivity"}.issubset(set(self.data.columns)):
             logger.error("invalid columns of df")
             raise InvalidDataframeException("must contain the following columns {'comp_id','smiles','bioactivity'}")
-
 
     def setup(self,stage:str):
         
@@ -73,9 +74,18 @@ class DEEPscreenDataModule(L.LightningDataModule):
             if self.data_split == "scaffold_split":
                 #TODO
                 raise NotImplementedError
+            
         
         if stage == "predict":
             self.predict = self.data
+    
+    def get_number_training_batches(self):
+        if self.data_split == "non_random_split":
+            number_training_batches = round(len(self.data[self.data["data_split"] == "train"])/self.batch_size)
+        else:
+            number_training_batches = 50
+            
+        return number_training_batches
 
     def train_dataloader(self):
         self.training_dataset = DEEPScreenDatasetTrain(self.imgs_path, self.train)
