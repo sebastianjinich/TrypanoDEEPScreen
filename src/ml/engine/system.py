@@ -41,31 +41,37 @@ class DEEPScreenClassifier(L.LightningModule):
         # Performance trackers
         self.train_metrics = MetricCollection(
              {
-                "train_acc": classification.BinaryAccuracy(),
-                "train_prec": classification.BinaryPrecision(),
-                "train_f1": classification.BinaryF1Score(),
-                "train_mcc": classification.BinaryMatthewsCorrCoef(),
-                "train_recall": classification.BinaryRecall(),
+                "train_acc": classification.BinaryAccuracy(threshold=0.5),
+                "train_prec": classification.BinaryPrecision(threshold=0.5),
+                "train_f1": classification.BinaryF1Score(threshold=0.5),
+                "train_mcc": classification.BinaryMatthewsCorrCoef(threshold=0.5),
+                "train_recall": classification.BinaryRecall(threshold=0.5),
+                "train_auroc": classification.BinaryAUROC(),
+                "train_calibration_error": classification.BinaryCalibrationError()
              }
          )
         
         self.val_metrics = MetricCollection(
              {
-                "val_acc": classification.BinaryAccuracy(),
-                "val_prec": classification.BinaryPrecision(),
-                "val_f1": classification.BinaryF1Score(),
-                "val_mcc": classification.BinaryMatthewsCorrCoef(),
-                "val_recall": classification.BinaryRecall(),
+                "val_acc": classification.BinaryAccuracy(threshold=0.5),
+                "val_prec": classification.BinaryPrecision(threshold=0.5),
+                "val_f1": classification.BinaryF1Score(threshold=0.5),
+                "val_mcc": classification.BinaryMatthewsCorrCoef(threshold=0.5),
+                "val_recall": classification.BinaryRecall(threshold=0.5),
+                "val_auroc": classification.BinaryAUROC(),
+                "val_calibration_error": classification.BinaryCalibrationError()
              }
          )
         
         self.test_metrics = MetricCollection(
              {
-                "test_acc": classification.BinaryAccuracy(),
-                "test_prec": classification.BinaryPrecision(),
-                "test_f1": classification.BinaryF1Score(),
-                "test_mcc": classification.BinaryMatthewsCorrCoef(),
-                "test_recall": classification.BinaryRecall(),
+                "test_acc": classification.BinaryAccuracy(threshold=0.5),
+                "test_prec": classification.BinaryPrecision(threshold=0.5),
+                "test_f1": classification.BinaryF1Score(threshold=0.5),
+                "test_mcc": classification.BinaryMatthewsCorrCoef(threshold=0.5),
+                "test_recall": classification.BinaryRecall(threshold=0.5),
+                "test_auroc": classification.BinaryAUROC(),
+                "test_calibration_error": classification.BinaryCalibrationError()
              }
          )
 
@@ -95,13 +101,14 @@ class DEEPScreenClassifier(L.LightningModule):
     def training_step(self,train_batch,batch_idx):
         img_arrs, label, comp_id = train_batch
         y_pred = self.forward(img_arrs)
-        _, preds = torch.max(y_pred,1)
+        y_pred_soft_max = F.softmax(y_pred,dim=1)
+        y_pred_soft_max_1_active = y_pred_soft_max[:,1]
         loss = self.cross_entropy_loss(y_pred.squeeze(),label)
         self.log('train_loss', loss, batch_size=self.hparams.batch_size, prog_bar=True, sync_dist=True)
 
-        output = self.train_metrics(preds.int(),label.int())
+        output = self.train_metrics(y_pred_soft_max_1_active,label.int())
         self.log_dict(output,on_step=False,on_epoch=True, batch_size=self.hparams.batch_size, sync_dist=True)
-        self.train_metrics.update(preds.int(),label.int())
+        self.train_metrics.update(y_pred_soft_max_1_active,label.int())
         
         return loss
     
@@ -112,13 +119,14 @@ class DEEPScreenClassifier(L.LightningModule):
     def validation_step(self,val_batch,batch_idx):
         img_arrs, label, comp_id = val_batch
         y_pred = self.forward(img_arrs)
-        _, preds = torch.max(y_pred,1)
+        y_pred_soft_max = F.softmax(y_pred,dim=1)
+        y_pred_soft_max_1_active = y_pred_soft_max[:,1]
         loss = self.cross_entropy_loss(y_pred.squeeze(),label)
         self.log('val_loss', loss, batch_size=self.hparams.batch_size, prog_bar=True, sync_dist=True)
 
-        output = self.val_metrics(preds.int(),label.int())
+        output = self.val_metrics(y_pred_soft_max_1_active,label.int())
         self.log_dict(output,on_step=False,on_epoch=True,batch_size=self.hparams.batch_size,  sync_dist=True)
-        self.val_metrics.update(preds.int(),label.int())
+        self.val_metrics.update(y_pred_soft_max_1_active,label.int())
     
     def on_validation_epoch_end(self):
         self.log_dict(self.val_metrics.compute(), on_step=False, on_epoch=True,batch_size=self.hparams.batch_size,  sync_dist=True)
@@ -128,17 +136,18 @@ class DEEPScreenClassifier(L.LightningModule):
         img_arrs, label, comp_id = test_batch
         y_pred = self.forward(img_arrs)
         _, preds = torch.max(y_pred,1)
+        y_pred_soft_max = F.softmax(y_pred,dim=1)
+        y_pred_soft_max_1_active = y_pred_soft_max[:,1]
         loss = self.cross_entropy_loss(y_pred.squeeze(),label)
         self.log('test_loss', loss, batch_size=self.hparams.batch_size, prog_bar=True)
 
-        output = self.test_metrics(preds.int(),label.int())
+        output = self.test_metrics(y_pred_soft_max_1_active,label.int())
         self.log_dict(output,on_step=False,on_epoch=True,batch_size=self.hparams.batch_size)
-        self.test_metrics.update(preds.int(),label.int())
+        self.test_metrics.update(y_pred_soft_max_1_active,label.int())
 
         comp_id_pd = pd.Series(comp_id,name="comp_id")
         label_pd = pd.Series(label,name="label")
         pred_pd = pd.Series(preds.cpu(),name="prediction")
-        y_pred_soft_max = F.softmax(y_pred,dim=1) 
         pred_0_pd = pd.Series(y_pred_soft_max[:,0].cpu(),name="0_inactive_probability")
         pred_1_pd = pd.Series(y_pred_soft_max[:,1].cpu(),name="1_active_probability")
         batch_predictions = pd.concat([comp_id_pd,label_pd,pred_pd,pred_0_pd,pred_1_pd],axis=1)
@@ -157,7 +166,6 @@ class DEEPScreenClassifier(L.LightningModule):
         img_arrs, comp_id = batch
         y_pred = self.forward(img_arrs)
         _, preds = torch.max(y_pred,1)
-
         comp_id_pd = pd.Series(comp_id,name="comp_id")
         pred_pd = pd.Series(preds.cpu(),name="prediction")
         y_pred_soft_max = F.softmax(y_pred,dim=1) 
