@@ -42,4 +42,5 @@ def main_raytune_search_train(data_train_val_test:str, target_name_experiment:st
     trainer.test(model,datamodule=datamodule)
 
     result_df = result.get_dataframe()
-    result_df.to_pickle(os.path(experiment_result_path,f"raytune_result_{target_name_experiment}.pkl"))
+    result_df_path = os.path.join(experiment_result_path,f"raytune_result_{target_name_experiment}.pkl")
+    result_df.to_pickle(result_df_path)
