@@ -6,7 +6,7 @@
 
 #
 ## time = walltime
-#SBATCH --time=8-12:00:00
+#SBATCH --time=4-12:00:00
 #
 ## An email is sent when the job is canceled or finished
 ## Change "root" for your e-mail address
@@ -43,7 +43,7 @@ echo -e "\n Input file: $INP \n"
 
 ## Program run.
 cd $SLURM_SUBMIT_DIR
-python3 main.py
+python3 main.py --data_train_val_test ../../.data/processed/CHEMBL4072.csv --target_name_experiment chembl4072
 
 echo -e "\n################### Job finished in $(date +'%d-%m-%Y as %T') ###################"
 

@@ -31,19 +31,19 @@ class configurations:
         'fully_layer_2': tune.choice([16, 32, 128, 256, 512]),
         'learning_rate': tune.choice([0.0005, 0.0001, 0.005, 0.001, 0.01]),
         'batch_size': tune.choice([32, 64]),
-        'drop_rate': tune.choice([0.2, 0.3, 0.5, 0.6]),
+        'drop_rate': tune.choice([0.3, 0.5, 0.6, 0.8]),
         }
         return hyperparams_choices
     
     def get_hyperparameters_search_setup(self):
         setup = {
-           "max_epochs": 10,
-           "grace_period": 2,
+           "max_epochs": 200,
+           "grace_period": 40,
            "metric_to_optimize": "val_mcc",
            "optimize_mode":"max",
-           "num_samples":10,
+           "num_samples":300,
            "asha_reduction_factor":3,
-           "number_ckpts_keep":2
+           "number_ckpts_keep":1
         }
         return setup
 
