@@ -34,7 +34,7 @@ class DEEPScreenClassifier(L.LightningModule):
         self.fc2 = nn.Linear(fully_layer_1, fully_layer_2)
         self.fc3 = nn.Linear(fully_layer_2, 2)
         self.drop_rate = drop_rate
-        
+
         # Object atributes
         self.config = configs
         
