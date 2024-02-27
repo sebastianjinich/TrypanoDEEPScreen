@@ -47,6 +47,7 @@ class DEEPScreenClassifier(L.LightningModule):
                 "train_mcc": classification.BinaryMatthewsCorrCoef(threshold=0.5),
                 "train_recall": classification.BinaryRecall(threshold=0.5),
                 "train_auroc": classification.BinaryAUROC(),
+                "train_auroc_15": classification.BinaryAUROC(max_fpr=0.15),
                 "train_calibration_error": classification.BinaryCalibrationError()
              }
          )
@@ -59,6 +60,7 @@ class DEEPScreenClassifier(L.LightningModule):
                 "val_mcc": classification.BinaryMatthewsCorrCoef(threshold=0.5),
                 "val_recall": classification.BinaryRecall(threshold=0.5),
                 "val_auroc": classification.BinaryAUROC(),
+                "val_auroc_15": classification.BinaryAUROC(max_fpr=0.15),
                 "val_calibration_error": classification.BinaryCalibrationError()
              }
          )
@@ -71,6 +73,7 @@ class DEEPScreenClassifier(L.LightningModule):
                 "test_mcc": classification.BinaryMatthewsCorrCoef(threshold=0.5),
                 "test_recall": classification.BinaryRecall(threshold=0.5),
                 "test_auroc": classification.BinaryAUROC(),
+                "test_auroc_15": classification.BinaryAUROC(max_fpr=0.15),
                 "test_calibration_error": classification.BinaryCalibrationError()
              }
          )
