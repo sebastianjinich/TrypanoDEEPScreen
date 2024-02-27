@@ -47,7 +47,7 @@ class DEEPscreenDataModule(L.LightningDataModule):
 
         logger.info(f"Using a total of {len(self.data)} datapoints")
 
-        if stage == "fit" or stage == "test":
+        if stage == "fit" or stage == "test" or stage == "val":
 
             if self.data_split == "random_split":
                 #TODO
@@ -92,7 +92,7 @@ class DEEPscreenDataModule(L.LightningDataModule):
         return DataLoader(self.training_dataset,batch_size=self.hparams.batch_size)
     
     def val_dataloader(self):
-        self.validation_dataset = DEEPScreenDatasetTrain(self.imgs_path, self.validate)
+        self.validation_dataset = DEEPScreenDatasetTest(self.imgs_path, self.validate)
         return DataLoader(self.validation_dataset,batch_size=self.hparams.batch_size)
     
     def test_dataloader(self):
