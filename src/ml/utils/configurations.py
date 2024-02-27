@@ -3,7 +3,7 @@ from utils.logging_deepscreen import logger
 import multiprocessing
 import torch
 from ray import tune
-import warnings
+import math
 
 class configurations:
     def __init__(self):
@@ -37,11 +37,11 @@ class configurations:
     
     def get_hyperparameters_search_setup(self):
         setup = {
-           "max_epochs": 200,
-           "grace_period": 40,
+           "max_epochs": 20,
+           "grace_period": 5,
            "metric_to_optimize": "val_mcc",
            "optimize_mode":"max",
-           "num_samples":300,
+           "num_samples":10,
            "asha_reduction_factor":3,
            "number_ckpts_keep":1
         }
@@ -49,11 +49,11 @@ class configurations:
 
     def get_raytune_scaleing_config(self):
 
-        if configs._get_gpu_number() > 0:
+        if self._get_gpu_number() > 0:
             scaleing_config = {
-                "num_workers":1,
+                "num_workers":self._get_gpu_number(),
                 "use_gpu":True,
-                "resources_per_worker":{"CPU": self._get_cpu_number(), "GPU": self._get_gpu_number()}
+                "resources_per_worker":{"CPU": self._get_cpu_number(), "GPU": 1}
             }
             return scaleing_config
         else:
@@ -65,11 +65,13 @@ class configurations:
         
     def _get_cpu_number(self):
         cores = multiprocessing.cpu_count()
-        gpus = torch.cuda.device_count()
-        if gpus*4 <= cores:
-            return gpus*4
-        else:
-            return cores
+        gpus = self._get_gpu_number()
+
+        if self._get_gpu_number() > 0:
+            if gpus*4 <= cores:
+                return gpus*4
+            else:
+                return math.floor(cores/gpus)
 
     def _get_gpu_number(self):
         return torch.cuda.device_count()
