@@ -13,7 +13,7 @@ from utils.configurations import configs
 from utils.logging_deepscreen import logger
 
 class DEEPScreenClassifier(L.LightningModule):
-    def __init__(self,fully_layer_1, fully_layer_2, drop_rate, learning_rate, batch_size, experiment_result_path):
+    def __init__(self,fully_layer_1, fully_layer_2, drop_rate, learning_rate, batch_size, experiment_result_path, temperature_scaleing = 1):
         super(DEEPScreenClassifier, self).__init__()
         self.save_hyperparameters()
         logger.info(f"Using hyperparameters {[i for i in self.hparams.items()]}") 
@@ -34,6 +34,7 @@ class DEEPScreenClassifier(L.LightningModule):
         self.fc2 = nn.Linear(fully_layer_1, fully_layer_2)
         self.fc3 = nn.Linear(fully_layer_2, 2)
         self.drop_rate = drop_rate
+        self.temperature_scaleing = temperature_scaleing
 
         # Object atributes
         self.config = configs
@@ -92,6 +93,7 @@ class DEEPScreenClassifier(L.LightningModule):
         x = F.dropout(F.relu(self.fc1(x)), self.drop_rate, training = self.training)
         x = F.dropout(F.relu(self.fc2(x)), self.drop_rate, training = self.training)
         x = self.fc3(x)
+        x = torch.div(x,self.temperature_scaleing)
         return x
 
     def configure_optimizers(self):
