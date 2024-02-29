@@ -4,6 +4,7 @@ import multiprocessing
 import torch
 from ray import tune
 import math
+import numpy as np
 
 class configurations:
     def __init__(self):
@@ -37,11 +38,11 @@ class configurations:
     
     def get_hyperparameters_search_setup(self):
         setup = {
-           "max_epochs": 200,
-           "grace_period": 45,
+           "max_epochs": 4,
+           "grace_period": 1,
            "metric_to_optimize": "val_mcc",
            "optimize_mode":"max",
-           "num_samples":200,
+           "num_samples":2,
            "asha_reduction_factor":3,
            "number_ckpts_keep":1
         }
@@ -62,6 +63,9 @@ class configurations:
                 "use_gpu":False,
             }
             return scaleing_config
+    
+    def get_temperature_search_configs(self):
+        return np.arange(0,4,0.1)
         
     def _get_cpu_number(self):
         cores = multiprocessing.cpu_count()

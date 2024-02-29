@@ -47,7 +47,7 @@ class DEEPscreenDataModule(L.LightningDataModule):
 
         logger.info(f"Using a total of {len(self.data)} datapoints")
 
-        if stage == "fit" or stage == "test" or stage == "val":
+        if stage == "fit" or stage == "test" or stage == "validate":
 
             if self.data_split == "random_split":
                 #TODO
