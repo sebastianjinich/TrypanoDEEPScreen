@@ -5,6 +5,7 @@ import os
 from engine.system import DEEPScreenClassifier
 from datasets.datamodule import DEEPscreenDataModule
 from lightning import Trainer
+from utils.logging_deepscreen import logger
 
 
 def main_raytune_search_train(data_train_val_test:str, target_name_experiment:str, data_split_mode:str, experiment_result_path:str):
@@ -29,6 +30,13 @@ def main_raytune_search_train(data_train_val_test:str, target_name_experiment:st
     best_result = result.get_best_result(metric=hyperparameters_search_setup["metric_to_optimize"],mode=hyperparameters_search_setup["optimize_mode"])
     best_checkpoint_path = os.path.join(best_result.checkpoint.path,"checkpoint.ckpt")
     best_result_hparams = best_result.config["train_loop_config"]
+    best_val_metrics = {i:j for i,j in best_result.metrics.items() if i.find("val") != -1 }
+    logger.info(f"Best hyperparams founded {best_result_hparams}")
+    logger.info(f"Best validation metrics {best_val_metrics}")
+
+    result_df = result.get_dataframe()
+    result_df_path = os.path.join(experiment_result_path,f"raytune_result_{target_name_experiment}.pkl")
+    result_df.to_pickle(result_df_path)
 
     trainer = Trainer()
     model = DEEPScreenClassifier.load_from_checkpoint(best_checkpoint_path,experiment_result_path=experiment_result_path)
@@ -41,6 +49,3 @@ def main_raytune_search_train(data_train_val_test:str, target_name_experiment:st
     
     trainer.test(model,datamodule=datamodule)
 
-    result_df = result.get_dataframe()
-    result_df_path = os.path.join(experiment_result_path,f"raytune_result_{target_name_experiment}.pkl")
-    result_df.to_pickle(result_df_path)

@@ -1,12 +1,12 @@
 #!/bin/bash
 ##
 ## ntasks = numbers of cores
-#SBATCH --ntasks=20
+#SBATCH --ntasks-per-node=20
 #SBATCH --gres=gpu:1
 
 #
 ## time = walltime
-#SBATCH --time=4-12:00:00
+#SBATCH --time=12:00:00
 #
 ## An email is sent when the job is canceled or finished
 ## Change "root" for your e-mail address
