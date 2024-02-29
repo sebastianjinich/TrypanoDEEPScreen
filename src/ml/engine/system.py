@@ -149,7 +149,7 @@ class DEEPScreenClassifier(L.LightningModule):
         self.test_metrics.update(y_pred_soft_max_1_active,label.int())
 
         comp_id_pd = pd.Series(comp_id,name="comp_id")
-        label_pd = pd.Series(label,name="label")
+        label_pd = pd.Series(label.cpu(),name="label")
         pred_pd = pd.Series(preds.cpu(),name="prediction")
         pred_0_pd = pd.Series(y_pred_soft_max[:,0].cpu(),name="0_inactive_probability")
         pred_1_pd = pd.Series(y_pred_soft_max[:,1].cpu(),name="1_active_probability")
