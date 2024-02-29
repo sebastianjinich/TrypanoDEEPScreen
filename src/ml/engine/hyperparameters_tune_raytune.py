@@ -33,6 +33,7 @@ class deepscreen_hyperparameter_tuneing:
         self.mode = optimize_mode
         self.reduction_factor = asha_reduction_factor
 
+        os.environ["TUNE_RESULT_DIR"] = self.experiment_path_abs
 
         if not os.path.exists(self.experiment_result_path):
                 os.makedirs(self.experiment_result_path)
@@ -55,7 +56,6 @@ class deepscreen_hyperparameter_tuneing:
                 checkpoint_score_attribute=self.metric,
                 checkpoint_score_order=self.mode
             ),
-            storage_path=self.experiment_result_path,
             name=self.target
             )
 
@@ -84,7 +84,6 @@ class deepscreen_hyperparameter_tuneing:
             strategy=RayDDPStrategy(),
             callbacks=[RayTrainReportCallback()],
             plugins=[RayLightningEnvironment()],
-            logger=loggers.TensorBoardLogger(save_dir=self.experiment_result_path),
             enable_progress_bar=False,
             enable_model_summary=False,
             max_epochs = self.max_epochs,

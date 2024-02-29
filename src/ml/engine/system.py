@@ -159,7 +159,7 @@ class DEEPScreenClassifier(L.LightningModule):
     def on_test_end(self):
         self.test_predictions["abs_prob_diff"] =  self.test_predictions["0_inactive_probability"] - self.test_predictions["1_active_probability"]
         self.test_predictions["abs_prob_diff"] = abs(self.test_predictions["abs_prob_diff"])
-        self.test_predictions.to_csv(os.path.join(self.hparams.experiment_result_path,f"test_predictions_{self.hparams.fully_layer_1}-{self.hparams.fully_layer_2}-{self.hparams.learning_rate}-{self.hparams.drop_rate}-{self.hparams.batch_size}.csv"),index=False)
+        self.test_predictions.to_csv(os.path.join(self.hparams.experiment_result_path,f"test_{self.hparams.target}_{self.hparams.fully_layer_1}-{self.hparams.fully_layer_2}-{self.hparams.learning_rate}-{self.hparams.drop_rate}-{self.hparams.batch_size}.csv"),index=False)
     
     def on_test_epoch_end(self):
         self.log_dict(self.test_metrics.compute(), on_step=False, on_epoch=True, batch_size=self.hparams.batch_size)
@@ -180,4 +180,4 @@ class DEEPScreenClassifier(L.LightningModule):
     def on_predict_end(self):
         self.predictions["abs_prob_diff"] =  self.predictions["0_inactive_probability"] - self.predictions["1_active_probability"]
         self.predictions["abs_prob_diff"] = abs(self.predictions["abs_prob_diff"])
-        self.predictions.to_csv(os.path.join(self.hparams.experiment_result_path,f"predictions_{self.target}_{self.hparams.fully_layer_1}-{self.hparams.fully_layer_2}-{self.hparams.learning_rate}-{self.hparams.drop_rate}-{self.hparams.batch_size}.csv"),index=False)
+        self.predictions.to_csv(os.path.join(self.hparams.experiment_result_path,f"predictions_{self.hparams.target}_{self.hparams.fully_layer_1}-{self.hparams.fully_layer_2}-{self.hparams.learning_rate}-{self.hparams.drop_rate}-{self.hparams.batch_size}.csv"),index=False)
