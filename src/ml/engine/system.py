@@ -13,7 +13,7 @@ from utils.configurations import configs
 from utils.logging_deepscreen import logger
 
 class DEEPScreenClassifier(L.LightningModule):
-    def __init__(self,fully_layer_1, fully_layer_2, drop_rate, learning_rate, batch_size, experiment_result_path):
+    def __init__(self,fully_layer_1, fully_layer_2, drop_rate, learning_rate, batch_size, experiment_result_path, target):
         super(DEEPScreenClassifier, self).__init__()
         self.save_hyperparameters()
         logger.info(f"Using hyperparameters {[i for i in self.hparams.items()]}") 
@@ -180,4 +180,4 @@ class DEEPScreenClassifier(L.LightningModule):
     def on_predict_end(self):
         self.predictions["abs_prob_diff"] =  self.predictions["0_inactive_probability"] - self.predictions["1_active_probability"]
         self.predictions["abs_prob_diff"] = abs(self.predictions["abs_prob_diff"])
-        self.predictions.to_csv(os.path.join(self.hparams.experiment_result_path,f"predictions_{self.hparams.fully_layer_1}-{self.hparams.fully_layer_2}-{self.hparams.learning_rate}-{self.hparams.drop_rate}-{self.hparams.batch_size}.csv"),index=False)
+        self.predictions.to_csv(os.path.join(self.hparams.experiment_result_path,f"predictions_{self.target}_{self.hparams.fully_layer_1}-{self.hparams.fully_layer_2}-{self.hparams.learning_rate}-{self.hparams.drop_rate}-{self.hparams.batch_size}.csv"),index=False)
