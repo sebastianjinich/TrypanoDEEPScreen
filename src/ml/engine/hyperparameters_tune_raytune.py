@@ -5,7 +5,7 @@ from ray.train import RunConfig, ScalingConfig, CheckpointConfig
 from ray.train.torch import TorchTrainer
 from ray.tune import CLIReporter
 from lightning import Trainer
-from lightning.pytorch import seed_everything
+from lightning.pytorch import seed_everything, loggers
 import pandas as pd
 import os
 
@@ -26,13 +26,14 @@ class deepscreen_hyperparameter_tuneing:
         self.target = target
         self.data_split_mode = data_split_mode
         self.experiment_path_abs = os.path.abspath(experiments_result_path)
-        self.experiment_result_path = os.path.join( self.experiment_path_abs,self.target)
+        self.experiment_result_path = self.experiment_path_abs
         self.max_epochs = max_epochs
         self.grace_period = grace_period
         self.metric = metric_to_optimize
         self.mode = optimize_mode
         self.reduction_factor = asha_reduction_factor
 
+        os.environ["TUNE_RESULT_DIR"] = self.experiment_path_abs
 
         if not os.path.exists(self.experiment_result_path):
                 os.makedirs(self.experiment_result_path)
@@ -54,7 +55,8 @@ class deepscreen_hyperparameter_tuneing:
                 num_to_keep=number_ckpts_keep,
                 checkpoint_score_attribute=self.metric,
                 checkpoint_score_order=self.mode
-            )
+            ),
+            name=self.target
             )
 
         self.ray_trainer = TorchTrainer(
@@ -72,7 +74,7 @@ class deepscreen_hyperparameter_tuneing:
              data_split_mode=self.data_split_mode,
              tmp_imgs=configs.get_use_tmp_imgs())
         
-        model = DEEPScreenClassifier(**config,experiment_result_path=self.experiment_result_path)
+        model = DEEPScreenClassifier(**config,experiment_result_path=self.experiment_result_path,target=self.target)
 
         number_training_batches = dm.get_number_training_batches()
 
@@ -82,7 +84,6 @@ class deepscreen_hyperparameter_tuneing:
             strategy=RayDDPStrategy(),
             callbacks=[RayTrainReportCallback()],
             plugins=[RayLightningEnvironment()],
-            deterministic=True,
             enable_progress_bar=False,
             enable_model_summary=False,
             max_epochs = self.max_epochs,
