@@ -43,7 +43,7 @@ echo -e "\n Input file: $INP \n"
 
 ## Program run.
 cd $SLURM_SUBMIT_DIR
-python3 main.py --data_train_val_test ../../.data/processed/CHEMBL4072.csv --target_name_experiment chembl4072
+python3 main.py --data_train_val_test ../../.data/processed/antibiotics_random_split.csv --target_name_experiment antibioticos_random_split
 
 echo -e "\n################### Job finished in $(date +'%d-%m-%Y as %T') ###################"
 
