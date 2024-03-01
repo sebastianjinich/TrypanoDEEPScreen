@@ -5,7 +5,7 @@ from ray.train import RunConfig, ScalingConfig, CheckpointConfig
 from ray.train.torch import TorchTrainer
 from ray.tune import CLIReporter
 from lightning import Trainer
-from lightning.pytorch import seed_everything, loggers
+from lightning.pytorch import seed_everything
 import pandas as pd
 import os
 
@@ -34,6 +34,7 @@ class deepscreen_hyperparameter_tuneing:
         self.reduction_factor = asha_reduction_factor
 
         os.environ["TUNE_RESULT_DIR"] = self.experiment_path_abs
+        os.environ["RAY_AIR_NEW_OUTPUT"]="0"
 
         if not os.path.exists(self.experiment_result_path):
                 os.makedirs(self.experiment_result_path)
@@ -49,6 +50,8 @@ class deepscreen_hyperparameter_tuneing:
 
         self.scaling_config = ScalingConfig(**configs.get_raytune_scaleing_config())
 
+        self.reporter = CLIReporter(metric=self.metric,mode=self.mode,max_progress_rows=15,metric_columns=["train_loss","val_loss","val_mcc","val_f1","val_auroc","val_auroc_15"])
+
         self.run_config = RunConfig(
             stop={"training_iteration": self.max_epochs},
             checkpoint_config=CheckpointConfig(
@@ -56,13 +59,14 @@ class deepscreen_hyperparameter_tuneing:
                 checkpoint_score_attribute=self.metric,
                 checkpoint_score_order=self.mode
             ),
-            name=self.target
+            name=self.target,
+            progress_reporter=self.reporter
             )
+        
 
         self.ray_trainer = TorchTrainer(
             self._train_func,
-            scaling_config=self.scaling_config,
-            run_config=self.run_config,
+            scaling_config=self.scaling_config
         )
 
     def _train_func(self,config):
@@ -101,5 +105,6 @@ class deepscreen_hyperparameter_tuneing:
                 num_samples=self.num_samples,
                 scheduler=self.scheduler
             ),
+            run_config=self.run_config
         )
         return tuner.fit()
