@@ -176,8 +176,10 @@ class DEEPScreenClassifier(L.LightningModule):
         pred_1_pd = pd.Series(y_pred_soft_max[:,1].cpu(),name="1_active_probability")
         batch_predictions = pd.concat([comp_id_pd,pred_pd,pred_0_pd,pred_1_pd],axis=1)
         self.predictions = pd.concat([self.predictions,batch_predictions],axis=0)
+        return batch_predictions
+
+    def on_predict_epoch_end(self):
+        return self.predictions
     
     def on_predict_end(self):
-        self.predictions["abs_prob_diff"] =  self.predictions["0_inactive_probability"] - self.predictions["1_active_probability"]
-        self.predictions["abs_prob_diff"] = abs(self.predictions["abs_prob_diff"])
         self.predictions.to_csv(os.path.join(self.hparams.experiment_result_path,f"predictions_{self.hparams.target}_{self.hparams.fully_layer_1}-{self.hparams.fully_layer_2}-{self.hparams.learning_rate}-{self.hparams.drop_rate}-{self.hparams.batch_size}.csv"),index=False)
