@@ -7,6 +7,7 @@ import random
 from torch.utils.data import Dataset
 import torch
 from rdkit.Chem import Draw, MolFromSmiles
+import re
 
 # Internal Imports
 from utils.constants import RANDOM_STATE
@@ -43,8 +44,9 @@ class DEEPScreenDataset(Dataset):
         mol = MolFromSmiles(smiles)
         opt = self.config.get_mol_draw_options()
         img_size = self.config.get_img_size()
+        comp_id_clean = re.sub('[^A-Za-z0-9]+', '_', comp_id)
 
-        output_file = os.path.join(output_path, f"{comp_id}.png")
+        output_file = os.path.join(output_path, f"{comp_id_clean}.png")
         Draw.MolToFile(mol, output_file, size=img_size, options=opt)
         return output_file
 
