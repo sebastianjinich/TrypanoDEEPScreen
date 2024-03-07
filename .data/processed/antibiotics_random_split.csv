@@ -1,4 +1,4 @@
-comp_original,bioactivity,data_split,smiles,comp_id
+comp_id,bioactivity,data_split,smiles,comp_id_FAIL
 CEFPIRAMIDE,1,train,Cc1cc(O)c(C(=O)NC(C(=O)NC2C(=O)N3C(C(=O)O)=C(CSc4nnnn4C)CSC23)c2ccc(O)cc2)cn1,comp0
 GEMIFLOXACIN MESYLATE,1,test,CON=C1CN(c2nc3c(cc2F)c(=O)c(C(=O)O)cn3C2CC2)CC1CN.CS(=O)(=O)O,comp1
 POLYMYXIN B SULFATE,1,train,CCC(C)CCCCC(=O)NC(CCN)C(=O)NC(C(=O)NC(CCN)C(=O)NC1CCNC(=O)C(C(C)O)NC(=O)C(CCN)NC(=O)C(CCN)NC(=O)C(CC(C)C)NC(=O)C(Cc2ccccc2)NC(=O)C(CCN)NC1=O)C(C)O.O=S(=O)(O)O,comp2
