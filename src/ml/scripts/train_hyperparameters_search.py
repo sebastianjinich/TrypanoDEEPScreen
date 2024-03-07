@@ -45,7 +45,7 @@ def main_raytune_search_train(data_train_val_test:str, target_name_experiment:st
                                       batch_size=best_result_hparams["batch_size"],
                                       experiment_result_path=experiment_result_path,
                                       data_split_mode=data_split_mode,
-                                      tmp_imgs=True)
+                                      tmp_imgs=False)
     
     trainer.test(model,datamodule=datamodule)
 

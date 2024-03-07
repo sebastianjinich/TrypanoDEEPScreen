@@ -36,7 +36,7 @@ class DEEPscreenDataModule(L.LightningDataModule):
 
         self.data = data
 
-        if not {"comp_id","smiles","bioactivity"}.issubset(set(self.data.columns)):
+        if data_split_mode != "predict" and not {"comp_id","smiles","bioactivity"}.issubset(set(self.data.columns)):
             logger.error("invalid columns of df")
             raise InvalidDataframeException("must contain the following columns {'comp_id','smiles','bioactivity'}")
 
@@ -49,27 +49,15 @@ class DEEPscreenDataModule(L.LightningDataModule):
 
         if stage == "fit" or stage == "test" or stage == "validation":
 
+            # sanitizeing data
+            self.data["bioactivity"] = self.data["bioactivity"].astype(int)
+
             if self.data_split == "random_split":
                 #TODO
-                raise NotImplementedError    
+                raise NotImplementedError
 
             if self.data_split == "non_random_split":
-                if "data_split" not in self.data.columns:
-                    logger.error("theres not a 'data_split' column in the dataframe for non random datasplit")
-                    raise InvalidDataframeException("Missing 'data_split' column while using non_random_split")
-
-                if set(self.data["data_split"].unique()) != {"train","test","validation"}:
-                    logger.error("invalid tags or missing tags for data spliting in non random datasplit")
-                    raise InvalidDataframeException("Invalid tags or missing tags for data spliting in non random datasplit")
-
-                try:
-                    self.train = self.data[self.data["data_split"] == "train"]
-                    self.validate = self.data[self.data["data_split"] == "validation"]
-                    self.test = self.data[self.data["data_split"] == "test"]
-                    logger.info(f"non_random_split datasets splited train={len(self.train)},validation={len(self.validate)},test={len(self.test)}")
-                except Exception as e:
-                    logger.error(f"Unable to create non_random_split datasets {e}")
-                    raise RuntimeError("non_random_split dataloader type generator failed")
+                self.dataset = self._non_random_split(self.data)
 
             if self.data_split == "scaffold_split":
                 #TODO
@@ -86,17 +74,40 @@ class DEEPscreenDataModule(L.LightningDataModule):
             number_training_batches = 50
             
         return number_training_batches
+    
+    def _non_random_split(self,data):
+        if "data_split" not in data.columns:
+            logger.error("theres not a 'data_split' column in the dataframe for non random datasplit")
+            raise InvalidDataframeException("Missing 'data_split' column while using non_random_split")
+
+        if not set(data["data_split"].unique()).issubset({"train","validation","test","predict"}):
+            logger.error("invalid tags or missing tags for data spliting in non random datasplit")
+            raise InvalidDataframeException("Invalid tags or missing tags for data spliting in non random datasplit, tags should be in ('trian','validation','test','predict')")
+        
+        dataset = {"train":None,"validation":None,"test":None}
+        
+        try:
+            for key in data["data_split"].unique():
+                dataset[key] = data[data["data_split"]==key]
+                logger.info(f"non_random_split dataset splited {key}={len(dataset[key])}")
+            
+        except Exception as e:
+            logger.error(f"Unable to create non_random_split datasets {e}")
+            raise RuntimeError("non_random_split dataloader type generator failed")
+
+        return dataset
+
 
     def train_dataloader(self):
-        self.training_dataset = DEEPScreenDatasetTrain(self.imgs_path, self.train)
-        return DataLoader(self.training_dataset,batch_size=self.hparams.batch_size)
+        self.training_dataset = DEEPScreenDatasetTrain(self.imgs_path, self.dataset["train"])
+        return DataLoader(self.training_dataset,batch_size=self.hparams.batch_size,shuffle=True)
     
     def val_dataloader(self):
-        self.validation_dataset = DEEPScreenDatasetTest(self.imgs_path, self.validate)
+        self.validation_dataset = DEEPScreenDatasetTest(self.imgs_path, self.dataset["validation"])
         return DataLoader(self.validation_dataset,batch_size=self.hparams.batch_size)
     
     def test_dataloader(self):
-        self.test_dataset = DEEPScreenDatasetTest(self.imgs_path, self.test)
+        self.test_dataset = DEEPScreenDatasetTest(self.imgs_path, self.dataset["test"])
         return DataLoader(self.test_dataset,batch_size=self.hparams.batch_size)
     
     def predict_dataloader(self):
