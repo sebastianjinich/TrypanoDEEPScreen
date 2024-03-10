@@ -27,7 +27,7 @@ class DEEPscreenDataModule(L.LightningDataModule):
         if tmp_imgs:
             self.imgs_path = tempfile.TemporaryDirectory().name
         else:
-            self.imgs_path = os.path.join(self.result_path,target_id,"imgs")
+            self.imgs_path = os.path.join(self.result_path,"imgs")
         
         if data_split_mode in ("random_split","non_random_split","scaffold_split","predict"):
             self.data_split = data_split_mode
