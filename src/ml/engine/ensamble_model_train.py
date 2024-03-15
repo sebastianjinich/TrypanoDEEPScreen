@@ -1,110 +1,138 @@
-from ray.train.lightning import RayDDPStrategy, RayLightningEnvironment, RayTrainReportCallback, prepare_trainer
-from ray import tune
-from ray.tune.schedulers import ASHAScheduler
-from ray.train import RunConfig, ScalingConfig, CheckpointConfig
-from ray.train.torch import TorchTrainer
-from ray.tune import CLIReporter
 from lightning import Trainer
 from lightning.pytorch import seed_everything
+from lightning.pytorch.callbacks import ModelCheckpoint
+from lightning.pytorch.loggers import TensorBoardLogger
 import pandas as pd
 import os
+from deepchem.splits import RandomSplitter
+from deepchem.data import NumpyDataset
+from torchmetrics import classification, MetricCollection
+import torch
 
 
 from utils.configurations import configs
 from utils.constants import RANDOM_STATE
+from utils.logging_deepscreen import logger
 from datasets.datamodule import DEEPscreenDataModule
 from engine.system import DEEPScreenClassifier
 
 
-class deepscreen_hyperparameter_tuneing:
-    def __init__(self,data:pd.DataFrame,search_space:dict,target:str,max_epochs:int,data_split_mode:str,grace_period:int,metric_to_optimize:str,optimize_mode:str,num_samples:int,experiments_result_path:str,asha_reduction_factor:int,number_ckpts_keep:int):
+class deepscreen_ensamble:
+    def __init__(self,target,experiments_result_path:str="../../.experiments/",):
         seed_everything(RANDOM_STATE,True)
 
-        self.data = data
-        self.search_space = search_space
-        self.num_samples =  num_samples
+        self.trainer_models_trained = list()
+        self.models_trained = list()
+        self.models_ckpt_path = list()
+        
         self.target = target
-        self.data_split_mode = data_split_mode
-        self.experiment_path_abs = os.path.abspath(experiments_result_path)
-        self.experiment_result_path = self.experiment_path_abs
-        self.max_epochs = max_epochs
-        self.grace_period = grace_period
-        self.metric = metric_to_optimize
-        self.mode = optimize_mode
-        self.reduction_factor = asha_reduction_factor
+        self.experiment_path_abs = os.path.abspath(experiments_result_path) 
+        self.experiment_result_path = os.path.join(self.experiment_path_abs,target,"ensamble")
 
-        os.environ["TUNE_RESULT_DIR"] = self.experiment_path_abs
-        os.environ["RAY_AIR_NEW_OUTPUT"]="0"
 
-        if not os.path.exists(self.experiment_result_path):
-                os.makedirs(self.experiment_result_path)
+    def load_models(self,ensamble_checkpoints_directory:str):
+        '''
+        Loads models stored in lightning checkpoints
+        '''
+        models_ckpt_paths = [os.path.join(ensamble_checkpoints_directory,path) for path in os.listdir(ensamble_checkpoints_directory) if path.find(".ckpt") != -1]
+        self.models_trained = [DEEPScreenClassifier.load_from_checkpoint(model_path) for model_path in models_ckpt_paths]
+        self.hyperparameters = self.models_trained[0].hparams
 
-        self.scheduler = ASHAScheduler(
-            time_attr="epoch",
-            metric=self.metric,
-            mode=self.mode,
-            max_t=self.max_epochs,
-            grace_period=self.grace_period,
-            reduction_factor=self.reduction_factor,
-            )
+    
+    def fit(self,data,hyperparameters,number_to_ensamble:int,max_epochs:int,metric_to_optimize:str,optimize_mode:str):
+        '''
+        train models, filling self.trainter_models list and self.models_ckpt_path. Then is stores the ckpt path list as a csv/json in the expermient folder
+        '''
 
-        self.scaling_config = ScalingConfig(**configs.get_raytune_scaleing_config())
+        datasets = self._generate_n_datasets_random(data,number_to_ensamble)
 
-        self.reporter = CLIReporter(metric=self.metric,mode=self.mode,max_progress_rows=15,metric_columns=["train_loss","val_loss","val_mcc","val_f1","val_auroc","val_auroc_15"])
+        self.hyperparameters = hyperparameters 
 
-        self.run_config = RunConfig(
-            stop={"training_iteration": self.max_epochs},
-            checkpoint_config=CheckpointConfig(
-                num_to_keep=number_ckpts_keep,
-                checkpoint_score_attribute=self.metric,
-                checkpoint_score_order=self.mode
-            ),
-            name=self.target,
-            progress_reporter=self.reporter
-            )
+        for i, dataset in enumerate(datasets):
+            tb_logger = TensorBoardLogger(save_dir=self.experiment_result_path)
+            checkpoint_callback = ModelCheckpoint(dirpath=self.experiment_result_path, save_top_k=1, monitor=metric_to_optimize, mode=optimize_mode)
+            trainer = Trainer(max_epochs=max_epochs,callbacks=[checkpoint_callback],logger=tb_logger)
+            model = DEEPScreenClassifier(**hyperparameters,experiment_result_path=self.experiment_result_path,target=self.target)
+            train_count = dataset[dataset.data_split == "train"]["bioactivity"].value_counts()
+            validation_count = dataset[dataset.data_split == "validation"]["bioactivity"].value_counts()
+            logger.info(f"trining ensamble model with dataset train: {train_count[0]+train_count[1]}|{train_count[0]}/{train_count[1]} - validation: {validation_count[0]+validation_count[1]}|{validation_count[0]}/{validation_count[1]}")
+            datamodule = DEEPscreenDataModule(data=dataset,batch_size=hyperparameters["batch_size"],experiment_result_path=self.experiment_result_path,data_split_mode="non_random_split",tmp_imgs=False)
+            trainer.fit(model,datamodule=datamodule)
+            self.trainer_models_trained.append(trainer)
+            self.models_ckpt_path.append(checkpoint_callback.best_model_path)
+            self.models_trained.append(model)
+            logger.info(f"Ensamble model trained {i}/{len(datasets)} - path {checkpoint_callback.best_model_path}")
+
+        return self.trainer_models_trained
+
+    def test(self,data, pred_column = "ensambled_deepscreen_score", label_column = "label"):
         
+        prediction =  self.predict(data)
 
-        self.ray_trainer = TorchTrainer(
-            self._train_func,
-            scaling_config=self.scaling_config
-        )
-
-    def _train_func(self,config):
-        dm = DEEPscreenDataModule(
-             data=self.data,
-             target_id=self.target,
-             batch_size=config["batch_size"],
-             experiment_result_path=self.experiment_result_path,
-             data_split_mode=self.data_split_mode,
-             tmp_imgs=configs.get_use_tmp_imgs())
+        metrics = MetricCollection(
+             {
+                "acc": classification.BinaryAccuracy(threshold=0.5),
+                "prec": classification.BinaryPrecision(threshold=0.5),
+                "f1": classification.BinaryF1Score(threshold=0.5),
+                "mcc": classification.BinaryMatthewsCorrCoef(threshold=0.5),
+                "recall": classification.BinaryRecall(threshold=0.5),
+                "auroc": classification.BinaryAUROC(),
+                "auroc_15": classification.BinaryAUROC(max_fpr=0.15),
+                "calibration_error": classification.BinaryCalibrationError()
+             }
+         )
         
-        model = DEEPScreenClassifier(**config,experiment_result_path=self.experiment_result_path,target=self.target)
+        m = metrics(torch.tensor(prediction[pred_column]),torch.tensor(prediction[label_column]))
 
-        number_training_batches = dm.get_number_training_batches()
+        for k,v in m.items():
+            m[k] = float(v)
+        
+        return m, prediction
 
-        trainer = Trainer(
-            devices="auto",
-            accelerator="auto",
-            strategy=RayDDPStrategy(),
-            callbacks=[RayTrainReportCallback()],
-            plugins=[RayLightningEnvironment()],
-            enable_progress_bar=False,
-            enable_model_summary=False,
-            max_epochs = self.max_epochs,
-            log_every_n_steps=number_training_batches
-        )
-        trainer = prepare_trainer(trainer)
-        trainer.fit(model, datamodule=dm)
+    
+    def predict(self,data):
 
-    def tune_deepscreen(self):
+        data_input = data.copy()
 
-        tuner = tune.Tuner(
-            self.ray_trainer,
-            param_space={"train_loop_config": self.search_space},
-            tune_config=tune.TuneConfig(         
-                num_samples=self.num_samples,
-                scheduler=self.scheduler
-            ),
-            run_config=self.run_config
-        )
-        return tuner.fit()
+        self._check_models_aviable()
+
+        datamodule = DEEPscreenDataModule(data=data_input,batch_size=self.hyperparameters["batch_size"],experiment_result_path=self.experiment_result_path,data_split_mode="predict",tmp_imgs=False)
+        
+        ensambled_prob_columns_name = list()
+
+        for i,model in enumerate(self.models_trained):
+            trainer = Trainer()
+            predictions_batches = trainer.predict(model=model,datamodule=datamodule)
+            predictions = pd.concat(predictions_batches)
+            predictions = predictions[["comp_id","1_active_probability"]]
+            prediction_column_name = f"prediction_{i}"
+            predictions = predictions.rename(columns={"1_active_probability":prediction_column_name})
+            ensambled_prob_columns_name.append(prediction_column_name)
+            data_input = pd.merge(data_input,predictions,on="comp_id")
+
+        data_input["ensambled_deepscreen_score"] = data_input.apply(lambda x: x[ensambled_prob_columns_name].mean(),axis=1)
+        data_input["ensambled_prediction"] = data_input["ensambled_deepscreen_score"].round().astype(int)
+
+        return data_input
+    
+    def _generate_n_datasets_random(self,data,number_datasets)->list:
+
+        splitter = RandomSplitter()
+        datas = list()
+        for i in range(number_datasets):
+            comp_id = data.comp_id.to_numpy()
+            label_bioact = data.bioactivity.to_numpy()
+            dc_dataset_split = NumpyDataset(X=comp_id,y=label_bioact,ids=comp_id)
+            train,valid,test = splitter.train_valid_test_split(dc_dataset_split,seed=i,**configs.get_datas_splitting_config())
+            data.loc[data.comp_id.isin(test.ids),"data_split"] = "test"
+            data.loc[data.comp_id.isin(train.ids),"data_split"] = "train"
+            data.loc[data.comp_id.isin(valid.ids),"data_split"] = "validation"
+            datas.append(data.copy())
+
+        return datas
+
+    def _check_models_aviable(self):
+        if len(self.models_trained) < 0:
+            logger.error("Theres not any trained model to predict/test in ensamble. Load or train models")
+            raise RuntimeError("Missing models in ensamble training")
+        

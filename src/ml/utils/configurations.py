@@ -37,11 +37,11 @@ class configurations:
     
     def get_hyperparameters_search_setup(self):
         setup = {
-           "max_epochs": 150,
-           "grace_period": 40,
+           "max_epochs": 4,
+           "grace_period": 2,
            "metric_to_optimize": "val_mcc",
            "optimize_mode":"max",
-           "num_samples":250,
+           "num_samples":5,
            "asha_reduction_factor":3,
            "number_ckpts_keep":1
         }
@@ -62,6 +62,15 @@ class configurations:
                 "use_gpu":False,
             }
             return scaleing_config
+    
+    def get_datas_splitting_config(self):
+        # configuration of deepchem splitting object.
+        config = {
+            "frac_train":0.8,
+            "frac_valid":0.2,
+            "frac_test":0
+        }
+        return config
         
     def _get_cpu_number(self):
         cores = multiprocessing.cpu_count()

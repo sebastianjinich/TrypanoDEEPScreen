@@ -111,13 +111,13 @@ class DEEPScreenClassifier(L.LightningModule):
 
         output = self.train_metrics(y_pred_soft_max_1_active,label.int())
         self.log_dict(output,on_step=False,on_epoch=True, batch_size=self.hparams.batch_size, sync_dist=True)
-        self.train_metrics.update(y_pred_soft_max_1_active,label.int())
+    #    self.train_metrics.update(y_pred_soft_max_1_active,label.int())
         
         return loss
     
-    def on_training_epoch_end(self, outputs):
-        self.log_dict(self.train_metrics.compute(), on_step=False, on_epoch=True, batch_size=self.hparams.batch_size,  sync_dist=True)
-        self.train_metrics.reset()
+    #def on_training_epoch_end(self, outputs):
+    #    self.log_dict(self.train_metrics.compute(), on_step=False, on_epoch=True, batch_size=self.hparams.batch_size,  sync_dist=True)
+    #    self.train_metrics.reset()
     
     def validation_step(self,val_batch,batch_idx):
         img_arrs, label, comp_id = val_batch
@@ -129,11 +129,11 @@ class DEEPScreenClassifier(L.LightningModule):
 
         output = self.val_metrics(y_pred_soft_max_1_active,label.int())
         self.log_dict(output,on_step=False,on_epoch=True,batch_size=self.hparams.batch_size,  sync_dist=True)
-        self.val_metrics.update(y_pred_soft_max_1_active,label.int())
-    
-    def on_validation_epoch_end(self):
-        self.log_dict(self.val_metrics.compute(), on_step=False, on_epoch=True,batch_size=self.hparams.batch_size,  sync_dist=True)
-        self.val_metrics.reset()
+    #    self.val_metrics.update(y_pred_soft_max_1_active,label.int())
+    #
+    #def on_validation_epoch_end(self):
+    #   self.log_dict(self.val_metrics.compute(), on_step=False, on_epoch=True,batch_size=self.hparams.batch_size,  sync_dist=True)
+    #   self.val_metrics.reset()
 
     def test_step(self,test_batch,batch_idx):
         img_arrs, label, comp_id = test_batch
@@ -146,7 +146,7 @@ class DEEPScreenClassifier(L.LightningModule):
 
         output = self.test_metrics(y_pred_soft_max_1_active,label.int())
         self.log_dict(output,on_step=False,on_epoch=True,batch_size=self.hparams.batch_size)
-        self.test_metrics.update(y_pred_soft_max_1_active,label.int())
+    #    self.test_metrics.update(y_pred_soft_max_1_active,label.int())
 
         comp_id_pd = pd.Series(comp_id,name="comp_id")
         label_pd = pd.Series(label.cpu(),name="label")
@@ -157,13 +157,13 @@ class DEEPScreenClassifier(L.LightningModule):
         self.test_predictions = pd.concat([self.test_predictions,batch_predictions],axis=0)
 
     def on_test_end(self):
-        self.test_predictions["abs_prob_diff"] =  self.test_predictions["0_inactive_probability"] - self.test_predictions["1_active_probability"]
-        self.test_predictions["abs_prob_diff"] = abs(self.test_predictions["abs_prob_diff"])
+    #    self.test_predictions["abs_prob_diff"] =  self.test_predictions["0_inactive_probability"] - self.test_predictions["1_active_probability"]
+    #    self.test_predictions["abs_prob_diff"] = abs(self.test_predictions["abs_prob_diff"])
         self.test_predictions.to_csv(os.path.join(self.hparams.experiment_result_path,f"test_{self.hparams.target}_{self.hparams.fully_layer_1}-{self.hparams.fully_layer_2}-{self.hparams.learning_rate}-{self.hparams.drop_rate}-{self.hparams.batch_size}.csv"),index=False)
     
-    def on_test_epoch_end(self):
-        self.log_dict(self.test_metrics.compute(), on_step=False, on_epoch=True, batch_size=self.hparams.batch_size)
-        self.test_metrics.reset()
+    #def on_test_epoch_end(self):
+    #    self.log_dict(self.test_metrics.compute(), on_step=False, on_epoch=True, batch_size=self.hparams.batch_size)
+    #    self.test_metrics.reset()
 
     def predict_step(self, batch, batch_idx, dataloader_idx=None):
         img_arrs, comp_id = batch
