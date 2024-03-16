@@ -72,7 +72,6 @@ class deepscreen_hyperparameter_tuneing:
     def _train_func(self,config):
         dm = DEEPscreenDataModule(
              data=self.data,
-             target_id=self.target,
              batch_size=config["batch_size"],
              experiment_result_path=self.experiment_result_path,
              data_split_mode=self.data_split_mode,

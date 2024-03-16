@@ -14,7 +14,7 @@ from utils.configurations import configs
 
 class DEEPscreenDataModule(L.LightningDataModule):
     
-    def __init__(self, data:str, target_id:str, batch_size:int, experiment_result_path:str, data_split_mode:str, tmp_imgs:bool = False):
+    def __init__(self, data:str, batch_size:int, experiment_result_path:str, data_split_mode:str, tmp_imgs:bool = False):
 
         super(DEEPscreenDataModule, self).__init__()
 
@@ -27,7 +27,7 @@ class DEEPscreenDataModule(L.LightningDataModule):
         if tmp_imgs:
             self.imgs_path = tempfile.TemporaryDirectory().name
         else:
-            self.imgs_path = os.path.join(self.result_path,target_id,"imgs")
+            self.imgs_path = os.path.join(self.result_path,"imgs")
         
         if data_split_mode in ("random_split","non_random_split","scaffold_split","predict"):
             self.data_split = data_split_mode
@@ -57,7 +57,10 @@ class DEEPscreenDataModule(L.LightningDataModule):
                 raise NotImplementedError
 
             if self.data_split == "non_random_split":
-                self.dataset = self._non_random_split(self.data)
+                dataset = self._non_random_split(self.data)
+                self.train = dataset["train"]
+                self.validate = dataset["validation"]
+                self.test = dataset["test"]
 
             if self.data_split == "scaffold_split":
                 #TODO
@@ -99,15 +102,15 @@ class DEEPscreenDataModule(L.LightningDataModule):
 
 
     def train_dataloader(self):
-        self.training_dataset = DEEPScreenDatasetTrain(self.imgs_path, self.dataset["train"])
+        self.training_dataset = DEEPScreenDatasetTrain(self.imgs_path, self.train)
         return DataLoader(self.training_dataset,batch_size=self.hparams.batch_size,shuffle=True)
     
     def val_dataloader(self):
-        self.validation_dataset = DEEPScreenDatasetTest(self.imgs_path, self.dataset["validation"])
+        self.validation_dataset = DEEPScreenDatasetTest(self.imgs_path, self.validate)
         return DataLoader(self.validation_dataset,batch_size=self.hparams.batch_size)
     
     def test_dataloader(self):
-        self.test_dataset = DEEPScreenDatasetTest(self.imgs_path, self.dataset["test"])
+        self.test_dataset = DEEPScreenDatasetTest(self.imgs_path, self.test)
         return DataLoader(self.test_dataset,batch_size=self.hparams.batch_size)
     
     def predict_dataloader(self):
