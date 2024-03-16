@@ -65,7 +65,7 @@ class deepscreen_ensamble:
 
         return self.trainer_models_trained
 
-    def test(self,data, pred_column = "ensambled_deepscreen_score", label_column = "label"):
+    def test(self,data, pred_column = "ensambled_deepscreen_score", label_column = "bioactivity"):
         
         prediction =  self.predict(data)
 
