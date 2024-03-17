@@ -6,7 +6,7 @@
 
 #
 ## time = walltime
-#SBATCH --time=12:00:00
+#SBATCH --time=2-12:00:00
 #
 ## An email is sent when the job is canceled or finished
 ## Change "root" for your e-mail address
@@ -16,7 +16,7 @@
 ## Job name. It is shown in 'squeue' command output.
 ## It is recommended, but not necessary, that the job name be the same
 ## that the input file name
-#SBATCH --job-name=Trypanodeepscreen
+#SBATCH --job-name=Trypanodeepscreen_ensamble
 echo -e "\n##################### Job started in $(date +'%d-%m-%Y as %T') #####################\n"
 ## The input and output file names are based in job name
 ## It is not mandatory but helps keeping things tidy
@@ -43,7 +43,7 @@ echo -e "\n Input file: $INP \n"
 
 ## Program run.
 cd $SLURM_SUBMIT_DIR
-python3 main.py --data_train_val_test ../../.data/processed/antibiotics_random_split.csv --target_name_experiment antibioticos_random_split
+python3 ensamble_antibiotics_train.py
 
 echo -e "\n################### Job finished in $(date +'%d-%m-%Y as %T') ###################"
 

@@ -63,7 +63,7 @@ class deepscreen_ensamble:
             self.models_trained.append(model)
             logger.info(f"Ensamble model trained {i}/{len(datasets)} - path {checkpoint_callback.best_model_path}")
 
-        return self.trainer_models_trained
+        return self.models_ckpt_path
 
     def test(self,data, pred_column = "ensambled_deepscreen_score", label_column = "bioactivity"):
         
