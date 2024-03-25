@@ -1,7 +1,6 @@
-# TrypanoDEEPScreen: A Deep Learning Model for Compound Activity Prediction with Hyperparameter Tuning
+# TrypanoDEEPScreen: Convolutional neural networks for drug-target interaction prediction based on 2D molecule structures
 
-This repository provides a comprehensive deep learning pipeline for training and evaluating a model to predict compound activity, based on [ahmetrifaioglu's DEEPScreen](https://github.com/cansyl/DEEPScreen), publicated in [Chemical Science on 2020](https://doi.org/10.1039/C9SC03414E). TrypanoDEEPScreen is implemented using PyTorch Lightning and leverages Ray Tune for efficient hyperparameter search. GPU usage and paralelization (when aviable) is compleatly handled by the pipeline.
-
+This repository provides a comprehensive deep learning pipeline for training and evaluating a model to predict compound activity, based on [ahmetrifaioglu's DEEPScreen](https://github.com/cansyl/DEEPScreen), publication in [Chemical Science on 2020](https://doi.org/10.1039/C9SC03414E). TrypanoDEEPScreen is implemented using PyTorch Lightning and leverages Ray Tune for efficient hyperparameter search. GPU usage and parallelization (when available) are completely handled by the pipeline.
 
 ## Understanding the Codebase
 
@@ -97,8 +96,8 @@ python src/ml/main.py \
 --data_split_mode non_random_split
 ```
 
-This will train the model, perform hyperparameter search, and save the results in the specified experiment directory.
+This will train the model, perform a hyperparameter search, and save the results in the specified experiment directory.
 
 ### Using the Model
 
-**COMING SOON... (Still in developement)**
+**COMING SOON... (Still in development)**
