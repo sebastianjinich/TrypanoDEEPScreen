@@ -98,6 +98,6 @@ python src/ml/main.py \
 
 This will train the model, perform a hyperparameter search, and save the results in the specified experiment directory.
 
-### Using the Model
+### Using the trained model
 
 **COMING SOON... (Still in development)**
