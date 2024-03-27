@@ -83,7 +83,7 @@ The main script for training the model and performing hyperparameter search is `
 * `--data_train_val_test`: Path to the CSV file containing the training, validation, and test data.
 * `--target_name_experiment`: Name of the experiment for logging and identification.
 * `--data_split_mode`: Mode for splitting data into training, validation, and test sets (currently supports `"non_random_split"`).
-* `--experiment_result_path`: Path to the directory where experiment results will be saved (default: `../../.experiments`).
+* `--experiment_result_path`: Path to the directory where experiment results will be saved (_default: ../../.experiments_).
 
 The script uses Ray Tune to perform a hyperparameter search to find the best model configuration. The search space and other hyperparameter tuning settings are defined in `src/ml/utils/configurations.py`.
 
