@@ -41,7 +41,7 @@ class configurations:
            "grace_period": 55,
            "metric_to_optimize": "val_mcc",
            "optimize_mode":"max",
-           "num_samples":250,
+           "num_samples":320,
            "asha_reduction_factor":3,
            "number_ckpts_keep":1
         }
