@@ -6,11 +6,15 @@ from engine.system_rdkit_features import DEEPScreenClassifier
 from datasets.datamodule_rdkit_features import DEEPscreenDataModule
 from lightning import Trainer
 from utils.logging_deepscreen import logger
+import numpy as np
 
 
-def main_raytune_search_train(data_train_val_test:str, target_name_experiment:str, data_split_mode:str, experiment_result_path:str):
+def main_raytune_search_train(data_train_val_test:str, features_rdkit:str,target_name_experiment:str, data_split_mode:str, experiment_result_path:str):
     
     data = pd.read_csv(data_train_val_test)
+    features = np.load(features_rdkit)
+
+    features_len = len(features[0])
     
     search_space_deepscreen = configs.get_hyperparameters_search()
 
@@ -18,6 +22,7 @@ def main_raytune_search_train(data_train_val_test:str, target_name_experiment:st
     
     tuner = deepscreen_hyperparameter_tuneing(
         data=data,
+        features=features,
         data_split_mode=data_split_mode,
         search_space=search_space_deepscreen,
         target=target_name_experiment,
@@ -41,6 +46,7 @@ def main_raytune_search_train(data_train_val_test:str, target_name_experiment:st
     trainer = Trainer()
     model = DEEPScreenClassifier.load_from_checkpoint(best_checkpoint_path,experiment_result_path=experiment_result_path)
     datamodule = DEEPscreenDataModule(data=data,
+                                      features=features,
                                       batch_size=best_result_hparams["batch_size"],
                                       experiment_result_path=experiment_result_path,
                                       data_split_mode=data_split_mode,

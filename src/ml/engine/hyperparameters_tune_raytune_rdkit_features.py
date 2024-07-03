@@ -8,6 +8,7 @@ from lightning import Trainer
 from lightning.pytorch import seed_everything
 import pandas as pd
 import os
+import numpy as np
 
 
 from utils.configurations import configs
@@ -17,10 +18,12 @@ from engine.system_rdkit_features import DEEPScreenClassifier
 
 
 class deepscreen_hyperparameter_tuneing:
-    def __init__(self,data:pd.DataFrame,search_space:dict,target:str,max_epochs:int,data_split_mode:str,grace_period:int,metric_to_optimize:str,optimize_mode:str,num_samples:int,experiments_result_path:str,asha_reduction_factor:int,number_ckpts_keep:int):
+    def __init__(self,data:pd.DataFrame,features:np.ndarray,search_space:dict,target:str,max_epochs:int,data_split_mode:str,grace_period:int,metric_to_optimize:str,optimize_mode:str,num_samples:int,experiments_result_path:str,asha_reduction_factor:int,number_ckpts_keep:int):
         seed_everything(RANDOM_STATE,True)
 
         self.data = data
+        self.features = features
+        self.features_len = len(features[0])
         self.search_space = search_space
         self.num_samples =  num_samples
         self.target = target
@@ -72,12 +75,13 @@ class deepscreen_hyperparameter_tuneing:
     def _train_func(self,config):
         dm = DEEPscreenDataModule(
              data=self.data,
+             features=self.features,
              batch_size=config["batch_size"],
              experiment_result_path=self.experiment_result_path,
              data_split_mode=self.data_split_mode,
              tmp_imgs=configs.get_use_tmp_imgs())
         
-        model = DEEPScreenClassifier(**config,experiment_result_path=self.experiment_result_path,target=self.target)
+        model = DEEPScreenClassifier(**config,experiment_result_path=self.experiment_result_path,target=self.target,features_len=self.features_len)
 
         number_training_batches = dm.get_number_training_batches()
 

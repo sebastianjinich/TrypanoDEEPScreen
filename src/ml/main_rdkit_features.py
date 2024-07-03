@@ -13,6 +13,11 @@ def main():
         help="Path to the CSV file containing training, validation, and test data. Ussualy located in .data/processed folder",
     )
     parser.add_argument(
+        "--features",
+        type=str,
+        help="Path to the npy file containing rdkit descriptor features. Ussualy located in .data/processed folder",
+    )
+    parser.add_argument(
         "--target_name_experiment",
         type=str,
         default="deepscreen_experiment",
@@ -37,6 +42,7 @@ def main():
 
     main_raytune_search_train(
         data_train_val_test=args.data_train_val_test,
+        features_rdkit=args.features,
         target_name_experiment=args.target_name_experiment,
         data_split_mode=args.data_split_mode,
         experiment_result_path=args.experiment_result_path,

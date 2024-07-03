@@ -8,7 +8,6 @@ from torch.utils.data import Dataset
 import torch
 from rdkit.Chem import Draw, MolFromSmiles
 import re
-import deepchem as dc
 
 # Internal Imports
 from utils.constants import RANDOM_STATE
@@ -18,7 +17,7 @@ from utils.configurations import configs
 random.seed(RANDOM_STATE)
 
 class DEEPScreenDataset(Dataset):
-    def __init__(self, path_imgs_files:str, df_compid_smiles_bioactivity:pd.DataFrame):
+    def __init__(self, path_imgs_files:str, df_compid_smiles_bioactivity:pd.DataFrame, features:np.ndarray):
             super(DEEPScreenDataset, self).__init__()
 
             self.path_imgs = path_imgs_files
@@ -31,15 +30,7 @@ class DEEPScreenDataset(Dataset):
             # creating molecules images -> path will be stored in 'img_molecule' column
             self.df['img_molecule'] = self.df.apply(lambda x: self.smiles_to_img_png(x["comp_id"],x["smiles"],self.path_imgs),axis=1)
 
-            featurizer = dc.feat.RDKitDescriptors()
-            
-            rdkit_features_not_std = featurizer.featurize(self.df["smiles"])
-            
-            # min max standarization for min max scaleing to append featurese to cnn output
-            rdkit_features_not_std_max = rdkit_features_not_std.max(axis=1,keepdims=True)
-            rdkit_features_not_std_min = rdkit_features_not_std.min(axis=1,keepdims=True)
-            self.rdkit_features = (rdkit_features_not_std - rdkit_features_not_std_min) / (rdkit_features_not_std_max - rdkit_features_not_std_min)
-
+            self.rdkit_features = features
 
             logger.debug(f'Dataset created in {self.path_imgs}')
 

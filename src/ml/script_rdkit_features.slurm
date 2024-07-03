@@ -2,7 +2,8 @@
 ##
 ## ntasks = numbers of cores
 #SBATCH --ntasks-per-node=20
-#SBATCH --gres=gpu:1
+#SBATCH --job-name=TrypanodeepscreenRdkit_extra
+#SBATCH --nodelist=c008
 
 #
 ## time = walltime
@@ -13,10 +14,7 @@
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=sebij1910@gmail.com
 #
-## Job name. It is shown in 'squeue' command output.
-## It is recommended, but not necessary, that the job name be the same
-## that the input file name
-#SBATCH --job-name=TrypanodeepscreenRdkit_extra
+
 echo -e "\n##################### Job started in $(date +'%d-%m-%Y as %T') #####################\n"
 ## The input and output file names are based in job name
 ## It is not mandatory but helps keeping things tidy
@@ -34,7 +32,6 @@ echo -e "\n Number of tasks for this job: $SLURM_NTASKS \n"
 
 module load anaconda3
 source /home/sjinich/.conda/envs/trypanodeepscreen_che_env/bin/activate
-which python
 
 ## Informations about the execution environment printed in output file
 echo -e "\n Job submission directory: $SLURM_SUBMIT_DIR \n"
@@ -44,7 +41,8 @@ echo -e "\n Input file: $INP \n"
 ## Program run.
 cd $SLURM_SUBMIT_DIR
 python3 main_rdkit_features.py \
---data_train_val_test ../../.data/processed/CHEMBL4567.csv \
+--data_train_val_test ../../.data/processed/CHEMBL4657features_rdkit.csv \
+--features ../../.data/processed/CHEMBL4657features_rdkit.npy \
 --target_name_experiment chembl4567_rdkitfeaturization \
 --data_split_mode non_random_split
 

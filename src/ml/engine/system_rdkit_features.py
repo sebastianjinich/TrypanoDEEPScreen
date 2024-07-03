@@ -13,10 +13,12 @@ from utils.configurations import configs
 from utils.logging_deepscreen import logger
 
 class DEEPScreenClassifier(L.LightningModule):
-    def __init__(self,fully_layer_1, fully_layer_2, drop_rate, learning_rate, batch_size, experiment_result_path, target):
+    def __init__(self,fully_layer_1, fully_layer_2, drop_rate, learning_rate, batch_size, experiment_result_path, target, features_len):
         super(DEEPScreenClassifier, self).__init__()
         self.save_hyperparameters()
         logger.info(f"Using hyperparameters {[i for i in self.hparams.items()]}") 
+
+        fc1_size = int(800+features_len)
 
         # Model architecture
         self.conv1 = nn.Conv2d(3, 32, 2)
@@ -30,7 +32,7 @@ class DEEPScreenClassifier(L.LightningModule):
         self.conv5 = nn.Conv2d(64, 32, 2)
         self.bn5 = nn.BatchNorm2d(32)
         self.pool = nn.MaxPool2d(2, 2)
-        self.fc1 = nn.Linear(1010, fully_layer_1)
+        self.fc1 = nn.Linear(fc1_size, fully_layer_1)
         self.fc2 = nn.Linear(fully_layer_1, fully_layer_2)
         self.fc3 = nn.Linear(fully_layer_2, 2)
         self.drop_rate = drop_rate

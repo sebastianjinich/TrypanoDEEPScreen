@@ -4,6 +4,7 @@ import pandas as pd
 import os
 from torch.utils.data import DataLoader
 import tempfile
+import numpy as np
 
 # Internal imports
 from .dataset_rdkit_features import DEEPScreenDatasetPredict, DEEPScreenDatasetTrain, DEEPScreenDatasetTest
@@ -14,7 +15,7 @@ from utils.configurations import configs
 
 class DEEPscreenDataModule(L.LightningDataModule):
     
-    def __init__(self, data:str, batch_size:int, experiment_result_path:str, data_split_mode:str, tmp_imgs:bool = False):
+    def __init__(self, data:pd.DataFrame, features:np.ndarray, batch_size:int, experiment_result_path:str, data_split_mode:str, tmp_imgs:bool = False):
 
         super(DEEPscreenDataModule, self).__init__()
 
@@ -23,6 +24,8 @@ class DEEPscreenDataModule(L.LightningDataModule):
         self.result_path = experiment_result_path
 
         self.batch_size = batch_size
+
+        self.features = features
 
         if tmp_imgs:
             self.imgs_path = tempfile.TemporaryDirectory().name
@@ -57,10 +60,10 @@ class DEEPscreenDataModule(L.LightningDataModule):
                 raise NotImplementedError
 
             if self.data_split == "non_random_split":
-                dataset = self._non_random_split(self.data)
-                self.train = dataset["train"]
-                self.validate = dataset["validation"]
-                self.test = dataset["test"]
+                dataset = self._non_random_split(self.data,self.features)
+                self.train, self.train_features = dataset["train"]
+                self.validate, self.validate_features = dataset["validation"]
+                self.test, self.test_features  = dataset["test"]
 
             if self.data_split == "scaffold_split":
                 #TODO
@@ -69,6 +72,7 @@ class DEEPscreenDataModule(L.LightningDataModule):
         
         if stage == "predict":
             self.predict = self.data
+            self.predict_features = self.features
     
     def get_number_training_batches(self):
         if self.data_split == "non_random_split":
@@ -78,7 +82,7 @@ class DEEPscreenDataModule(L.LightningDataModule):
             
         return number_training_batches
     
-    def _non_random_split(self,data):
+    def _non_random_split(self,data,features):
         if "data_split" not in data.columns:
             logger.error("theres not a 'data_split' column in the dataframe for non random datasplit")
             raise InvalidDataframeException("Missing 'data_split' column while using non_random_split")
@@ -91,7 +95,8 @@ class DEEPscreenDataModule(L.LightningDataModule):
         
         try:
             for key in data["data_split"].unique():
-                dataset[key] = data[data["data_split"]==key]
+                dataset[key] = (data[data["data_split"]==key], features[data["data_split"]==key]) # this im gonna did with features is horrible, but im tired and i need to try features TODO improve
+
                 logger.info(f"non_random_split dataset splited {key}={len(dataset[key])}")
             
         except Exception as e:
@@ -102,19 +107,19 @@ class DEEPscreenDataModule(L.LightningDataModule):
 
 
     def train_dataloader(self):
-        self.training_dataset = DEEPScreenDatasetTrain(self.imgs_path, self.train)
+        self.training_dataset = DEEPScreenDatasetTrain(self.imgs_path, self.train, self.train_features)
         return DataLoader(self.training_dataset,batch_size=self.hparams.batch_size,shuffle=True)
     
     def val_dataloader(self):
-        self.validation_dataset = DEEPScreenDatasetTest(self.imgs_path, self.validate)
+        self.validation_dataset = DEEPScreenDatasetTest(self.imgs_path, self.validate, self.validate_features)
         return DataLoader(self.validation_dataset,batch_size=self.hparams.batch_size)
     
     def test_dataloader(self):
-        self.test_dataset = DEEPScreenDatasetTest(self.imgs_path, self.test)
+        self.test_dataset = DEEPScreenDatasetTest(self.imgs_path, self.test, self.test_features)
         return DataLoader(self.test_dataset,batch_size=self.hparams.batch_size)
     
     def predict_dataloader(self):
-        self.predict_dataset = DEEPScreenDatasetPredict(self.imgs_path, self.predict)
+        self.predict_dataset = DEEPScreenDatasetPredict(self.imgs_path, self.predict, self.predict_features)
         return DataLoader(self.predict_dataset,batch_size=self.hparams.batch_size)
 
         
