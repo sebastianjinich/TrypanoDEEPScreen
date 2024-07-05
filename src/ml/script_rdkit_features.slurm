@@ -7,7 +7,7 @@
 
 #
 ## time = walltime
-#SBATCH --time=8-12:00:00
+#SBATCH --time=2-12:00:00
 #
 ## An email is sent when the job is canceled or finished
 ## Change "root" for your e-mail address
@@ -41,9 +41,9 @@ echo -e "\n Input file: $INP \n"
 ## Program run.
 cd $SLURM_SUBMIT_DIR
 python3 main_rdkit_features.py \
---data_train_val_test ../../.data/processed/CHEMBL4657features_rdkit.csv \
---features ../../.data/processed/CHEMBL4657features_rdkit.npy \
---target_name_experiment chembl4567_rdkitfeaturization \
+--data_train_val_test ../../.data/processed/CHEMBL2581features_rdkit.csv \
+--features ../../.data/processed/CHEMBL2581features_rdkit.npy \
+--target_name_experiment chembl2581_rdkitfeaturization \
 --data_split_mode non_random_split
 
 
