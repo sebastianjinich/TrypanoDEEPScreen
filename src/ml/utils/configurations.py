@@ -37,13 +37,13 @@ class configurations:
     
     def get_hyperparameters_search_setup(self):
         setup = {
-           "max_epochs": 200,
-           "grace_period": 55,
+           "max_epochs": 60,
+           "grace_period": 10,
            "metric_to_optimize": "val_mcc",
            "optimize_mode":"max",
-           "num_samples":320,
-           "asha_reduction_factor":3,
-           "number_ckpts_keep":1
+           "num_samples":4,
+           "asha_reduction_factor":2,
+           "number_ckpts_keep":5
         }
         return setup
 
