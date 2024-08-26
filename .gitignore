@@ -164,3 +164,5 @@ cython_debug/
 *log*
 *ray_results*
 *.zip
+
+src/analysis/ensamble_models/*.csv

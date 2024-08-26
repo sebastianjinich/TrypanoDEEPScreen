@@ -26,21 +26,19 @@ class deepscreen_ensamble:
         self.models_ckpt_path = list()
         
         self.target = target
-        self.experiment_path_abs = os.path.abspath(experiments_result_path) 
-        self.experiment_result_path = os.path.join(self.experiment_path_abs,target,"ensamble")
+        self.experiment_result_path = experiments_result_path
 
 
-    def load_models(self,ensamble_checkpoints_directory:str):
+    def load_models(self,models_ckpt_paths:list):
         '''
         Loads models stored in lightning checkpoints
         '''
-        models_ckpt_paths = [os.path.join(ensamble_checkpoints_directory,path) for path in os.listdir(ensamble_checkpoints_directory) if path.find(".ckpt") != -1]
-        self.models_trained = [DEEPScreenClassifier.load_from_checkpoint(model_path) for model_path in models_ckpt_paths]
-        self.hyperparameters = self.models_trained[0].hparams
+        self.models_trained = [DEEPScreenClassifier.load_from_checkpoint(model_path,experiment_result_path=self.experiment_result_path) for model_path in models_ckpt_paths]
 
     
-    def fit(self,data,hyperparameters,number_to_ensamble:int,max_epochs:int,metric_to_optimize:str,optimize_mode:str):
+    def _fit(self,data,hyperparameters,number_to_ensamble:int,max_epochs:int,metric_to_optimize:str,optimize_mode:str):
         '''
+        DEPRECATED FOR THE MOMENT
         train models, filling self.trainter_models list and self.models_ckpt_path. Then is stores the ckpt path list as a csv/json in the expermient folder
         '''
 
@@ -63,7 +61,7 @@ class deepscreen_ensamble:
             self.models_trained.append(model)
             logger.info(f"Ensamble model trained {i}/{len(datasets)} - path {checkpoint_callback.best_model_path}")
 
-        return self.models_ckpt_path
+        return self.models_ckpt_paths
 
     def test(self,data, pred_column = "ensambled_deepscreen_score", label_column = "bioactivity"):
         
@@ -96,12 +94,19 @@ class deepscreen_ensamble:
 
         self._check_models_aviable()
 
-        datamodule = DEEPscreenDataModule(data=data_input,batch_size=self.hyperparameters["batch_size"],experiment_result_path=self.experiment_result_path,data_split_mode="predict",tmp_imgs=False)
+        datamodules = {
+            "32" : DEEPscreenDataModule(data=data_input,batch_size=32,experiment_result_path=self.experiment_result_path,data_split_mode="predict",tmp_imgs=True),
+            "64" :  DEEPscreenDataModule(data=data_input,batch_size=64,experiment_result_path=self.experiment_result_path,data_split_mode="predict",tmp_imgs=True)
+        }
         
         ensambled_prob_columns_name = list()
 
         for i,model in enumerate(self.models_trained):
             trainer = Trainer()
+            batch_size = str(model.hparams["batch_size"])
+            if batch_size not in ["32","64"]:
+                raise RuntimeError("Batch size unknown for data modules")
+            datamodule = datamodules[batch_size]
             predictions_batches = trainer.predict(model=model,datamodule=datamodule)
             predictions = pd.concat(predictions_batches)
             predictions = predictions[["comp_id","1_active_probability"]]
