@@ -74,7 +74,7 @@ class DEEPScreenClassifier(L.LightningModule):
                 "test_recall": classification.BinaryRecall(threshold=0.5),
                 "test_auroc": classification.BinaryAUROC(),
                 "test_auroc_15": classification.BinaryAUROC(max_fpr=0.15),
-                "test_calibration_error": classification.BinaryCalibrationError()
+                "test_calibration_error": classification.BinaryCalibrationError(),
              }
          )
 

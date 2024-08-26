@@ -97,7 +97,7 @@ class DEEPscreenDataModule(L.LightningDataModule):
             for key in data["data_split"].unique():
                 dataset[key] = (data[data["data_split"]==key], features[data["data_split"]==key]) # this im gonna did with features is horrible, but im tired and i need to try features TODO improve
 
-                logger.info(f"non_random_split dataset splited {key}={len(dataset[key])}")
+                logger.info(f"non_random_split dataset splited {key}={len(dataset[key][0])}")
             
         except Exception as e:
             logger.error(f"Unable to create non_random_split datasets {e}")
