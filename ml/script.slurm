@@ -2,11 +2,11 @@
 ##
 ## ntasks = numbers of cores
 #SBATCH --ntasks-per-node=20
-#SBATCH --gres=gpu:1
+#SBATCH --nodelist=c008
 
 #
 ## time = walltime
-#SBATCH --time=8-12:00:00
+#SBATCH --time=4-12:00:00
 #
 ## An email is sent when the job is canceled or finished
 ## Change "root" for your e-mail address
@@ -16,7 +16,7 @@
 ## Job name. It is shown in 'squeue' command output.
 ## It is recommended, but not necessary, that the job name be the same
 ## that the input file name
-#SBATCH --job-name=PosterTrypanodeepscreen
+#SBATCH --job-name=Trypanodeepscreen
 echo -e "\n##################### Job started in $(date +'%d-%m-%Y as %T') #####################\n"
 ## The input and output file names are based in job name
 ## It is not mandatory but helps keeping things tidy
@@ -44,14 +44,10 @@ echo -e "\n Input file: $INP \n"
 ## Program run.
 cd $SLURM_SUBMIT_DIR
 python3 main.py \
---data_train_val_test ../../.data/processed/CHEMBL2580.csv \
+--data_train_val_test ../data/processed/CHEMBL262.csv \
 --target_name_experiment chembl2580_poster \
 --data_split_mode non_random_split
 
-python3 main.py \
---data_train_val_test ../../.data/processed/CHEMBL262.csv \
---target_name_experiment chembl262_poster \
---data_split_mode non_random_split
 
 echo -e "\n################### Job finished in $(date +'%d-%m-%Y as %T') ###################"
 
