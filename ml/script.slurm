@@ -44,8 +44,9 @@ echo -e "\n Input file: $INP \n"
 ## Program run.
 cd $SLURM_SUBMIT_DIR
 python3 main.py \
---data_train_val_test ../data/processed/CHEMBL262.csv \
---target_name_experiment chembl2580_poster \
+--data_train_val_test ../data/processed/CHEMBL4567.csv \
+--experiment_result_path ../experiments/ \
+--target_name_experiment chembl4567_auroc \
 --data_split_mode non_random_split
 
 
