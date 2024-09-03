@@ -1,6 +1,7 @@
 SELECT act.molregno, 
     md.chembl_id AS comp_id,
     ass.tid as tid,
+    ass.assay_id as assay_id,
     trgd.chembl_id AS target,
     act.standard_relation AS relation,
     act.standard_value AS bioactivity,
@@ -14,13 +15,16 @@ SELECT act.molregno,
     ass.assay_type,
     cmpstc.canonical_smiles AS smiles,
     cmpstc.standard_inchi_key AS inchi_key,
-    cs.sequence AS sequence
-INTO OUTFILE '/var/lib/mysql-files/data_chemb34_01_07_24_full.csv'
+    cmpprop.*,
+    cs.sequence AS sequence,
+    cs.organism AS sequence_organism
+INTO OUTFILE '/var/lib/mysql-files/data_chemb34_30_08_24_full.csv'
 FROM activities AS act
 JOIN assays AS ass ON act.assay_id = ass.assay_id
 JOIN target_dictionary AS trgd ON ass.tid = trgd.tid
 JOIN compound_structures AS cmpstc ON act.molregno = cmpstc.molregno
 JOIN molecule_dictionary AS md ON act.molregno = md.molregno
+JOIN compound_properties AS cmpprop ON md.molregno = cmpprop.molregno
 JOIN target_components AS tc ON ass.tid = tc.tid
 JOIN component_sequences AS cs ON tc.component_id = cs.component_id
 ;

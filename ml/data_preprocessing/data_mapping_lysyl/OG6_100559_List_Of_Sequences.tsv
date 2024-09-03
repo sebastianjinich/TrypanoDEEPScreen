@@ -1,0 +1,1022 @@
+Ortholog Group 	 Organism 	 Core/Peripheral 	 full_id
+OG6_100559 	 Theileria equi strain WA 	 Peripheral 	 tequ|BEWA_014220
+OG6_100559 	 Mycobacterium tuberculosis (strain ATCC 25618 / H37Rv) 	 Core 	 mtub|P9WFU7
+OG6_100559 	 Ixodes persulcatus Iper-2018 	 Peripheral 	 iper|IPEI_028156
+OG6_100559 	 Glossina morsitans Yale (old build 2019-12-20) 	 Core 	 gmor-old|GMOY007875
+OG6_100559 	 Glossina morsitans Yale 	 Peripheral 	 gmor|GMOY007875
+OG6_100559 	 Pneumocystis oryctolagi CS1 	 Peripheral 	 pory|PORY_002478
+OG6_100559 	 Pneumocystis sp. macacae isolate P2C 	 Peripheral 	 pmpc|PMAC_001284
+OG6_100559 	 Eimeria brunetti Houghton 	 Peripheral 	 ebru|EBH_0029130
+OG6_100559 	 Phytophthora palmivora var. palmivora strain sbr112.9 	 Peripheral 	 ppal|PHPALM_7333
+OG6_100559 	 Phytophthora palmivora var. palmivora strain sbr112.9 	 Peripheral 	 ppal|PHPALM_36710
+OG6_100559 	 Anopheles minimus MINIMUS1 	 Peripheral 	 amin|AMIN005476
+OG6_100559 	 Glossina austeni TTRI 	 Peripheral 	 gaus|GAUT007531
+OG6_100559 	 Bos taurus breed Hereford 	 Peripheral 	 btau|ENSBTAG00000015677
+OG6_100559 	 Chara braunii (Braun's stonewort) 	 Core 	 cbra|A0A388K3Y4
+OG6_100559 	 Entamoeba moshkovskii Laredo 	 Peripheral 	 emos|EMO_085150
+OG6_100559 	 Entamoeba histolytica HM-1:IMSS (old build 2009-11-27) 	 Core 	 ehis-old|EHI_047810
+OG6_100559 	 Entamoeba histolytica HM-1:IMSS 	 Peripheral 	 ehis|EHI_047810
+OG6_100559 	 Entamoeba invadens IP1 	 Peripheral 	 einv|EIN_051900
+OG6_100559 	 Entamoeba dispar SAW760 	 Peripheral 	 edis|EDI_343790
+OG6_100559 	 Entamoeba histolytica KU27 	 Peripheral 	 ehik|EHI5A_080270
+OG6_100559 	 Zea mays (Maize) 	 Core 	 zmay|A0A1D6KWD0
+OG6_100559 	 Leptomonas pyrrhocoris H10 	 Peripheral 	 lpyr|LpyrH10_04_2660
+OG6_100559 	 Leptomonas seymouri ATCC 30220 	 Peripheral 	 lsey|Lsey_0017_0420
+OG6_100559 	 Bodo saltans strain Lake Konstanz (old build 2015-11-19) 	 Core 	 bsal-old|BSAL_46775
+OG6_100559 	 Bodo saltans strain Lake Konstanz 	 Peripheral 	 bsal|BSAL_46775
+OG6_100559 	 Crithidia fasciculata strain Cf-Cl (old build 2015-06-01) 	 Core 	 cfas-old|CFAC1_260019200
+OG6_100559 	 Crithidia fasciculata strain Cf-Cl 	 Peripheral 	 cfas|CFAC1_260019200
+OG6_100559 	 Aedes albopictus Foshan FPA 	 Peripheral 	 aalb|AALFPA_052894
+OG6_100559 	 Leishmania tarentolae Parrot-TarII 	 Peripheral 	 ltar|LtaP30.0190
+OG6_100559 	 Leishmania tarentolae Parrot Tar II 2019 	 Peripheral 	 ltpt|LtaPh_3001900
+OG6_100559 	 Arthrobotrys flagrans CBS H-5679 	 Peripheral 	 afcb|DFL_000537
+OG6_100559 	 Leishmania arabica strain LEM1108 	 Peripheral 	 lara|LARLEM1108_300006400
+OG6_100559 	 Leishmania gerbilli strain LEM452 	 Peripheral 	 lger|LGELEM452_300006400
+OG6_100559 	 Leishmania turanica strain LEM423 	 Peripheral 	 ltur|LTULEM423_300006500
+OG6_100559 	 Leishmania aethiopica L147 	 Peripheral 	 laet|LAEL147_000547700
+OG6_100559 	 Leishmania enriettii MCAV/BR/2001/CUR178 	 Peripheral 	 lenm|CUR178_02914
+OG6_100559 	 Leishmania enriettii strain LEM3045 	 Peripheral 	 lenr|LENLEM3045_300006800
+OG6_100559 	 Leishmania orientalis MHOM/TH/2014/LSCM4 	 Peripheral 	 lori|LSCM4_01931
+OG6_100559 	 Leishmania sp. Ghana MHOM/GH/2012/GH5 	 Peripheral 	 lspg|GH5_02569
+OG6_100559 	 Leishmania sp. Namibia MPRO/NA/1975/252/LV425 	 Peripheral 	 lspn|JIQ42_03302
+OG6_100559 	 Porcisia hertigi MCOE/PA/1965/C119 	 Peripheral 	 pher|JKF63_02810
+OG6_100559 	 Endotrypanum monterogeii strain LV88 	 Peripheral 	 emon|EMOLV88_300006100
+OG6_100559 	 Leishmania braziliensis MHOM/BR/75/M2903 	 Peripheral 	 lbrm|LBRM2903_300006800
+OG6_100559 	 Leishmania martiniquensis MHOM/TH/2012/LSCM1 	 Peripheral 	 lmar|LSCM1_03629
+OG6_100559 	 Leishmania panamensis MHOM/COL/81/L13 	 Peripheral 	 lpan|LPAL13_300006500
+OG6_100559 	 Leishmania martiniquensis LEM2494 	 Peripheral 	 lspm|LMARLEM2494_300006600
+OG6_100559 	 Leishmania tropica L590 	 Peripheral 	 ltro|LTRL590_300006500
+OG6_100559 	 Zea mays (Maize) 	 Core 	 zmay|A0A1D6GM16
+OG6_100559 	 Paratrypanosoma confusum CUL13 (old build 2018-03-02) 	 Core 	 pcon-old|PCON_0027420
+OG6_100559 	 Paratrypanosoma confusum CUL13 	 Peripheral 	 pcon|PCON_0027420
+OG6_100559 	 Gallus gallus isolate bGalGal1 	 Peripheral 	 ggal|geneid_415885
+OG6_100559 	 Sarcocystis neurona SN3 (old build 2015-04-13) 	 Core 	 sneu-old|SN3_01800545
+OG6_100559 	 Sarcocystis neurona SN3 	 Peripheral 	 sneu|SN3_01800545
+OG6_100559 	 Anopheles merus MAF 	 Peripheral 	 amer|AMEM000998
+OG6_100559 	 Besnoitia besnoiti strain Bb-Ger1 	 Peripheral 	 bbes|BESB_056260
+OG6_100559 	 Vitrella brassicaformis CCMP3155 (old build 2014-05-15) 	 Core 	 vbra-old|Vbra_6201
+OG6_100559 	 Vitrella brassicaformis CCMP3155 	 Peripheral 	 vbra|Vbra_6201
+OG6_100559 	 Leishmania major strain LV39c5 	 Peripheral 	 lmjl|LMJLV39_300006400
+OG6_100559 	 Leishmania major strain SD 75.1 	 Peripheral 	 lmjs|LMJSD75_300006400
+OG6_100559 	 Trypanosoma grayi ANR4 	 Peripheral 	 tgra|DQ04_03871030
+OG6_100559 	 Albugo candida 2VRR 	 Peripheral 	 acan|evm.TU.AC2VRR_s00021g28
+OG6_100559 	 Albugo laibachii Nc14 	 Peripheral 	 alai|ALNC14_091230
+OG6_100559 	 Rhodotorula taiwanensis 	 Core 	 rtai|A0A2S5BAZ0
+OG6_100559 	 Micromonas commoda (strain RCC299 / NOUM17 / CCMP2709) (Picoplanktonic green alga) 	 Core 	 mcom|C1EF52
+OG6_100559 	 Glossina palpalis IAEA 	 Peripheral 	 gpap|GPPI000505
+OG6_100559 	 Naegleria fowleri ATCC 30863 (old build 2014-11-05) 	 Core 	 nfow-old|NF0127250
+OG6_100559 	 Naegleria fowleri ATCC 30863 	 Peripheral 	 nfow|NF0127250
+OG6_100559 	 Phytopythium vexans DAOM BR484 	 Peripheral 	 pvex|PVE_G007744
+OG6_100559 	 Phytophthora sojae strain P6497 	 Peripheral 	 psoj|PHYSODRAFT_551244
+OG6_100559 	 Trypanosoma cruzi marinkellei strain B7 	 Peripheral 	 tcrm|Tc_MARK_8327
+OG6_100559 	 Aphanomyces invadans NJM9701 	 Peripheral 	 ainv|H310_07920
+OG6_100559 	 Guillardia theta (strain CCMP2712) (Cryptophyte) 	 Core 	 gthe|L1IEA6
+OG6_100559 	 Phytophthora cinnamomi GKB4 	 Peripheral 	 pcgk|IUM83_02118
+OG6_100559 	 Phytophthora cinnamomi var. cinnamomi CBS 144.22 	 Peripheral 	 pcin|PHYCI_95539
+OG6_100559 	 Trypanosoma brucei brucei TREU927 (old build 2016-05-19) 	 Core 	 tbrt-old|Tb927.8.1600
+OG6_100559 	 Trypanosoma brucei brucei TREU927 	 Peripheral 	 tbrt|Tb927.8.1600
+OG6_100559 	 Trypanosoma cruzi Berenice 	 Peripheral 	 tcbe|ECC02_000184
+OG6_100559 	 Trypanosoma cruzi TCC 	 Peripheral 	 tcrk|C3747_113g91
+OG6_100559 	 Trypanosoma cruzi CL Brener Esmeraldo-like 	 Peripheral 	 tcrl|TcCLB.505807.120
+OG6_100559 	 Trypanosoma cruzi Y C6 	 Peripheral 	 tcyc|TcYC6_0094840
+OG6_100559 	 Tetrahymena thermophila (strain SB210) 	 Core 	 tetr|I7LT60
+OG6_100559 	 Hammondia hammondi strain H.H.34 	 Peripheral 	 hhhh|HHA_205710
+OG6_100559 	 Toxoplasma gondii ARI 	 Peripheral 	 tgar|TGARI_205710
+OG6_100559 	 Toxoplasma gondii CAST 	 Peripheral 	 tgca|TGCAST_205710
+OG6_100559 	 Toxoplasma gondii COUG 	 Peripheral 	 tgco|TGCOUG_205710
+OG6_100559 	 Toxoplasma gondii FOU 	 Peripheral 	 tgfo|TGFOU_205710
+OG6_100559 	 Toxoplasma gondii GT1 	 Peripheral 	 tggt|TGGT1_205710
+OG6_100559 	 Toxoplasma gondii MAS 	 Peripheral 	 tgma|TGMAS_205710
+OG6_100559 	 Toxoplasma gondii ME49 (old build 2015-08-11) 	 Core 	 tgon-old|TGME49_205710
+OG6_100559 	 Toxoplasma gondii ME49 	 Peripheral 	 tgon|TGME49_205710
+OG6_100559 	 Toxoplasma gondii p89 	 Peripheral 	 tgop|TGP89_205710
+OG6_100559 	 Toxoplasma gondii RUB 	 Peripheral 	 tgru|TGRUB_205710
+OG6_100559 	 Toxoplasma gondii TgCATBr9 	 Peripheral 	 tgta|TGBR9_205710
+OG6_100559 	 Toxoplasma gondii TgCatPRC2 	 Peripheral 	 tgtg|TGPRC2_205710
+OG6_100559 	 Toxoplasma gondii VAND 	 Peripheral 	 tgva|TGVAND_205710
+OG6_100559 	 Toxoplasma gondii VEG 	 Peripheral 	 tgve|TGVEG_205710
+OG6_100559 	 Hyaloperonospora arabidopsidis Emoy2 	 Peripheral 	 hara|HpaG814349
+OG6_100559 	 Pythium aphanidermatum DAOM BR444 	 Peripheral 	 paph|PAG1_G008352
+OG6_100559 	 Peronospora effusa R13 	 Peripheral 	 peff|DD237_005390
+OG6_100559 	 Phytophthora capsici LT1534 	 Peripheral 	 pclt|DVH05_010016
+OG6_100559 	 Trypanosoma rangeli SC58 	 Peripheral 	 tran|TRSC58_02512
+OG6_100559 	 Puccinia striiformis strain 93-210 	 Peripheral 	 pstr|PSTT_00701
+OG6_100559 	 Puccinia striiformis 93TX-2 	 Peripheral 	 pstt|PSHT_00331
+OG6_100559 	 Naegleria gruberi strain NEG-M 	 Peripheral 	 ngru|NAEGRDRAFT_77219
+OG6_100559 	 Naegleria lovaniensis strain ATCC 30569 	 Peripheral 	 nlov|C9374_014507
+OG6_100559 	 Bremia lactucae strain SF5 	 Peripheral 	 blac|CCR75_004908
+OG6_100559 	 Naegleria fowleri strain ATCC 30894 	 Peripheral 	 nfoa|FDP41_009330
+OG6_100559 	 Naegleria fowleri strain Ty 	 Peripheral 	 nfty|NfTy_061590
+OG6_100559 	 Phytophthora parasitica INRA-310 	 Peripheral 	 ppar|PPTG_06467
+OG6_100559 	 Puccinia triticina 1-1 BBBD Race 1 	 Peripheral 	 ptri|PTTG_07340
+OG6_100559 	 Trypanosoma cruzi Brazil A4 	 Peripheral 	 tcba|TcBrA4_0031120
+OG6_100559 	 Trypanosoma cruzi Dm28c 2017 	 Peripheral 	 tccd|BCY84_00795
+OG6_100559 	 Trypanosoma cruzi strain CL 	 Peripheral 	 tccl|TcCL_NonESM05305
+OG6_100559 	 Trypanosoma cruzi Dm28c 2014 	 Peripheral 	 tcrd|TCDM_06264
+OG6_100559 	 Trypanosoma cruzi strain G 	 Peripheral 	 tcrg|TcG_04257
+OG6_100559 	 Trypanosoma cruzi TCC 	 Peripheral 	 tcrk|C3747_41g131
+OG6_100559 	 Trypanosoma cruzi marinkellei strain B7 	 Peripheral 	 tcrm|Tc_MARK_1781
+OG6_100559 	 Trypanosoma cruzi CL Brener Non-Esmeraldo-like 	 Peripheral 	 tcrn|TcCLB.503815.20
+OG6_100559 	 Trypanosoma cruzi Dm28c 2018 	 Peripheral 	 tcru|C4B63_42g247
+OG6_100559 	 Phytophthora infestans T30-4 	 Peripheral 	 pinf|PITG_08714
+OG6_100559 	 Globisporangium ultimum DAOM BR144 (old build 2016-03-02) 	 Core 	 pult-old|PYU1_G013793
+OG6_100559 	 Globisporangium ultimum DAOM BR144 	 Peripheral 	 pult|PYU1_G013793
+OG6_100559 	 Kluyveromyces marxianus DMKU3-1042 	 Peripheral 	 kmar|KLMA_40122
+OG6_100559 	 Macaca mulatta isolate AG07107 	 Peripheral 	 mmua|ENSMMUG00000005754
+OG6_100559 	 Phytopythium vexans DAOM BR484 	 Peripheral 	 pvex|PVE_G005737
+OG6_100559 	 Toxoplasma gondii RH-88 	 Peripheral 	 tgee|TGRH88_033790
+OG6_100559 	 Monosiga brevicollis (Choanoflagellate) 	 Core 	 mbre|A9UPJ7
+OG6_100559 	 Pythium insidiosum Pi-s 	 Peripheral 	 pins|PINS_002060
+OG6_100559 	 Paramecium tetraurelia 	 Core 	 ptet|A0D3D4
+OG6_100559 	 Aphanomyces euteiches MF1 	 Peripheral 	 aeut|AeMF1_018537
+OG6_100559 	 Cystoisospora suis strain Wien I 	 Peripheral 	 csui|CSUI_000278
+OG6_100559 	 Paracoccidioides brasiliensis Pb18 	 Peripheral 	 pbrb|PADG_08472
+OG6_100559 	 Saprolegnia diclina VS20 	 Peripheral 	 sdic|SDRG_02674
+OG6_100559 	 Saprolegnia parasitica CBS 223.65 	 Peripheral 	 spar|SPRG_09468
+OG6_100559 	 Culex quinquefasciatus JHB 2020 	 Peripheral 	 cqjh|CQUJHB000174
+OG6_100559 	 Volvox carteri f. nagariensis 	 Peripheral 	 vcar|D8U647
+OG6_100559 	 Spironucleus salmonicida ATCC50377 	 Peripheral 	 ssal|SS50377_25445
+OG6_100559 	 Trypanosoma vivax Y486 	 Peripheral 	 tviv|TvY486_0600930
+OG6_100559 	 Cytauxzoon felis strain Winnie 	 Peripheral 	 cfel|CF001069
+OG6_100559 	 Emergomyces africanus CBS 136260 	 Peripheral 	 eafr|ACJ72_06597
+OG6_100559 	 Entamoeba histolytica HM-3:IMSS 	 Peripheral 	 ehhi|KM1_093300
+OG6_100559 	 Glossina fuscipes IAEA 2018 	 Peripheral 	 gfui|GFUI18_003032
+OG6_100559 	 Monocercomonoides exilis PA203 	 Peripheral 	 mexi|MONOS_18705
+OG6_100559 	 Physcomitrium patens (Spreading-leaved earth moss) (Physcomitrella patens) 	 Core 	 ppat|A0A2K1IXC9
+OG6_100559 	 Paracoccidioides brasiliensis Pb03 	 Peripheral 	 pbra|PABG_07397
+OG6_100559 	 Globisporangium irregulare DAOM BR486 	 Peripheral 	 pirr|PIR_G007636
+OG6_100559 	 Trypanosoma theileri isolate Edinburgh 	 Peripheral 	 tthe|TM35_000075040
+OG6_100559 	 Cyclospora cayetanensis isolate NF1_C8 	 Peripheral 	 ccnf|LOC34618231
+OG6_100559 	 Physcomitrium patens (Spreading-leaved earth moss) (Physcomitrella patens) 	 Core 	 ppat|A0A2K1KMK5
+OG6_100559 	 Anopheles funestus FUMOZ 	 Peripheral 	 afun|AFUN021759
+OG6_100559 	 Ramazzottius varieornatus (Water bear) (Tardigrade) 	 Core 	 rvar|A0A1D1V1B6
+OG6_100559 	 Schistosoma mansoni (Blood fluke) 	 Core 	 sman|A0A3Q0KK01
+OG6_100559 	 Trypanosoma brucei Lister strain 427 2018 	 Peripheral 	 tbre|Tb427_060018000
+OG6_100559 	 Trypanosoma brucei gambiense DAL972 	 Peripheral 	 tbrg|Tbg972.6.1160
+OG6_100559 	 Trypanosoma brucei Lister strain 427 	 Peripheral 	 tbrl|Tb427.06.1510
+OG6_100559 	 Trypanosoma brucei brucei TREU927 (old build 2016-05-19) 	 Core 	 tbrt-old|Tb927.6.1510
+OG6_100559 	 Trypanosoma brucei brucei TREU927 	 Peripheral 	 tbrt|Tb927.6.1510
+OG6_100559 	 Trypanosoma brucei EATRO1125 	 Peripheral 	 tbtr|Tb1125.6.1510
+OG6_100559 	 Trypanosoma equiperdum OVI 	 Peripheral 	 teov|TEOVI_000688200
+OG6_100559 	 Trypanosoma evansi strain STIB 805 	 Peripheral 	 teva|TevSTIB805.6.1560
+OG6_100559 	 Tremella mesenterica DSM 1558 	 Peripheral 	 tmes|TREMEDRAFT_41611
+OG6_100559 	 Paracoccidioides lutzii Pb01 	 Peripheral 	 plut|PAAG_08172
+OG6_100559 	 Anopheles merus MAF 2021 	 Peripheral 	 amem|AMEM21_007470
+OG6_100559 	 Anopheles arabiensis Dongola 	 Peripheral 	 aara|AARA002604
+OG6_100559 	 Anopheles arabiensis DONGOLA 2021 	 Peripheral 	 aard|AARA21_008492
+OG6_100559 	 Anopheles coluzzii AcolN3 idAnoColuKW18-c001_1 	 Peripheral 	 accw|ACON2_032707
+OG6_100559 	 Anopheles coluzzii MOPTI 	 Peripheral 	 acmp|ACMO_011325
+OG6_100559 	 Anopheles coluzzii Ngousso 	 Peripheral 	 acol|ACON000325
+OG6_100559 	 Anopheles gambiae PEST (old build 2019-12-20) 	 Core 	 agam-old|AGAP000325
+OG6_100559 	 Anopheles gambiae PEST 	 Peripheral 	 agam|AGAP000325
+OG6_100559 	 Anopheles melas CM1001059_A 	 Peripheral 	 amec|AMEC017009
+OG6_100559 	 Anopheles quadriannulatus SANGWE 	 Peripheral 	 aqua|AQUA007283
+OG6_100559 	 Trypanosoma melophagium St. Kilda 	 Peripheral 	 tmki|LSM04_003741
+OG6_100559 	 Cryptococcus gattii CA1873 	 Peripheral 	 cgac|I314_03341
+OG6_100559 	 Cryptococcus gattii EJB2 	 Peripheral 	 cgae|I306_01682
+OG6_100559 	 Cryptococcus gattii VGIV IND107 	 Peripheral 	 cgai|I308_01507
+OG6_100559 	 Cryptococcus gattii NT-10 	 Peripheral 	 cgan|I311_05337
+OG6_100559 	 Cryptococcus gattii WM276 	 Peripheral 	 cgat|CGB_H5060W
+OG6_100559 	 Cryptococcus neoformans var. grubii KN99 	 Peripheral 	 cnek|CKF44_04179
+OG6_100559 	 Cryptococcus neoformans var. neoformans JEC21 (old build 2016-06-16) 	 Core 	 cneo-old|CNI03160
+OG6_100559 	 Cryptococcus neoformans var. neoformans JEC21 	 Peripheral 	 cneo|CNI03160
+OG6_100559 	 Cryptococcus neoformans var. neoformans B-3501A 	 Peripheral 	 cnep|CNBH3030
+OG6_100559 	 Cryptococcus neoformans var. grubii H99 	 Peripheral 	 cneq|CNAG_04179
+OG6_100559 	 Sporothrix brasiliensis 5110 	 Peripheral 	 sbra|SPBR_06675
+OG6_100559 	 Gorilla gorilla gorilla (Western lowland gorilla) 	 Peripheral 	 ggor|A0A2I2YTQ3
+OG6_100559 	 Hortaea werneckii EXF-2000 	 Peripheral 	 hwer|BTJ68_06105
+OG6_100559 	 Hortaea werneckii EXF-2000 	 Peripheral 	 hwer|BTJ68_14188
+OG6_100559 	 Pan troglodytes (Chimpanzee) 	 Peripheral 	 ptro|A0A2I3RWT8
+OG6_100559 	 Verruconis gallopava strain CBS 43764 	 Peripheral 	 vgal|PV09_00819
+OG6_100559 	 Strongylocentrotus purpuratus (Purple sea urchin) 	 Peripheral 	 spur|W4XZV9
+OG6_100559 	 Verticillium dahliae JR2 	 Peripheral 	 vdah|VDAG_JR2_Chr3g09900a
+OG6_100559 	 Anopheles aquasalis idAnoAquaMG-Q_19 	 Peripheral 	 aaqu|AAQUA_007501
+OG6_100559 	 Anopheles albimanus STECLA 2020 	 Peripheral 	 aasz|AALB20_033016
+OG6_100559 	 Anopheles coluzzii MOPTI 	 Peripheral 	 acmp|ACMO_005580
+OG6_100559 	 Vitrella brassicaformis CCMP3155 (old build 2014-05-15) 	 Core 	 vbra-old|Vbra_4678
+OG6_100559 	 Vitrella brassicaformis CCMP3155 	 Peripheral 	 vbra|Vbra_4678
+OG6_100559 	 Anopheles funestus idAnoFuneDA-416_04 	 Peripheral 	 affd|AFUN2_009314
+OG6_100559 	 Arabidopsis thaliana (Mouse-ear cress) 	 Core 	 atha|Q9ZPI1
+OG6_100559 	 Laccaria bicolor (strain S238N-H82 / ATCC MYA-4686) (Bicoloured deceiver) (Laccaria laccata var. bicolor) 	 Peripheral 	 lbic|B0D1I7
+OG6_100559 	 Rattus norvegicus BN/NHsdMcwi 	 Peripheral 	 rnor|ENSRNOG00000019456
+OG6_100559 	 Anopheles darlingi Coari 	 Peripheral 	 adar|ADAC007295
+OG6_100559 	 Aspergillus fijiensis CBS 313.89 	 Peripheral 	 afij|BO72DRAFT_412780
+OG6_100559 	 Canis lupus familiaris (Dog) (Canis familiaris) 	 Core 	 clup-old|E2RSP4
+OG6_100559 	 Canis lupus familiaris isolate SID07034 	 Peripheral 	 clup|ENSCAFG00845023307
+OG6_100559 	 Equus caballus (Horse) 	 Peripheral 	 ecab|A0A5F5PL33
+OG6_100559 	 Homo sapiens REF (old build GRCh38) 	 Core 	 hsap-old|ENSG00000065427.14
+OG6_100559 	 Homo sapiens REF 	 Peripheral 	 hsap|ENSG00000065427
+OG6_100559 	 Macaca fascicularis REF 	 Peripheral 	 mfas|ENSMFAG00000040024
+OG6_100559 	 Macaca mulatta isolate 17573 	 Core 	 mmul|MACM_3735
+OG6_100559 	 Physeter macrocephalus (Sperm whale) (Physeter catodon) 	 Core 	 phma|A0A2Y9F6Z2
+OG6_100559 	 Trypanosoma congolense IL3000 	 Peripheral 	 tcon|TcIL3000_6_990
+OG6_100559 	 Anopheles darlingi idAnoDarlMG-H_01 	 Peripheral 	 addm|ADAR2_006284
+OG6_100559 	 Anopheles epiroticus Epiroticus2 	 Peripheral 	 aepi|AEPI003248
+OG6_100559 	 Myotis lucifugus (Little brown bat) 	 Core 	 mluc|G1PRK4
+OG6_100559 	 Mus musculus C57BL6J (old build GRCm38) 	 Core 	 mmus-old|ENSMUSG00000031948.13
+OG6_100559 	 Mus musculus C57BL6J 	 Peripheral 	 mmus|ENSMUSG00000031948
+OG6_100559 	 Penicillium rubens Wisconsin 54-1255 	 Peripheral 	 prub|PCH_Pc12g09250
+OG6_100559 	 Rhinocladiella mackenziei CBS 650.93 	 Peripheral 	 rmac|Z518_04027
+OG6_100559 	 Anopheles stephensi UCISS2018 	 Peripheral 	 asit|ASTEI20_036501
+OG6_100559 	 Anopheles stephensi SDA-500 	 Peripheral 	 asts|ASTE001139
+OG6_100559 	 Bos taurus breed Hereford (old build Bos_taurus_UMD_3-1-1_2014-11) 	 Core 	 btau-old|BOS_16931
+OG6_100559 	 Cavia porcellus 2N 	 Peripheral 	 cpor|ENSCPOG00000012036
+OG6_100559 	 Sporothrix schenckii 1099-18 	 Peripheral 	 ssch|SPSK_01032
+OG6_100559 	 Zymoseptoria tritici IPO323 	 Peripheral 	 ztri|ZTRI_4.376
+OG6_100559 	 Zymoseptoria tritici ST99CH_3D1 	 Peripheral 	 ztrs|ZT3D1_G4965
+OG6_100559 	 Loxodonta africana (African elephant) 	 Core 	 lafr|G3TEY5
+OG6_100559 	 Trichophyton rubrum CBS 118892 	 Peripheral 	 trbc|TERG_00063
+OG6_100559 	 Blastomyces percursus strain EI222 	 Peripheral 	 bper|ACJ73_07122
+OG6_100559 	 Emergomyces pasteurianus Ep9510 	 Peripheral 	 epas|AJ78_03563
+OG6_100559 	 Ophiostoma piceae UAMH 11346 	 Peripheral 	 opic|F503_08870
+OG6_100559 	 Ostreococcus tauri 	 Peripheral 	 otau|A0A090MBV2
+OG6_100559 	 Anopheles cruzii idAnoCruzAS_RS32_06 	 Peripheral 	 acru|AcruBR1_000002880
+OG6_100559 	 Colletotrichum graminicola M1.001 	 Peripheral 	 cgra|GLRG_05447
+OG6_100559 	 Colletotrichum higginsianum IMI 349063 	 Peripheral 	 chig|CH63R_08111
+OG6_100559 	 Aedes aegypti LVP_AGWG (old build 2019-12-20) 	 Core 	 aaeg-old|AAEL014702
+OG6_100559 	 Aedes aegypti LVP_AGWG 	 Peripheral 	 aaeg|AAEL014702
+OG6_100559 	 Anopheles dirus WRAIR2 	 Peripheral 	 adir|ADIR001133
+OG6_100559 	 Anopheles moucheti idAnoMoucSN_F20_07 	 Peripheral 	 amou|AmouCM1_009983
+OG6_100559 	 Podospora anserina S mat+ 	 Peripheral 	 pans|PODANS_4_7220
+OG6_100559 	 Podospora comata strain T mat+ 	 Peripheral 	 pcom|PODCO_407220
+OG6_100559 	 Physcomitrium patens (Spreading-leaved earth moss) (Physcomitrella patens) 	 Core 	 ppat|A9SRN4
+OG6_100559 	 Aspergillus niger ATCC 13496 	 Peripheral 	 ania|M747DRAFT_289845
+OG6_100559 	 Aspergillus niger ATCC 1015 	 Peripheral 	 anih|ASPNIDRAFT2_1159986
+OG6_100559 	 Chaetomium globosum CBS 148.51 	 Peripheral 	 cglo|CHGG_09229
+OG6_100559 	 Lomentospora prolificans JHH-5317 	 Peripheral 	 lpro|jhhlp_003242
+OG6_100559 	 Neurospora crassa OR74A (old build 2015-03-23) 	 Core 	 ncra-old|NCU04020
+OG6_100559 	 Neurospora crassa OR74A 	 Peripheral 	 ncra|NCU04020
+OG6_100559 	 Neurospora tetrasperma FGSC 2508 	 Peripheral 	 ntet|NEUTE1DRAFT_87826
+OG6_100559 	 Sordaria macrospora k-hell 	 Peripheral 	 smac|SMAC_01083
+OG6_100559 	 Tuber melanosporum (strain Mel28) (Perigord black truffle) 	 Core 	 tmel|D5G820
+OG6_100559 	 Aedes albopictus Foshan FPA 	 Peripheral 	 aalb|AALFPA_073309
+OG6_100559 	 Aedes albopictus C6/36 cell line 	 Peripheral 	 aalc|AALC636_011615
+OG6_100559 	 Aedes albopictus C6/36 cell line 	 Peripheral 	 aalc|AALC636_037973
+OG6_100559 	 Magnaporthiopsis poae ATCC 64411 	 Peripheral 	 mpoa|MAPG_05590
+OG6_100559 	 Neurospora discreta FGSC 8579 	 Peripheral 	 ndis|NEUDI_25042
+OG6_100559 	 Thermothelomyces thermophilus ATCC 42464 	 Peripheral 	 thth|MYCTH_2306339
+OG6_100559 	 Aspergillus sydowii CBS 593.65 	 Peripheral 	 asyd|ASPSYDRAFT_26345
+OG6_100559 	 Gaeumannomyces tritici R3-111a-1 	 Peripheral 	 gtri|GGTG_13735
+OG6_100559 	 Helobdella robusta (Californian leech) 	 Core 	 hrob|T1FG52
+OG6_100559 	 Lentinus tigrinus ALCF2SS1-7 	 Peripheral 	 ltig|L226DRAFT_493960
+OG6_100559 	 Scedosporium apiospermum IHEM 14462 	 Peripheral 	 sapi|SAPIO_CDS8175
+OG6_100559 	 Dictyostelium discoideum (Social amoeba) 	 Core 	 ddis|Q54LP4
+OG6_100559 	 Leishmania panamensis strain MHOM/PA/94/PSC-1 	 Peripheral 	 lpap|LPMP_150270
+OG6_100559 	 Pyricularia oryzae BR32 	 Peripheral 	 morb|M_BR32_EuGene_00047761
+OG6_100559 	 Pyricularia oryzae 70-15 	 Peripheral 	 mory|MGG_04966
+OG6_100559 	 Chlamydomonas reinhardtii (Chlamydomonas smithii) 	 Core 	 crei|A0A2K3DQL0
+OG6_100559 	 Fusarium solani FSSC 5 MPI-SDFR-AT-0091 	 Peripheral 	 fsol|B0J15DRAFT_461389
+OG6_100559 	 Ixodes scapularis PalLabHiFi 	 Peripheral 	 iscp|ISCP_020851
+OG6_100559 	 Sporisorium reilianum SRZ2 	 Peripheral 	 srei|sr13025
+OG6_100559 	 Ascosphaera apis ARSEF 7405 	 Peripheral 	 aapi|AAP_05693
+OG6_100559 	 Melampsora larici-populina 98AG31 	 Peripheral 	 mlar|MELLADRAFT_104502
+OG6_100559 	 Fusarium circinatum NRRL 25331 	 Peripheral 	 fcir|FCIRC_8210
+OG6_100559 	 Fusarium oxysporum f. sp. cubense race 1 	 Peripheral 	 foxr|FOC1_g10014998
+OG6_100559 	 Malassezia restricta KCTC 27527 	 Peripheral 	 mres|MRET_0755
+OG6_100559 	 Oryzias latipes (Japanese rice fish) (Japanese killifish) 	 Core 	 olat|H2LTY5
+OG6_100559 	 Cyanidioschyzon merolae (strain NIES-3377 / 10D) (Unicellular red alga) 	 Core 	 cmer|M1VIT6
+OG6_100559 	 Fusarium graminearum PH-1 	 Peripheral 	 fgra|FGRAMPH1_01G10757
+OG6_100559 	 Stomoxys calcitrans USDA 	 Peripheral 	 scal|SCAU009972
+OG6_100559 	 Sclerotinia sclerotiorum 1980 UF-70 (old build 2015-03-23) 	 Core 	 sscl-old|SS1G_02152
+OG6_100559 	 Sclerotinia sclerotiorum 1980 UF-70 	 Peripheral 	 sscl|sscle_04g032330
+OG6_100559 	 Thalassiosira pseudonana (Marine diatom) (Cyclotella nana) 	 Core 	 tpse|B8C7D6
+OG6_100559 	 Histoplasma capsulatum NAm1 	 Peripheral 	 acap|HCAG_05713
+OG6_100559 	 Histoplasma capsulatum G186AR 	 Peripheral 	 acaq|I7I50_09845
+OG6_100559 	 Aspergillus clavatus NRRL 1 	 Peripheral 	 acla|ACLA_081800
+OG6_100559 	 Aspergillus terreus NIH2624 	 Peripheral 	 ater|ATEG_05906
+OG6_100559 	 Blastomyces dermatitidis ATCC 26199 	 Peripheral 	 bdea|BDFG_04180
+OG6_100559 	 Blastomyces dermatitidis ER-3 	 Peripheral 	 bder|BDCG_07764
+OG6_100559 	 Blastomyces gilchristii SLH14081 	 Peripheral 	 bgil|BDBG_03449
+OG6_100559 	 Coccidioides immitis H538.4 	 Peripheral 	 cimh|CIHG_01538
+OG6_100559 	 Coccidioides immitis RS 	 Peripheral 	 cimm|CIMG_01307
+OG6_100559 	 Coccidioides immitis WA_211 	 Peripheral 	 cimw|DIZ76_011320
+OG6_100559 	 Coccidioides posadasii C735 delta SOWgp 	 Peripheral 	 cpos|CPC735_051040
+OG6_100559 	 Coccidioides posadasii RMSCC 3488 	 Peripheral 	 cprm|CPAG_01546
+OG6_100559 	 Coccidioides posadasii str. Silveira 	 Peripheral 	 cpsi|CPSG_01881
+OG6_100559 	 Coccidioides posadasii strain Silveira 2022 	 Peripheral 	 cpsl|D8B26_001871
+OG6_100559 	 Emmonsia crescens UAMH 3008 	 Peripheral 	 ecre|EMCG_05774
+OG6_100559 	 Fusarium fujikuroi IMI 58289 	 Peripheral 	 ffuj|FFUJ_06295
+OG6_100559 	 Fusarium mangiferae MRC7560 	 Peripheral 	 fman|FMAN_09301
+OG6_100559 	 Fusarium oxysporum f. sp. conglutinans Fo5176 	 Peripheral 	 focf|HZS61_015134
+OG6_100559 	 Fusarium oxysporum NRRL 32931 	 Peripheral 	 foxa|FOYG_09457
+OG6_100559 	 Fusarium odoratissimum NRRL 54006 	 Peripheral 	 foxc|FOIG_01994
+OG6_100559 	 Fusarium oxysporum Fo47 	 Peripheral 	 foxf|FOZG_09089
+OG6_100559 	 Fusarium oxysporum f. sp. melonis 26406 	 Peripheral 	 foxm|FOMG_11116
+OG6_100559 	 Fusarium oxysporum f. sp. lycopersici 4287 	 Peripheral 	 foxy|FOXG_03018
+OG6_100559 	 Fusarium proliferatum strain NRRL62905 	 Peripheral 	 fprn|FPRN_09442
+OG6_100559 	 Fusarium proliferatum ET1 	 Peripheral 	 fpro|FPRO_09783
+OG6_100559 	 Fusarium vanettenii 77-13-4 	 Peripheral 	 fvan|NECHADRAFT_67315
+OG6_100559 	 Fusarium verticillioides 7600 	 Peripheral 	 fver|FVEG_01874
+OG6_100559 	 Histoplasma capsulatum G217B 	 Peripheral 	 hcag|I7I48_10706
+OG6_100559 	 Histoplasma capsulatum H88 	 Peripheral 	 hcah|I7I53_12175
+OG6_100559 	 Histoplasma capsulatum G184AR 	 Peripheral 	 hcga|I7I52_10839
+OG6_100559 	 Nannizzia gypsea CBS 118893 	 Peripheral 	 ngyp|MGYG_01440
+OG6_100559 	 Pseudogymnoascus destructans 20631-21 	 Peripheral 	 pdes|GMDG_01773
+OG6_100559 	 Rhipicephalus microplus Rmic-2018 	 Peripheral 	 rmrm|LOC119177247
+OG6_100559 	 Rhipicephalus sanguineus Rsan-2018 	 Peripheral 	 rsan|RSAN_027916
+OG6_100559 	 Trichophyton equinum CBS 127.97 	 Peripheral 	 teqc|TEQG_06831
+OG6_100559 	 Trichophyton mentagrophytes TIMM 2789 	 Peripheral 	 tmen|TMEN_4583
+OG6_100559 	 Trichophyton tonsurans CBS 112818 	 Peripheral 	 tton|TESG_06313
+OG6_100559 	 Blechomonas ayalai B08-376 	 Peripheral 	 baya|Baya_041_0250
+OG6_100559 	 Blumeria graminis f. sp. triticale THUN-12 	 Peripheral 	 bgrt|BGTH12_LOCUS1890
+OG6_100559 	 Blumeria hordei strain RACE1 	 Peripheral 	 bhor|BLGHR1_16987
+OG6_100559 	 Cyanidioschyzon merolae (strain NIES-3377 / 10D) (Unicellular red alga) 	 Core 	 cmer|M1VJF1
+OG6_100559 	 Dermacentor andersoni qqDerAnde1 	 Peripheral 	 dand|DAND_005036
+OG6_100559 	 Dermacentor silvarum Dsil-2018 	 Peripheral 	 dsil|DSIL_073363
+OG6_100559 	 Microsporum canis CBS 113480 	 Peripheral 	 mcan|MCYG_00521
+OG6_100559 	 Monodelphis domestica (Gray short-tailed opossum) 	 Peripheral 	 mdom|F7DFS1
+OG6_100559 	 Botrytis cinerea B05.10 	 Peripheral 	 bfuc|Bcin16g00430
+OG6_100559 	 Drosophila melanogaster (Fruit fly) 	 Core 	 dmel-old|Q9W327
+OG6_100559 	 Drosophila melanogaster iso-1 	 Peripheral 	 dmel|FBgn0027084
+OG6_100559 	 Glossina pallidipes IAEA 	 Peripheral 	 gpal|GPAI015700
+OG6_100559 	 Monilinia fructicola CPMC6 	 Peripheral 	 mfru|MFRU_006g00660
+OG6_100559 	 Ricinus communis (Castor bean) 	 Peripheral 	 rcom|B9SY11
+OG6_100559 	 Trichoderma reesei QM6a 2017 	 Peripheral 	 trqm|TrQ_009921
+OG6_100559 	 Trichoderma virens Gv29-8 	 Peripheral 	 tvir|TRIVIDRAFT_89180
+OG6_100559 	 Aspergillus nidulans FGSC A4 	 Peripheral 	 anid|AN1913
+OG6_100559 	 Aspergillus tanneri NIH1004 	 Peripheral 	 atan|EYZ11_001655
+OG6_100559 	 Cenococcum geophilum 1.58 	 Peripheral 	 cgeo|K441DRAFT_533251
+OG6_100559 	 Exophiala aquamarina CBS 119918 	 Peripheral 	 eaqu|A1O9_05077
+OG6_100559 	 Exophiala oligosperma strain CBS 72588 	 Peripheral 	 eoli|PV06_03799
+OG6_100559 	 Exophiala spinifera CBS 89968 	 Peripheral 	 espi|PV08_06471
+OG6_100559 	 Aspergillus fischeri NRRL 181 	 Peripheral 	 afis|NFIA_053310
+OG6_100559 	 Aspergillus versicolor CBS 583.65 	 Peripheral 	 aver|ASPVEDRAFT_147654
+OG6_100559 	 Hemileia vastatrix Race XXXIII 	 Peripheral 	 hvas|HVAS_10153790
+OG6_100559 	 Trichomonas vaginalis G3 (old build 2014-09-12) 	 Core 	 tvag-old|TVAG_152430
+OG6_100559 	 Trichomonas vaginalis G3 	 Peripheral 	 tvag|TVAG_152430
+OG6_100559 	 Aspergillus aculeatus ATCC 16872 	 Peripheral 	 aacu|ASPACDRAFT_76801
+OG6_100559 	 Aspergillus brasiliensis CBS 101740 	 Peripheral 	 abra|ASPBRDRAFT_36867
+OG6_100559 	 Aspergillus campestris IBT 28561 	 Peripheral 	 acam|P168DRAFT_255370
+OG6_100559 	 Aspergillus eucalypticola CBS 122712 	 Peripheral 	 aeuc|BO83DRAFT_330026
+OG6_100559 	 Aspergillus flavus NRRL3357 	 Peripheral 	 afla|AFLA_001506
+OG6_100559 	 Aspergillus flavus NRRL3357 2020 	 Peripheral 	 afnr|F9C07_3002
+OG6_100559 	 Aspergillus fumigatus A1163 	 Peripheral 	 afub|AFUB_073600
+OG6_100559 	 Aspergillus fumigatus Af293 (old build 2015-09-27) 	 Core 	 afum-old|Afu6g07640
+OG6_100559 	 Aspergillus fumigatus Af293 	 Peripheral 	 afum|Afu6g07640
+OG6_100559 	 Aspergillus homomorphus CBS 101889 	 Peripheral 	 ahom|BO97DRAFT_382794
+OG6_100559 	 Aspergillus luchuensis IFO 4308 	 Peripheral 	 akaw|AKAW_02109
+OG6_100559 	 Aspergillus lentulus strain IFM 54703 	 Peripheral 	 alen|TMP_alenIFM54703_710
+OG6_100559 	 Aspergillus luchuensis CBS 106.47 	 Peripheral 	 aluc|ASPFODRAFT_52555
+OG6_100559 	 Aspergillus niger CBS 513.88 	 Peripheral 	 anig|An11g02400
+OG6_100559 	 Aspergillus niger strain N402 (ATCC64974) 	 Peripheral 	 anin|ATCC64974_88850
+OG6_100559 	 Aspergillus novofumigatus IBT 16806 	 Peripheral 	 anov|P174DRAFT_404438
+OG6_100559 	 Aspergillus ochraceoroseus IBT 24754 	 Peripheral 	 aoch|P175DRAFT_0513359
+OG6_100559 	 Aspergillus oryzae RIB40 	 Peripheral 	 aory|AO090003000186
+OG6_100559 	 Aspergillus parasiticus CBS 117618 	 Peripheral 	 apar|BDV34DRAFT_193389
+OG6_100559 	 Aspergillus steynii IBT 23096 	 Peripheral 	 aste|P170DRAFT_375299
+OG6_100559 	 Aspergillus thermomutatus strain HMR AF 39 	 Peripheral 	 athe|CDV56_105309
+OG6_100559 	 Aspergillus uvarum CBS 121591 	 Peripheral 	 auva|BO82DRAFT_318054
+OG6_100559 	 Exophiala dermatitidis NIH/UT8656 	 Peripheral 	 eder|HMPREF1120_06209
+OG6_100559 	 Exophiala mesophila strain CBS 40295 	 Peripheral 	 emes|PV10_07594
+OG6_100559 	 Parastagonospora nodorum SN15 	 Peripheral 	 pnod|JI435_095380
+OG6_100559 	 Aspergillus carbonarius ITEM 5010 	 Peripheral 	 acar|ASPCADRAFT_204765
+OG6_100559 	 Aspergillus cristatus GZAAS20.1005 	 Peripheral 	 acri|SI65_07187
+OG6_100559 	 Aspergillus glaucus CBS 516.65 	 Peripheral 	 agla|ASPGLDRAFT_44972
+OG6_100559 	 Aspergillus wentii DTO 134E9 	 Peripheral 	 awen|ASPWEDRAFT_72889
+OG6_100559 	 Penicilliopsis zonata CBS 506.65 	 Peripheral 	 azon|ASPZODRAFT_134135
+OG6_100559 	 Cladophialophora bantiana CBS 173.52 	 Peripheral 	 cban|Z519_02985
+OG6_100559 	 Cladophialophora psammophila CBS 110553 	 Peripheral 	 cpsa|A1O5_03664
+OG6_100559 	 Kwoniella mangroviensis CBS 8507 	 Peripheral 	 kman|I203_04390
+OG6_100559 	 Klebsormidium nitens (Green alga) (Ulothrix nitens) 	 Core 	 knit|A0A0U9HIY3
+OG6_100559 	 Taphrina deformans PYCC 5710 	 Peripheral 	 tdef|TAPDE_005204
+OG6_100559 	 Xenopus tropicalis (Western clawed frog) (Silurana tropicalis) 	 Core 	 xtro|A0A5G3KL64
+OG6_100559 	 Arabidopsis thaliana (Mouse-ear cress) 	 Core 	 atha|Q9LJE2
+OG6_100559 	 Brugia malayi (Filarial nematode worm) 	 Peripheral 	 bmaa|A0A0R3RE14
+OG6_100559 	 Danio rerio (Zebrafish) (Brachydanio rerio) 	 Core 	 drer|Q6DHE6
+OG6_100559 	 Kwoniella bestiolae CBS 10118 	 Peripheral 	 kbes|I302_07543
+OG6_100559 	 Malassezia sympodialis ATCC 42132 	 Peripheral 	 msym|MSYG_0988
+OG6_100559 	 Naegleria lovaniensis strain ATCC 30569 	 Peripheral 	 nlov|C9374_000660
+OG6_100559 	 Oryza sativa subsp. japonica (Rice) 	 Core 	 osat|Q6F2U9
+OG6_100559 	 Raffaelea lauricola RL4 	 Peripheral 	 rlau|RL4_JR_00598
+OG6_100559 	 Talaromyces marneffei ATCC 18224 	 Peripheral 	 tmar|PMAA_032290
+OG6_100559 	 Talaromyces stipitatus ATCC 10500 	 Peripheral 	 tsti|TSTA_065320
+OG6_100559 	 Ustilago maydis 521 (old build 2015-02-18) 	 Core 	 umay-old|UMAG_10176
+OG6_100559 	 Ustilago maydis 521 	 Peripheral 	 umay|UMAG_10176
+OG6_100559 	 Alternaria alternata SRC1lrK2f 	 Peripheral 	 aalt|CC77DRAFT_992541
+OG6_100559 	 Cyphellophora europaea CBS 101466 	 Peripheral 	 ceur|HMPREF1541_05607
+OG6_100559 	 Plasmodium ovale curtisi GH01 	 Peripheral 	 pova|PocGH01_12013100
+OG6_100559 	 Pyrenophora teres f. teres 0-1 	 Peripheral 	 pter|PTT_18775
+OG6_100559 	 Cladophialophora immunda strain CBS 83496 	 Peripheral 	 cimc|PV07_10147
+OG6_100559 	 Fonsecaea pedrosoi CBS 271.37 	 Peripheral 	 fped|Z517_08300
+OG6_100559 	 Sarcocystis neurona SO SN1 	 Peripheral 	 snsn|SRCN_5751
+OG6_100559 	 Candida parapsilosis CDC317 	 Peripheral 	 cpac|CPAR2_807790
+OG6_100559 	 Kwoniella dejecticola CBS 10117 	 Peripheral 	 kdej|I303_06699
+OG6_100559 	 Lutzomyia longipalpis Jacobina 	 Peripheral 	 llon|LLOJ001048
+OG6_100559 	 Pythium arrhenomanes ATCC 12531 	 Peripheral 	 parr|PAR_G004234
+OG6_100559 	 Trichosporon asahii var. asahii CBS 2479 	 Peripheral 	 tasa|A1Q1_08104
+OG6_100559 	 Acanthamoeba castellanii str. Neff (old build 2015-03-19) 	 Core 	 acas-old|ACA1_270690
+OG6_100559 	 Acanthamoeba castellanii str. Neff 	 Peripheral 	 acas|ACA1_270690
+OG6_100559 	 Caenorhabditis briggsae 	 Peripheral 	 cbri|A8WLD5
+OG6_100559 	 Chromera velia CCMP2878 	 Peripheral 	 cvel|Cvel_7175
+OG6_100559 	 Guillardia theta (strain CCMP2712) (Cryptophyte) 	 Core 	 gthe|L1ISH0
+OG6_100559 	 Lingula unguis 	 Core 	 lung|A0A1S3IIR5
+OG6_100559 	 Lingula unguis 	 Core 	 lung|A0A1S3J2I6
+OG6_100559 	 Neospora caninum Liverpool 	 Peripheral 	 ncan|NCLIV_019960
+OG6_100559 	 Neospora caninum Liverpool 2019 	 Peripheral 	 nclv|Ncaninum_LIV_000641100
+OG6_100559 	 Saccharomycodes ludwigii UTAD17 	 Peripheral 	 slud|SCODWIG_00697
+OG6_100559 	 Wallemia mellicola (strain ATCC MYA-4683 / CBS 633.66) (Wallemia sebi (CBS 633.66)) 	 Core 	 wmel|I4YCY1
+OG6_100559 	 Aquifex aeolicus (strain VF5) 	 Core 	 aaeo|O67258
+OG6_100559 	 Aspergillus tubingensis CBS 134.48 	 Peripheral 	 atub|ASPTUDRAFT_685699
+OG6_100559 	 Cryptococcus cf. gattii MF34 	 Peripheral 	 ccfg|D1P53_004623
+OG6_100559 	 Cryptococcus gattii VGII R265 	 Peripheral 	 cdeu|CNBG_2865
+OG6_100559 	 Cryptococcus neoformans strain:VNII 	 Peripheral 	 cnev|LQV05_006331
+OG6_100559 	 Gregarina niphandrodes Unknown strain (old build 2014-04-15) 	 Core 	 gnip-old|GNI_140190
+OG6_100559 	 Gregarina niphandrodes Unknown strain 	 Peripheral 	 gnip|GNI_140190
+OG6_100559 	 Lodderomyces elongisporus NRRL YB-4239 	 Peripheral 	 lelo|LELG_02937
+OG6_100559 	 Trypanosoma theileri isolate Edinburgh 	 Peripheral 	 tthe|TM35_000271000
+OG6_100559 	 Anopheles arabiensis DONGOLA 2021 	 Peripheral 	 aard|AARA21_010098
+OG6_100559 	 Batrachochytrium salamandrivorans BS 	 Peripheral 	 bsbs|BSLG_03607
+OG6_100559 	 Fonticula alba (Slime mold) 	 Core 	 falb|A0A058Z352
+OG6_100559 	 Haemoproteus tartakovskyi strain SISKIN1 	 Peripheral 	 htar|Htart_000208800
+OG6_100559 	 Kwoniella heveanensis CBS 569 	 Peripheral 	 khev|I317_01489
+OG6_100559 	 Spizellomyces punctatus DAOM BR117 	 Peripheral 	 spun|SPPG_05517
+OG6_100559 	 Acyrthosiphon pisum (Pea aphid) 	 Core 	 apis|J9K9F3
+OG6_100559 	 Cryptococcus depauperatus CBS 7855 	 Peripheral 	 cdcb|L204_02452
+OG6_100559 	 Cryptococcus depauperatus CBS 7841 	 Peripheral 	 cdep|L203_00281
+OG6_100559 	 Candida metapsilosis BP57 	 Peripheral 	 cmet|I9W82_001367
+OG6_100559 	 Candida tropicalis MYA-3404 2020 	 Peripheral 	 ctmy|CTMYA2_009200
+OG6_100559 	 Candida tropicalis MYA-3404 	 Peripheral 	 ctro|CTRG_05605
+OG6_100559 	 Monodelphis domestica (Gray short-tailed opossum) 	 Peripheral 	 mdom|F7G3B7
+OG6_100559 	 Naegleria fowleri strain ATCC 30894 	 Peripheral 	 nfoa|FDP41_004040
+OG6_100559 	 Naegleria fowleri ATCC 30863 (old build 2014-11-05) 	 Core 	 nfow-old|NF0125850
+OG6_100559 	 Naegleria fowleri ATCC 30863 	 Peripheral 	 nfow|NF0125850
+OG6_100559 	 Naegleria fowleri strain Ty 	 Peripheral 	 nfty|NfTy_069470
+OG6_100559 	 Pleurotus ostreatus PC15 	 Peripheral 	 posp|PLEOSDRAFT_1061805
+OG6_100559 	 Pleurotus ostreatus PC9 	 Peripheral 	 post|PC9H_008339
+OG6_100559 	 Schizophyllum commune H4-8 	 Peripheral 	 scoh|SCHCODRAFT_02509747
+OG6_100559 	 Trypanosoma melophagium St. Kilda 	 Peripheral 	 tmki|LSM04_005265
+OG6_100559 	 Trichoderma reesei QM6a 	 Peripheral 	 tree|TRIREDRAFT_72615
+OG6_100559 	 Takifugu rubripes (Japanese pufferfish) (Fugu rubripes) 	 Core 	 trub|H2V6Z7
+OG6_100559 	 Candida albicans SC5314_B 	 Peripheral 	 cabb|C3_07410C_B
+OG6_100559 	 Candida albicans SC5314 	 Peripheral 	 calb|C3_07410C_A
+OG6_100559 	 Candida albicans WO-1 	 Peripheral 	 calw|CAWG_03050
+OG6_100559 	 Candida auris strain B11220 	 Peripheral 	 caub|CJI96_0000336
+OG6_100559 	 Candida auris strain B11245 	 Peripheral 	 cauc|CJJ09_001604
+OG6_100559 	 Candida auris strain B8441 	 Peripheral 	 caur|B9J08_001878
+OG6_100559 	 Candida auris strain B11243 	 Peripheral 	 cauy|CJJ07_002373
+OG6_100559 	 Candida auris strain B11221 	 Peripheral 	 cauz|CJI97_002539
+OG6_100559 	 Candida dubliniensis CD36 	 Peripheral 	 cdub|CD36_87320
+OG6_100559 	 Candida duobushaemulonis strain B09383 	 Peripheral 	 cduo|CXQ87_000316
+OG6_100559 	 Candida haemulonis B11899 	 Peripheral 	 chae|CXQ85_001870
+OG6_100559 	 Candida pseudohaemulonii strain B12108 	 Peripheral 	 cpse|C7M61_001030
+OG6_100559 	 Globisporangium irregulare DAOM BR486 	 Peripheral 	 pirr|PIR_G000997
+OG6_100559 	 Branchiostoma floridae (Florida lancelet) (Amphioxus) 	 Core 	 bflo|C3Y8L9
+OG6_100559 	 Debaryomyces fabryi CBS 789 	 Peripheral 	 dfab|AC631_03380
+OG6_100559 	 Debaryomyces hansenii CBS767 	 Peripheral 	 dhan|DEHA2F06820g
+OG6_100559 	 Ornithorhynchus anatinus (Duckbill platypus) 	 Peripheral 	 oana|F7EEM1
+OG6_100559 	 Scheffersomyces stipitis (strain ATCC 58785 / CBS 6054 / NBRC 10063 / NRRL Y-11545) (Yeast) (Pichia stipitis) 	 Peripheral 	 ssti|A3GEX5
+OG6_100559 	 Anopheles culicifacies A-37 	 Peripheral 	 acua|ACUA027039
+OG6_100559 	 Anopheles minimus MINIMUS1 	 Peripheral 	 amin|AMIN004336
+OG6_100559 	 Coprinopsis cinerea okayama7#130 (old build 2010-06-16) 	 Core 	 ccin-old|CC1G_02312
+OG6_100559 	 Coprinopsis cinerea okayama7#130 	 Peripheral 	 ccin|CC1G_02312
+OG6_100559 	 Coprinopsis cinerea #326 	 Peripheral 	 cctt|CC2G_009577
+OG6_100559 	 Cordyceps militaris ATCC 34164 	 Peripheral 	 cmil|A9K55_008650
+OG6_100559 	 Saccharomyces paradoxus CBS432 	 Peripheral 	 spcb|SPAR_B01640
+OG6_100559 	 Anopheles albimanus STECLA 	 Peripheral 	 aals|AALB017518
+OG6_100559 	 Candida glabrata CBS138 2020 	 Peripheral 	 cgcb|GVI51_K11847
+OG6_100559 	 Candida glabrata CBS 138 	 Peripheral 	 cgla|CAGL0K12012g
+OG6_100559 	 Candida glabrata BG2 	 Peripheral 	 cglb|GWK60_K11781
+OG6_100559 	 Candida glabrata DSY562 	 Peripheral 	 cgld|B1J91_K12012g
+OG6_100559 	 Cimex lectularius Harlan 	 Peripheral 	 clec|LOC106665742
+OG6_100559 	 Chlamydomonas reinhardtii (Chlamydomonas smithii) 	 Core 	 crei|A8J7C8
+OG6_100559 	 Hanseniaspora guilliermondii strain UTAD222 	 Peripheral 	 hgui|HGUI_03516
+OG6_100559 	 Hanseniaspora uvarum strain AWRI3580 	 Peripheral 	 huva|AWRI3580_g740
+OG6_100559 	 Nakaseomyces glabratus BG3993 	 Peripheral 	 nglb|GW608_K11759
+OG6_100559 	 Saccharomyces cerevisiae S288C (old build 2016-03-08) 	 Core 	 scer-old|YDR037W
+OG6_100559 	 Saccharomyces cerevisiae S288C 	 Peripheral 	 scer|YDR037W
+OG6_100559 	 Saccharomyces paradoxus CBS432 	 Peripheral 	 spcb|SPAR_D02570
+OG6_100559 	 Schizosaccharomyces pombe 972h- (old build 2016-04-12) 	 Core 	 spom-old|SPBC17G9.03c
+OG6_100559 	 Schizosaccharomyces pombe 972h- 	 Peripheral 	 spom|SPBC17G9.03c
+OG6_100559 	 Cladophialophora carrionii KSF 	 Peripheral 	 ccar|CLCR_09895
+OG6_100559 	 Cladophialophora carrionii CBS 160.54 	 Peripheral 	 cccb|G647_00570
+OG6_100559 	 Clavispora lusitaniae ATCC 42720 	 Peripheral 	 clus|CLUG_03680
+OG6_100559 	 Chromera velia CCMP2878 	 Peripheral 	 cvel|Cvel_20258
+OG6_100559 	 Cladophialophora yegresii CBS 114405 	 Peripheral 	 cyeg|A1O7_00524
+OG6_100559 	 Gallus gallus (Chicken) 	 Core 	 ggal-old|F1NE72
+OG6_100559 	 Schizosaccharomyces japonicus yFS275 	 Peripheral 	 sjap|SJAG_00488
+OG6_100559 	 Ashbya gossypii (strain ATCC 10895 / CBS 109.51 / FGSC 9923 / NRRL Y-1056) (Yeast) (Eremothecium gossypii) 	 Peripheral 	 agos|Q750C0
+OG6_100559 	 Cyberlindnera fabianii 65 	 Peripheral 	 cfab|BON22_3266
+OG6_100559 	 Claviceps purpurea 20.1 	 Peripheral 	 cpur|CPUR_00247
+OG6_100559 	 Metarhizium anisopliae ARSEF 549 	 Peripheral 	 mani|MAN_02673
+OG6_100559 	 Paratrypanosoma confusum CUL13 (old build 2018-03-02) 	 Core 	 pcon-old|PCON_0049630
+OG6_100559 	 Paratrypanosoma confusum CUL13 	 Peripheral 	 pcon|PCON_0049630
+OG6_100559 	 Schizosaccharomyces octosporus yFS286 	 Peripheral 	 soct|SOCG_02580
+OG6_100559 	 Sarcoptes scabiei Arlian 	 Peripheral 	 ssca|SSCA000692
+OG6_100559 	 Anopheles maculipalpis idAnoMacuDA-375_x 	 Peripheral 	 amda|AMAC_010302
+OG6_100559 	 Anopheles stephensi Indian 	 Peripheral 	 asti|ASTEI08818
+OG6_100559 	 Edhazardia aedis USNM 41457 (old build 2015-08-05) 	 Core 	 eaed-old|EDEG_01279
+OG6_100559 	 Edhazardia aedis USNM 41457 	 Peripheral 	 eaed|EDEG_01279
+OG6_100559 	 Kluyveromyces lactis NRRL Y-1140 	 Peripheral 	 klac|KLLA0_F18392g
+OG6_100559 	 Apis mellifera (Honeybee) 	 Peripheral 	 amel|A0A088ACI9
+OG6_100559 	 Bodo saltans strain Lake Konstanz (old build 2015-11-19) 	 Core 	 bsal-old|BSAL_36090
+OG6_100559 	 Bodo saltans strain Lake Konstanz 	 Peripheral 	 bsal|BSAL_36090
+OG6_100559 	 Crithidia fasciculata strain Cf-Cl (old build 2015-06-01) 	 Core 	 cfas-old|CFAC1_060020000
+OG6_100559 	 Crithidia fasciculata strain Cf-Cl 	 Peripheral 	 cfas|CFAC1_060020000
+OG6_100559 	 Leishmania braziliensis MHOM/BR/75/M2904 	 Peripheral 	 lbra|LbrM.15.0260
+OG6_100559 	 Leishmania braziliensis MHOM/BR/75/M2903 	 Peripheral 	 lbrm|LBRM2903_150007600
+OG6_100559 	 Leishmania braziliensis MHOM/BR/75/M2904 2019 	 Peripheral 	 lbrn|LbrM.15.2.000260
+OG6_100559 	 Leishmania panamensis MHOM/COL/81/L13 	 Peripheral 	 lpan|LPAL13_150007700
+OG6_100559 	 Leptomonas pyrrhocoris H10 	 Peripheral 	 lpyr|LpyrH10_38_0390
+OG6_100559 	 Meyerozyma guilliermondii ATCC 6260 	 Peripheral 	 mgui|PGUG_01408
+OG6_100559 	 Pichia kudriavzevii strain CBS573 	 Peripheral 	 pkud|C5L36_0A12870
+OG6_100559 	 Aedes albopictus Foshan 	 Peripheral 	 aalf|AALF011135
+OG6_100559 	 Anopheles atroparvus EBRO 	 Peripheral 	 aatr|AATE003868
+OG6_100559 	 Blechomonas ayalai B08-376 	 Peripheral 	 baya|Baya_195_0020
+OG6_100559 	 Batrachochytrium salamandrivorans BS 	 Peripheral 	 bsbs|BSLG_03543
+OG6_100559 	 Conidiobolus coronatus (strain ATCC 28846 / CBS 209.66 / NRRL 28638) (Delacroixia coronata) 	 Core 	 ccor|A0A137NUM4
+OG6_100559 	 Giardia muris strain Roberts-Thomson 	 Peripheral 	 gmur|GMRT_14916
+OG6_100559 	 Leishmania aethiopica L147 	 Peripheral 	 laet|LAEL147_000210100
+OG6_100559 	 Leishmania amazonensis MHOM/BR/71973/M2269 	 Peripheral 	 lama|LAMA_000228000
+OG6_100559 	 Leishmania arabica strain LEM1108 	 Peripheral 	 lara|LARLEM1108_150007700
+OG6_100559 	 Leishmania donovani HU3 	 Peripheral 	 ldhu|LDHU3_15.0360
+OG6_100559 	 Leishmania donovani strain LV9 	 Peripheral 	 ldlv|LdBPK.15.2.000270
+OG6_100559 	 Leishmania donovani CL-SL 	 Peripheral 	 ldoc|LdCL_150007600
+OG6_100559 	 Leishmania donovani BPK282A1 	 Peripheral 	 ldon|LdBPK_150270.1
+OG6_100559 	 Leishmania gerbilli strain LEM452 	 Peripheral 	 lger|LGELEM452_150007900
+OG6_100559 	 Leishmania infantum JPCM5 	 Peripheral 	 linf|LINF_150007600
+OG6_100559 	 Leishmania major strain Friedlin (old build 2016-05-28) 	 Core 	 lmaj-old|LmjF.15.0230
+OG6_100559 	 Leishmania major strain Friedlin 	 Peripheral 	 lmaj|LmjF.15.0230
+OG6_100559 	 Leishmania mexicana MHOM/GT/2001/U1103 	 Peripheral 	 lmex|LmxM.15.0230
+OG6_100559 	 Leishmania major Friedlin 2021 	 Peripheral 	 lmfr|LMJFC_150008400
+OG6_100559 	 Leishmania major strain LV39c5 	 Peripheral 	 lmjl|LMJLV39_150008000
+OG6_100559 	 Leishmania major strain SD 75.1 	 Peripheral 	 lmjs|LMJSD75_150007900
+OG6_100559 	 Leishmania orientalis MHOM/TH/2014/LSCM4 	 Peripheral 	 lori|LSCM4_07194
+OG6_100559 	 Leptomonas seymouri ATCC 30220 	 Peripheral 	 lsey|Lsey_0328_0060
+OG6_100559 	 Leishmania sp. Ghana MHOM/GH/2012/GH5 	 Peripheral 	 lspg|GH5_06286
+OG6_100559 	 Leishmania sp. Namibia MPRO/NA/1975/252/LV425 	 Peripheral 	 lspn|JIQ42_06381
+OG6_100559 	 Leishmania tarentolae Parrot-TarII 	 Peripheral 	 ltar|LtaP15.0260
+OG6_100559 	 Leishmania tarentolae Parrot Tar II 2019 	 Peripheral 	 ltpt|LtaPh_1502600
+OG6_100559 	 Leishmania tropica L590 	 Peripheral 	 ltro|LTRL590_150007600
+OG6_100559 	 Leishmania turanica strain LEM423 	 Peripheral 	 ltur|LTULEM423_150007800
+OG6_100559 	 Oryza sativa subsp. japonica (Rice) 	 Core 	 osat|Q6K1T2
+OG6_100559 	 Pneumocystis canis CanA 	 Peripheral 	 pcan|PCANB_002294
+OG6_100559 	 Porcisia hertigi MCOE/PA/1965/C119 	 Peripheral 	 pher|JKF63_06065
+OG6_100559 	 Pneumocystis murina B123 	 Peripheral 	 pmur|PNEG_01456
+OG6_100559 	 Phytophthora ramorum strain Pr102 (old build 1.1) 	 Core 	 pram-old|PSURA_71183
+OG6_100559 	 Phytophthora ramorum strain Pr102 	 Peripheral 	 pram|PSURA_71183
+OG6_100559 	 Pneumocystis wakefieldiae 2A 	 Peripheral 	 pwak|MERGE_002285
+OG6_100559 	 Trypanosoma grayi ANR4 	 Peripheral 	 tgra|DQ04_11761000
+OG6_100559 	 Anopheles sinensis SINENSIS 	 Peripheral 	 asin|ASIS014199
+OG6_100559 	 Culex quinquefasciatus Johannesburg (old build 2019-12-20) 	 Core 	 cqui-old|CPIJ017452
+OG6_100559 	 Culex quinquefasciatus Johannesburg 	 Peripheral 	 cqui|CPIJ017452
+OG6_100559 	 Endotrypanum monterogeii strain LV88 	 Peripheral 	 emon|EMOLV88_150007300
+OG6_100559 	 Glossina morsitans Yale (old build 2019-12-20) 	 Core 	 gmor-old|GMOY010694
+OG6_100559 	 Glossina morsitans Yale 	 Peripheral 	 gmor|GMOY010694
+OG6_100559 	 Leishmania enriettii MCAV/BR/2001/CUR178 	 Peripheral 	 lenm|CUR178_06689
+OG6_100559 	 Leishmania enriettii strain LEM3045 	 Peripheral 	 lenr|LENLEM3045_150007500
+OG6_100559 	 Plasmodium coatneyi Hackeri 	 Peripheral 	 pcoa|PCOAH_00040860
+OG6_100559 	 Plasmodium cynomolgi strain M 	 Peripheral 	 pcym|PcyM_1206100
+OG6_100559 	 Plasmodium cynomolgi strain B 	 Peripheral 	 pcyn|PCYB_121360
+OG6_100559 	 Plasmodium fragile strain nilgiri 	 Peripheral 	 pfra|AK88_04075
+OG6_100559 	 Plasmodium inui San Antonio 1 	 Peripheral 	 pinu|C922_01990
+OG6_100559 	 Plasmodium knowlesi strain A1H1 	 Peripheral 	 pkah|PKA1H_120055400
+OG6_100559 	 Plasmodium knowlesi strain H 	 Peripheral 	 pkno|PKNH_1250800
+OG6_100559 	 Plasmodium knowlesi strain Malayan Strain Pk1 A 	 Peripheral 	 pknp|PKNOH_S09548100
+OG6_100559 	 Plasmodium vivax P01 	 Peripheral 	 pvip|PVP01_1204700
+OG6_100559 	 Plasmodium vivax Sal-1 	 Peripheral 	 pviv|PVX_083400
+OG6_100559 	 Plasmodium vivax-like Pvl01 	 Peripheral 	 pvlk|PVL_120007100
+OG6_100559 	 Plasmodium vivax PvW1 	 Peripheral 	 pvpw|PVW1_120019300
+OG6_100559 	 Ricinus communis (Castor bean) 	 Peripheral 	 rcom|B9SBP3
+OG6_100559 	 Tritrichomonas foetus strain K 	 Peripheral 	 tfoe|TRFO_00827
+OG6_100559 	 Aspergillus heteromorphus CBS 117.55 	 Peripheral 	 ahet|BO70DRAFT_388115
+OG6_100559 	 Pneumocystis carinii B80 	 Peripheral 	 pcar|T552_01030
+OG6_100559 	 Phlebotomus papatasi Israel 	 Peripheral 	 ppap|PPAI008518
+OG6_100559 	 Trypanosoma brucei Lister strain 427 2018 	 Peripheral 	 tbre|Tb427_080018400
+OG6_100559 	 Trypanosoma brucei gambiense DAL972 	 Peripheral 	 tbrg|Tbg972.8.1220
+OG6_100559 	 Trypanosoma brucei Lister strain 427 	 Peripheral 	 tbrl|Tb427.08.1600
+OG6_100559 	 Trypanosoma brucei EATRO1125 	 Peripheral 	 tbtr|Tb1125.8.1600
+OG6_100559 	 Trypanosoma equiperdum OVI 	 Peripheral 	 teov|TEOVI_000016300
+OG6_100559 	 Trypanosoma evansi strain STIB 805 	 Peripheral 	 teva|TevSTIB805.8.1530
+OG6_100559 	 Hepatocystis sp. ex Piliocolobus tephrosceles 2019 	 Peripheral 	 hpil|HEP_00183100
+OG6_100559 	 Leishmania martiniquensis MHOM/TH/2012/LSCM1 	 Peripheral 	 lmar|LSCM1_06835
+OG6_100559 	 Leishmania martiniquensis LEM2494 	 Peripheral 	 lspm|LMARLEM2494_150007600
+OG6_100559 	 Plasmodium adleri G01 	 Peripheral 	 padl|PADL01_1349200
+OG6_100559 	 Plasmodium brasilianum strain Bolivian I 	 Peripheral 	 pbbi|MKS88_004088
+OG6_100559 	 Plasmodium billcollinsi G01 	 Peripheral 	 pbil|PBILCG01_1349700
+OG6_100559 	 Plasmodium blacklocki G01 	 Peripheral 	 pblg|PBLACG01_1347700
+OG6_100559 	 Plasmodium falciparum CD01 	 Peripheral 	 pfac|PfCD01_130055700
+OG6_100559 	 Plasmodium falciparum Dd2 	 Peripheral 	 pfad|PfDd2_130055900
+OG6_100559 	 Plasmodium falciparum 7G8 	 Peripheral 	 pfag|Pf7G8_130054500
+OG6_100559 	 Plasmodium falciparum IT 	 Peripheral 	 pfai|PfIT_130055400
+OG6_100559 	 Plasmodium falciparum 3D7 (old build 2015-06-18) 	 Core 	 pfal-old|PF3D7_1350100
+OG6_100559 	 Plasmodium falciparum 3D7 	 Peripheral 	 pfal|PF3D7_1350100
+OG6_100559 	 Plasmodium falciparum GA01 	 Peripheral 	 pfga|PfGA01_130056200
+OG6_100559 	 Plasmodium falciparum GB4 	 Peripheral 	 pfgb|PfGB4_130056000
+OG6_100559 	 Plasmodium falciparum GN01 	 Peripheral 	 pfgn|PfGN01_130056800
+OG6_100559 	 Plasmodium falciparum HB3 	 Peripheral 	 pfhb|PfHB3_130056400
+OG6_100559 	 Plasmodium falciparum KE01 	 Peripheral 	 pfke|PfKE01_130055700
+OG6_100559 	 Plasmodium falciparum KH01 	 Peripheral 	 pfkh|PfKH01_130054100
+OG6_100559 	 Plasmodium falciparum KH02 	 Peripheral 	 pfkt|PfKH02_130053000
+OG6_100559 	 Plasmodium falciparum NF135.C10 	 Peripheral 	 pfnc|PfNF135_130054500
+OG6_100559 	 Plasmodium falciparum NF54 	 Peripheral 	 pfnf|PfNF54_130054800
+OG6_100559 	 Plasmodium falciparum NF166 	 Peripheral 	 pfng|PfNF166_130055100
+OG6_100559 	 Plasmodium falciparum SD01 	 Peripheral 	 pfsd|PfSD01_130056800
+OG6_100559 	 Plasmodium falciparum 7G8 2019 	 Peripheral 	 pfsg|Pf7G8-2_000452600
+OG6_100559 	 Plasmodium falciparum SN01 	 Peripheral 	 pfsn|PfSN01_130053100
+OG6_100559 	 Plasmodium falciparum TG01 	 Peripheral 	 pftg|PfTG01_130055800
+OG6_100559 	 Plasmodium gaboni strain G01 	 Peripheral 	 pgab|PGABG01_1348100
+OG6_100559 	 Plasmodium gaboni strain SY75 	 Peripheral 	 pgas|PGSY75_1350100
+OG6_100559 	 Plasmodium malariae UG01 	 Peripheral 	 pmal|PmUG01_12014800
+OG6_100559 	 Plasmodium praefalciparum strain G01 	 Peripheral 	 ppra|PPRFG01_1352000
+OG6_100559 	 Plasmodium reichenowi G01 	 Peripheral 	 preg|PRG01_1352600
+OG6_100559 	 Plasmodium reichenowi CDC 	 Peripheral 	 prei|PRCDC_1349100
+OG6_100559 	 Musca domestica aabys 	 Peripheral 	 mdoa|MDOA014426
+OG6_100559 	 Globisporangium iwayamae DAOM BR242034 	 Peripheral 	 piwa|PIW_G010386
+OG6_100559 	 Pneumocystis jirovecii SE8 	 Peripheral 	 pjir|PNEJI1_000149
+OG6_100559 	 Pneumocystis jirovecii RU7 	 Peripheral 	 pjru|T551_02511
+OG6_100559 	 Trypanosoma rangeli SC58 	 Peripheral 	 tran|TRSC58_04898
+OG6_100559 	 Yarrowia lipolytica CLIB89 (W29) 	 Peripheral 	 ylic|YALI1_F21769g
+OG6_100559 	 Yarrowia lipolytica CLIB122 	 Peripheral 	 ylip|YALI0_F16291g
+OG6_100559 	 Diutina rugosa CBS 613 	 Peripheral 	 drug|DIURU_004668
+OG6_100559 	 Lepisosteus oculatus (Spotted gar) 	 Core 	 locu|W5M8T6
+OG6_100559 	 Sphaeroforma arctica JP610 	 Core 	 sarc|A0A0L0G023
+OG6_100559 	 Trypanosoma congolense IL3000 2019 	 Peripheral 	 tcoi|TcIL3000.A.H_000576700
+OG6_100559 	 Trypanosoma congolense IL3000 	 Peripheral 	 tcon|TcIL3000_0_06390
+OG6_100559 	 Trypanosoma vivax Y486 	 Peripheral 	 tviv|TvY486_0801050
+OG6_100559 	 Bombyx mori (Silk moth) 	 Peripheral 	 bmor|H9J0E7
+OG6_100559 	 Chromera velia CCMP2878 	 Peripheral 	 cvel|Cvel_9397
+OG6_100559 	 Ixodes scapularis Wikel (old build 2019-12-20) 	 Core 	 isca-old|ISCW018044
+OG6_100559 	 Ixodes scapularis Wikel 	 Peripheral 	 isca|ISCW018044
+OG6_100559 	 Ixodes scapularis ISE6 	 Peripheral 	 isci|ISCI018044
+OG6_100559 	 Plasmodium gallinaceum 8A 	 Peripheral 	 pgal|PGAL8A_00261100
+OG6_100559 	 Trypanosoma cruzi Brazil A4 	 Peripheral 	 tcba|TcBrA4_0076000
+OG6_100559 	 Trypanosoma cruzi Berenice 	 Peripheral 	 tcbe|ECC02_000985
+OG6_100559 	 Trypanosoma cruzi Dm28c 2017 	 Peripheral 	 tccd|BCY84_02728
+OG6_100559 	 Trypanosoma cruzi Dm28c 2017 	 Peripheral 	 tccd|BCY84_12672
+OG6_100559 	 Trypanosoma cruzi Dm28c 2014 	 Peripheral 	 tcrd|TCDM_08178
+OG6_100559 	 Trypanosoma cruzi strain G 	 Peripheral 	 tcrg|TcG_06191
+OG6_100559 	 Trypanosoma cruzi TCC 	 Peripheral 	 tcrk|C3747_15g414
+OG6_100559 	 Trypanosoma cruzi TCC 	 Peripheral 	 tcrk|C3747_220g7
+OG6_100559 	 Trypanosoma cruzi CL Brener Non-Esmeraldo-like 	 Peripheral 	 tcrn|TcCLB.508971.30
+OG6_100559 	 Trypanosoma cruzi Dm28c 2018 	 Peripheral 	 tcru|C4B63_45g239
+OG6_100559 	 Trypanosoma cruzi Y C6 	 Peripheral 	 tcyc|TcYC6_0099550
+OG6_100559 	 Ostreococcus tauri 	 Peripheral 	 otau|A0A096PBU2
+OG6_100559 	 Plasmodium chabaudi chabaudi 	 Peripheral 	 pcha|PCHAS_1367500
+OG6_100559 	 Plasmodium vinckei brucechwatti DA 	 Peripheral 	 pvbd|PVBDA_1306830
+OG6_100559 	 Plasmodium vinckei Cameroon EL 	 Peripheral 	 pvce|PVSEL_0500490
+OG6_100559 	 Plasmodium vinckei petteri CR 2020 	 Peripheral 	 pvcr|PVPCR_0500500
+OG6_100559 	 Plasmodium vinckei lentum DE 	 Peripheral 	 pvld|PVLDE_1307070
+OG6_100559 	 Plasmodium vinckei vinckei CY 	 Peripheral 	 pvvc|PVVCY_1306590
+OG6_100559 	 Plasmodium yoelii yoelii 17X 	 Peripheral 	 pyoe|PY17X_1368600
+OG6_100559 	 Plasmodium yoelii yoelii YM 	 Peripheral 	 pyoy|PYYM_1365000
+OG6_100559 	 Plasmodium yoelii yoelii 17XNL 	 Peripheral 	 pyxn|PY00115
+OG6_100559 	 Rhizophagus irregularis A1 (DAOM-664342) 	 Peripheral 	 rira|RhiirA1_411549
+OG6_100559 	 Rhizophagus irregularis C2 	 Peripheral 	 rirc|FUN_013262
+OG6_100559 	 Stachybotrys chartarum IBT 40293 	 Peripheral 	 scha|S40293_07459
+OG6_100559 	 Giardia Assemblage A2 isolate DH 	 Peripheral 	 gadh|DHA2_16766
+OG6_100559 	 Mitosporidium daphniae UGP3 	 Peripheral 	 mdap|DI09_15p150
+OG6_100559 	 Plasmodium berghei ANKA 	 Peripheral 	 pber|PBANKA_1362900
+OG6_100559 	 Papilio machaon (Old World swallowtail butterfly) 	 Core 	 pmac|A0A194QLM7
+OG6_100559 	 Rickenella mellea Ricmel1 	 Peripheral 	 rmel|BD410DRAFT_783949
+OG6_100559 	 Xenopus tropicalis (Western clawed frog) (Silurana tropicalis) 	 Core 	 xtro|A0A5G3KK17
+OG6_100559 	 Anopheles quadriannulatus SANGWE 	 Peripheral 	 aqua|AQUA000810
+OG6_100559 	 Lichtheimia corymbifera JMRC:FSU:9682 	 Peripheral 	 lcor|LCOR_09625.1
+OG6_100559 	 Malassezia pachydermatis CBS 1879 	 Peripheral 	 mpac|Malapachy_2416
+OG6_100559 	 Bacteroides thetaiotaomicron (strain ATCC 29148 / DSM 2079 / JCM 5827 / CCUG 10774 / NCTC 10582 / VPI-5482 / E50) 	 Core 	 bthe|Q8A5W4
+OG6_100559 	 Ciona intestinalis (Transparent sea squirt) (Ascidia intestinalis) 	 Core 	 cint|F6XJ08
+OG6_100559 	 Eimeria brunetti Houghton 	 Peripheral 	 ebru|EBH_0006630
+OG6_100559 	 Eimeria maxima Weybridge 	 Peripheral 	 emax|EMWEY_00008250
+OG6_100559 	 Eimeria praecox Houghton 	 Peripheral 	 epra|EPH_0004560
+OG6_100559 	 Francisella tularensis subsp. tularensis (strain SCHU S4 / Schu 4) 	 Peripheral 	 ftul|Q5NI89
+OG6_100559 	 Giardia Assemblage A isolate WB 2019 	 Peripheral 	 gaat|GL50803_0016766
+OG6_100559 	 Giardia Assemblage B isolate GS_B 	 Peripheral 	 gabb|GSB_16766
+OG6_100559 	 Giardia Assemblage B isolate GS 	 Peripheral 	 gasb|GL50581_2711
+OG6_100559 	 Giardia Assemblage B isolate BAH15c1 	 Peripheral 	 gasc|QR46_4670
+OG6_100559 	 Giardia Assemblage E isolate P15 	 Peripheral 	 gase|GLP15_4346
+OG6_100559 	 Giardia Assemblage A isolate WB (old build 2013-02-08) 	 Core 	 gass-old|GL50803_16766
+OG6_100559 	 Giardia Assemblage A isolate WB 	 Peripheral 	 gass|GL50803_16766
+OG6_100559 	 Malassezia restricta CBS 7877 	 Peripheral 	 mrec|DNF11_0074
+OG6_100559 	 Rhizophagus irregularis DAOM 181602=DAOM 197198 (old build 2018-01-30) 	 Core 	 rhiz-old|GLOIN_2v1647996
+OG6_100559 	 Rhizophagus irregularis DAOM 181602=DAOM 197198 	 Peripheral 	 rhiz|GLOIN_2v1647996
+OG6_100559 	 Xenopus tropicalis (Western clawed frog) (Silurana tropicalis) 	 Core 	 xtro|A0A5G3KL97
+OG6_100559 	 Anopheles arabiensis Dongola 	 Peripheral 	 aara|AARA005271
+OG6_100559 	 Anopheles coluzzii AcolN3 idAnoColuKW18-c001_1 	 Peripheral 	 accw|ACON2_035599
+OG6_100559 	 Anopheles coluzzii Ngousso 	 Peripheral 	 acol|ACON007858
+OG6_100559 	 Anopheles farauti FAR1 	 Peripheral 	 afar|AFAF008291
+OG6_100559 	 Anopheles gambiae PEST (old build 2019-12-20) 	 Core 	 agam-old|AGAP007858
+OG6_100559 	 Anopheles gambiae PEST 	 Peripheral 	 agam|AGAP007858
+OG6_100559 	 Anopheles melas CM1001059_A 	 Peripheral 	 amec|AMEC000679
+OG6_100559 	 Chara braunii (Braun's stonewort) 	 Core 	 cbra|A0A388LNC9
+OG6_100559 	 Eimeria acervulina Houghton 	 Peripheral 	 eace|EAH_00015810
+OG6_100559 	 Histomonas meleagridis 2922-C6/04-290x 	 Peripheral 	 hmcx|GPJ56_000690
+OG6_100559 	 Histomonas meleagridis 2922-C6/04-10x 	 Peripheral 	 hmel|GO595_002513
+OG6_100559 	 Puccinia sorghi strain RO10H11247 	 Peripheral 	 psor|VP01_3131g2
+OG6_100559 	 Rhodnius prolixus CDC 	 Peripheral 	 rprp|RPRC013965
+OG6_100559 	 Amphimedon queenslandica (Sponge) 	 Core 	 aque|A0A1X7VKN3
+OG6_100559 	 Catenaria anguillulae PL171 	 Core 	 cang|A0A1Y2HNC9
+OG6_100559 	 Klebsormidium nitens (Green alga) (Ulothrix nitens) 	 Core 	 knit|A0A0U9HKL7
+OG6_100559 	 Sphaeroforma arctica JP610 	 Core 	 sarc|A0A0L0FZ04
+OG6_100559 	 Babesia divergens strain 1802A 	 Peripheral 	 bdiv|Bdiv_029740
+OG6_100559 	 Caenorhabditis elegans 	 Core 	 cele|Q22099
+OG6_100559 	 Eimeria necatrix Houghton 	 Peripheral 	 enec|ENH_00003200
+OG6_100559 	 Eimeria tenella strain Houghton 	 Peripheral 	 eten|ETH_00031475
+OG6_100559 	 Eimeria tenella Houghton 2021 	 Peripheral 	 etht|ETH2_1579600
+OG6_100559 	 Fonticula alba (Slime mold) 	 Core 	 falb|A0A058ZAC9
+OG6_100559 	 Puccinia graminis f. sp. tritici CRL 75-36-700-3 (old build 2015-03-11) 	 Core 	 pgra-old|PGTG_01514
+OG6_100559 	 Puccinia graminis f. sp. tritici CRL 75-36-700-3 	 Peripheral 	 pgra|PGTG_01514
+OG6_100559 	 Rhizopus microsporus var. microsporus ATCC 52814 	 Peripheral 	 rmma|BCV72DRAFT_274685
+OG6_100559 	 Phycomyces blakesleeanus NRRL 1555(-) 	 Peripheral 	 pbla|PHYBL_125504
+OG6_100559 	 Pediculus humanus USDA (old build 2019-12-20) 	 Core 	 phum-old|PHUM249340
+OG6_100559 	 Pediculus humanus USDA 	 Peripheral 	 phum|PHUM249340
+OG6_100559 	 Tribolium castaneum (Red flour beetle) 	 Core 	 tcas|D6WMI1
+OG6_100559 	 Trichomonascus ciferrii CBS 4856 	 Peripheral 	 tcif|TRICI_002619
+OG6_100559 	 Tetraodon nigroviridis (Spotted green pufferfish) (Chelonodon nigroviridis) 	 Peripheral 	 tnig|H3CVD5
+OG6_100559 	 Mucor circinelloides 1006PhL 	 Peripheral 	 mcic|HMPREF1544_07340
+OG6_100559 	 Babesia sp. Xinjiang Xinjiang 	 Peripheral 	 bspx|BXIN_0771
+OG6_100559 	 Nematostella vectensis (Starlet sea anemone) 	 Core 	 nvec|A7RR97
+OG6_100559 	 Pythium aphanidermatum DAOM BR444 	 Peripheral 	 paph|PAG1_G002947
+OG6_100559 	 Plasmodium relictum SGS1-like 	 Peripheral 	 prel|PRELSG_1247800
+OG6_100559 	 Anopheles maculipalpis idAnoMacuDA-375_x 	 Peripheral 	 amda|AMAC_000926
+OG6_100559 	 Allomyces macrogynus ATCC 38327 	 Peripheral 	 amac|AMAG_06626
+OG6_100559 	 Biomphalaria glabrata BB02 (old build 2019-12-20) 	 Core 	 bgla-old|BGLB006968
+OG6_100559 	 Biomphalaria glabrata BB02 	 Peripheral 	 bgla|BGLB006968
+OG6_100559 	 Glossina austeni TTRI 	 Peripheral 	 gaus|GAUT045662
+OG6_100559 	 Glossina fuscipes IAEA 	 Peripheral 	 gfus|GFUI024471
+OG6_100559 	 Glossina palpalis IAEA 	 Peripheral 	 gpap|GPPI024778
+OG6_100559 	 Micromonas commoda (strain RCC299 / NOUM17 / CCMP2709) (Picoplanktonic green alga) 	 Core 	 mcom|C1FJF3
+OG6_100559 	 Porospora cf. gigantea B 	 Peripheral 	 pcgb|KVP17_004605
+OG6_100559 	 Glossina brevipalpis IAEA 	 Peripheral 	 gbre|GBRI021206
+OG6_100559 	 Porospora cf. gigantea A 	 Peripheral 	 pcga|KVP18_003322
+OG6_100559 	 Plasmodium ovale wallikeri strain PowCR01 	 Peripheral 	 powp|POWCR01_120008400
+OG6_100559 	 Puccinia striiformis strain 93-210 	 Peripheral 	 pstr|PSTT_12236
+OG6_100559 	 Xenopus tropicalis (Western clawed frog) (Silurana tropicalis) 	 Core 	 xtro|A0A5G3KJ81
+OG6_100559 	 Babesia microti strain RI 	 Peripheral 	 bmic|BmR1_04g05175
+OG6_100559 	 Pythium insidiosum Pi-s 	 Peripheral 	 pins|PINS_003619
+OG6_100559 	 Rozella allomycis (strain CSF55) 	 Core 	 rall|A0A075B271
+OG6_100559 	 Auxenochlorella protothecoides (Green microalga) (Chlorella protothecoides) 	 Core 	 apro|A0A087SKM2
+OG6_100559 	 Cryptosporidium parvum Iowa II (old build 2007-02-26) 	 Core 	 cpar-old|cgd4_2370
+OG6_100559 	 Cryptosporidium parvum Iowa II 	 Peripheral 	 cpar|cgd4_2370
+OG6_100559 	 Cryptosporidium parvum IOWA-ATCC 	 Peripheral 	 cpia|CPATCC_0020330
+OG6_100559 	 Mastigamoeba balamuthi ATCC 30984 	 Peripheral 	 mbal|MBAL_013708
+OG6_100559 	 Acidobacterium capsulatum (strain ATCC 51196 / DSM 11244 / BCRC 80197 / JCM 7670 / NBRC 15755 / NCIMB 13165 / 161) 	 Core 	 acid|C1F9C4
+OG6_100559 	 Babesia caballi USDA-D6B2 	 Peripheral 	 bcab|BcabD6B2_44370
+OG6_100559 	 Cryptosporidium andersoni isolate 30847 	 Peripheral 	 cand|cand_015080
+OG6_100559 	 Cryptosporidium muris RN66 	 Peripheral 	 cmur|CMU_017360
+OG6_100559 	 Phytophthora sojae strain P6497 	 Peripheral 	 psoj|PHYSODRAFT_305108
+OG6_100559 	 Trypanosoma cruzi Sylvio X10/1-2012 	 Peripheral 	 tcsx|TCSYLVIO_003069
+OG6_100559 	 Guillardia theta (strain CCMP2712) (Cryptophyte) 	 Core 	 gthe|L1JF78
+OG6_100559 	 Mucor lusitanicus CBS 277.49 	 Peripheral 	 mcir|QYA_142881
+OG6_100559 	 Amphiamblys sp. WSBS2006 	 Peripheral 	 aspw|A8A55_0774
+OG6_100559 	 Babesia ovis Selcuk 	 Peripheral 	 bovi|BaOVIS_029430
+OG6_100559 	 Hanseniaspora uvarum strain AWRI3580 	 Peripheral 	 huva|AWRI3580_g1645
+OG6_100559 	 Rhizophagus irregularis A1 (DAOM-664342) 	 Peripheral 	 rira|RhiirA1_541230
+OG6_100559 	 Rhizophagus irregularis C2 	 Peripheral 	 rirc|FUN_020630
+OG6_100559 	 Dictyostelium discoideum (Social amoeba) 	 Core 	 ddis|Q54TY4
+OG6_100559 	 Lepisosteus oculatus (Spotted gar) 	 Core 	 locu|W5N825
+OG6_100559 	 Naegleria gruberi strain NEG-M 	 Peripheral 	 ngru|NAEGRDRAFT_83039
+OG6_100559 	 Phytophthora cinnamomi GKB4 	 Peripheral 	 pcgk|IUM83_14639
+OG6_100559 	 Phytophthora cinnamomi var. cinnamomi CBS 144.22 	 Peripheral 	 pcin|PHYCI_304980
+OG6_100559 	 Theileria parva strain Muguga 	 Peripheral 	 tpar|TpMuguga_03g00387
+OG6_100559 	 Capsaspora owczarzaki (strain ATCC 30864) 	 Core 	 cowc|A0A0D2UKX0
+OG6_100559 	 Babesia bigemina strain BOND 	 Peripheral 	 bbig|BBBOND_0211630
+OG6_100559 	 Babesia bovis T2Bo 	 Peripheral 	 bbov|BBOV_IV002630
+OG6_100559 	 Hanseniaspora guilliermondii strain UTAD222 	 Peripheral 	 hgui|HGUI_02538
+OG6_100559 	 Angomonas deanei strain Cavalho ATCC PRA-265 	 Peripheral 	 adea|ADEAN_000939100
+OG6_100559 	 Allomyces macrogynus ATCC 38327 	 Peripheral 	 amac|AMAG_12784
+OG6_100559 	 Babesia ovata strain Miyake (old build 2017-12-16) 	 Core 	 bova-old|BOVATA_013810
+OG6_100559 	 Babesia ovata strain Miyake 	 Peripheral 	 bova|BOVATA_013810
+OG6_100559 	 Trichoplax adhaerens (Trichoplax reptans) 	 Core 	 tadh|B3RVL3
+OG6_100559 	 Phanerochaete chrysosporium RP-78 	 Peripheral 	 pchr|AGR57_6166
+OG6_100559 	 Peronospora effusa R13 	 Peripheral 	 peff|DD237_001385
+OG6_100559 	 Rhodopirellula baltica (strain DSM 10527 / NCIMB 13988 / SH1) 	 Core 	 rbal|Q7UK37
+OG6_100559 	 Rhizophagus irregularis DAOM 181602=DAOM 197198 (old build 2018-01-30) 	 Core 	 rhiz-old|GLOIN_2v1845820
+OG6_100559 	 Rhizophagus irregularis DAOM 181602=DAOM 197198 	 Peripheral 	 rhiz|GLOIN_2v1845820
+OG6_100559 	 Globisporangium ultimum var. sporangiiferum BR650 	 Peripheral 	 pulu|PUG3_G001640
+OG6_100559 	 Biomphalaria glabrata BB02 (old build 2019-12-20) 	 Core 	 bgla-old|BGLB009549
+OG6_100559 	 Biomphalaria glabrata BB02 	 Peripheral 	 bgla|BGLB009549
+OG6_100559 	 Phytophthora infestans T30-4 	 Peripheral 	 pinf|PITG_06222
+OG6_100559 	 Phytophthora parasitica INRA-310 	 Peripheral 	 ppar|PPTG_14082
+OG6_100559 	 Rhizopus delemar RA 99-880 (old build 2015-03-23) 	 Core 	 rdel-old|RO3G_14000
+OG6_100559 	 Rhizopus delemar RA 99-880 	 Peripheral 	 rdel|RO3G_14000
+OG6_100559 	 Mucor lusitanicus CBS 277.49 	 Peripheral 	 mcir|QYA_107357
+OG6_100559 	 Anopheles culicifacies A-37 	 Peripheral 	 acua|ACUA022438
+OG6_100559 	 Anopheles epiroticus Epiroticus2 	 Peripheral 	 aepi|AEPI011517
+OG6_100559 	 Anopheles maculatus maculatus3 	 Peripheral 	 amam|AMAM018094
+OG6_100559 	 Anopheles funestus idAnoFuneDA-416_04 	 Peripheral 	 affd|AFUN2_009617
+OG6_100559 	 Spraguea lophii 42_110 	 Peripheral 	 slop|SLOPH_1334
+OG6_100559 	 Auxenochlorella protothecoides (Green microalga) (Chlorella protothecoides) 	 Core 	 apro|A0A087SF48
+OG6_100559 	 Aphanomyces astaci strain APO3 (old build 2014-01-14) 	 Core 	 aast-old|H257_09426
+OG6_100559 	 Aphanomyces astaci strain APO3 	 Peripheral 	 aast|H257_09426
+OG6_100559 	 Anopheles moucheti idAnoMoucSN_F20_07 	 Peripheral 	 amou|AmouCM1_008039
+OG6_100559 	 Plasmodium falciparum ML01 	 Peripheral 	 pfml|PfML01_130054200
+OG6_100559 	 Albugo laibachii Nc14 	 Peripheral 	 alai|ALNC14_123860
+OG6_100559 	 Leishmania amazonensis MHOM/BR/71973/M2269 	 Peripheral 	 lama|LAMA_000587000
+OG6_100559 	 Leishmania braziliensis MHOM/BR/75/M2904 	 Peripheral 	 lbra|LbrM.30.0140
+OG6_100559 	 Leishmania braziliensis MHOM/BR/75/M2904 2019 	 Peripheral 	 lbrn|LbrM.30.2.000140
+OG6_100559 	 Leishmania donovani HU3 	 Peripheral 	 ldhu|LDHU3_30.0240
+OG6_100559 	 Leishmania donovani strain LV9 	 Peripheral 	 ldlv|LdBPK.30.2.000130
+OG6_100559 	 Leishmania donovani CL-SL 	 Peripheral 	 ldoc|LdCL_300006400
+OG6_100559 	 Leishmania donovani BPK282A1 	 Peripheral 	 ldon|LdBPK_300130.1
+OG6_100559 	 Leishmania infantum JPCM5 	 Peripheral 	 linf|LINF_300006400
+OG6_100559 	 Leishmania major strain Friedlin (old build 2016-05-28) 	 Core 	 lmaj-old|LmjF.30.0130
+OG6_100559 	 Leishmania major strain Friedlin 	 Peripheral 	 lmaj|LmjF.30.0130
+OG6_100559 	 Leishmania mexicana MHOM/GT/2001/U1103 	 Peripheral 	 lmex|LmxM.29.0130
+OG6_100559 	 Leishmania major Friedlin 2021 	 Peripheral 	 lmfr|LMJFC_300006600
+OG6_100559 	 Leishmania panamensis strain MHOM/PA/94/PSC-1 	 Peripheral 	 lpap|LPMP_300140
+OG6_100559 	 Plasmodium vinckei vinckei strain vinckei 	 Peripheral 	 pvin|YYE_00645
+OG6_100559 	 Plasmodium vinckei petteri strain CR 	 Peripheral 	 pvpc|YYG_03225
+OG6_100559 	 Plasmodium yoelii yoelii 17XNL 2023 	 Peripheral 	 pyyx|Py17XNL_001303516
+OG6_100559 	 Anopheles sinensis China 	 Peripheral 	 asic|ASIC021890
+OG6_100559 	 Anopheles sinensis SINENSIS 	 Peripheral 	 asin|ASIS000266
+OG6_100559 	 Bremia lactucae strain SF5 	 Peripheral 	 blac|CCR75_000738
+OG6_100559 	 Cryptosporidium hominis UdeA01 	 Peripheral 	 chod|CHUDEA4_2370
+OG6_100559 	 Cryptosporidium hominis isolate 30976 	 Peripheral 	 choi|GY17_00001702
+OG6_100559 	 Cryptosporidium hominis TU502 	 Peripheral 	 chom|Chro.40267
+OG6_100559 	 Cryptosporidium hominis isolate TU502_2012 	 Peripheral 	 chot|ChTU502y2012_295g0405
+OG6_100559 	 Cryptosporidium meleagridis strain UKMEL1 	 Peripheral 	 cmel|CmeUKMEL1_02305
+OG6_100559 	 Cryptosporidium sp. chipmunk genotype I strain 37763 	 Peripheral 	 cscp|ELE39_001656
+OG6_100559 	 Spizellomyces punctatus DAOM BR117 	 Peripheral 	 spun|SPPG_03684
+OG6_100559 	 Hepatospora eriocheir strain canceri 	 Peripheral 	 herc|A0H76_2209
+OG6_100559 	 Aphanomyces invadans NJM9701 	 Peripheral 	 ainv|H310_13326
+OG6_100559 	 Anopheles coluzzii Mali-NIH 	 Peripheral 	 acom|ACOM040424
+OG6_100559 	 Cryptosporidium bovis isolate 45015 	 Peripheral 	 cbov|FG379_003027
+OG6_100559 	 Cryptosporidium ryanae 45019 	 Peripheral 	 crya|FG386_000776
+OG6_100559 	 Cryptosporidium ubiquitum isolate 39726 	 Peripheral 	 cubi|cubi_01396
+OG6_100559 	 Saprolegnia diclina VS20 	 Peripheral 	 sdic|SDRG_03094
+OG6_100559 	 Saprolegnia parasitica CBS 223.65 	 Peripheral 	 spar|SPRG_01764
+OG6_100559 	 Cucumispora dikerogammari Dv6 	 Peripheral 	 cdik|CDIK_1189
+OG6_100559 	 Cucumispora dikerogammari Dv6 	 Peripheral 	 cdik|CDIK_1314
+OG6_100559 	 Chlamydia trachomatis (strain D/UW-3/Cx) 	 Core 	 ctra|O84786
+OG6_100559 	 Deinococcus radiodurans (strain ATCC 13939 / DSM 20539 / JCM 16871 / LMG 4051 / NBRC 15346 / NCIMB 9279 / R1 / VKM B-1422) 	 Core 	 drad|Q9RXE1
+OG6_100559 	 Hyaloperonospora arabidopsidis Emoy2 	 Peripheral 	 hara|HpaG806722
+OG6_100559 	 Lichtheimia corymbifera JMRC:FSU:9682 	 Peripheral 	 lcor|LCOR_00661.1
+OG6_100559 	 Nematocida major JUm2507 	 Peripheral 	 nmaj|NEMAJ01_0204
+OG6_100559 	 Gemmatimonas aurantiaca (strain T-27 / DSM 14586 / JCM 11422 / NBRC 100505) 	 Core 	 gaur|C1A8R1
+OG6_100559 	 Puccinia striiformis 93TX-2 	 Peripheral 	 pstt|PSHT_09221
+OG6_100559 	 Entamoeba histolytica HM-1:IMSS-A 	 Peripheral 	 ehia|EHI7A_109900
+OG6_100559 	 Entamoeba histolytica HM-1:IMSS-B 	 Peripheral 	 ehib|EHI8A_081590
+OG6_100559 	 Nematocida ausubeli ERTm2 	 Peripheral 	 nema|NERG_02285
+OG6_100559 	 Nematocida parisii ERTm3 	 Peripheral 	 npai|NEQG_02142
+OG6_100559 	 Nematocida parisii ERTm1 	 Peripheral 	 npar|NEPG_02222
+OG6_100559 	 Nematocida ausubeli ERTm6 	 Peripheral 	 nspe|NESG_01919
+OG6_100559 	 Nematocida ironsii ERTm5 	 Peripheral 	 nspt|NEIG_02003
+OG6_100559 	 Phytophthora capsici LT1534 	 Peripheral 	 pclt|DVH05_028706
+OG6_100559 	 Rhizopus microsporus var. microsporus ATCC 52814 	 Peripheral 	 rmma|BCV72DRAFT_308399
+OG6_100559 	 Cyclospora cayetanensis strain CHN_HEN01 	 Peripheral 	 ccay|cyc_01172
+OG6_100559 	 Enterocytozoon bieneusi H348 	 Peripheral 	 ebie|EBI_25548
+OG6_100559 	 Pythium arrhenomanes ATCC 12531 	 Peripheral 	 parr|PAR_G004879
+OG6_100559 	 Pseudoloma neurophilia strain MK1 	 Peripheral 	 pneu|M153_1100062646
+OG6_100559 	 Thelohania contejeani T1 	 Peripheral 	 tcot|TCON_1804
+OG6_100559 	 Hamiltosporidium magnivora BE-OM-2 	 Peripheral 	 hmag|CWI36_0991p0010
+OG6_100559 	 Hamiltosporidium magnivora IL-BN-2 	 Peripheral 	 hmai|CWI39_2408p0010
+OG6_100559 	 Hamiltosporidium tvaerminnensis IL-G-3 	 Peripheral 	 htvi|CWI38_2379p0020
+OG6_100559 	 Nosema ceranae BRL 	 Peripheral 	 ncbr|G9O61_00g011890
+OG6_100559 	 Nosema ceranae strain PA08_1199 	 Peripheral 	 ncep|AAJ76_800067210
+OG6_100559 	 Nosema ceranae BRL01 	 Peripheral 	 ncer|NCER_100909
+OG6_100559 	 Anncaliia algerae PRA339 	 Peripheral 	 aalr|H312_01264
+OG6_100559 	 Microsporidium sp. FI-F-10 	 Peripheral 	 mspf|HK407_04g07460
+OG6_100559 	 Ordospora colligata FI-SK-17-1 	 Peripheral 	 ocfi|CWI42_041030
+OG6_100559 	 Ordospora colligata GB-EP-1 	 Peripheral 	 ocgb|CWI41_041030
+OG6_100559 	 Ordospora colligata NO-V-7 	 Peripheral 	 ocno|CWI40_041030
+OG6_100559 	 Ordospora colligata OC4 	 Peripheral 	 ocol|M896_041040
+OG6_100559 	 Tubulinosema ratisbonensis Franzen 	 Peripheral 	 trat|TUBRATIS_006910
+OG6_100559 	 Enterospora canceri strain GB1 	 Peripheral 	 ecan|ECANGB1_1108
+OG6_100559 	 Chlorobaculum tepidum (strain ATCC 49652 / DSM 12025 / NBRC 103806 / TLS) (Chlorobium tepidum) 	 Core 	 ctep|Q8KCM7
+OG6_100559 	 Methanosarcina acetivorans (strain ATCC 35395 / DSM 2834 / JCM 12185 / C2A) 	 Core 	 mace|Q8TSN5
+OG6_100559 	 Nosema bombycis CQ1 	 Peripheral 	 nbom|NBO_64g0050
+OG6_100559 	 Nosema granulosis Ou3-Ou53 	 Peripheral 	 ngra|NGRA_2415
+OG6_100559 	 Encephalitozoon cuniculi EC2 	 Peripheral 	 ecuc|AEWQ_040510
+OG6_100559 	 Encephalitozoon cuniculi EcunIII-L 	 Peripheral 	 ecue|M970_040510
+OG6_100559 	 Encephalitozoon cuniculi EC1 	 Peripheral 	 ecui|AEWD_040520
+OG6_100559 	 Encephalitozoon cuniculi GB-M1 	 Peripheral 	 ecun|ECU04_0580
+OG6_100559 	 Encephalitozoon cuniculi EC3 	 Peripheral 	 ecuu|AEWR_040510
+OG6_100559 	 Encephalitozoon hellem ATCC 50504 	 Peripheral 	 ehel|EHEL_040490
+OG6_100559 	 Encephalitozoon hellem Swiss 	 Peripheral 	 ehes|KMI_04g06740
+OG6_100559 	 Encephalitozoon intestinalis ATCC 50506 	 Peripheral 	 eint|Eint_040530
+OG6_100559 	 Ralstonia solanacearum (strain GMI1000) (Pseudomonas solanacearum) 	 Peripheral 	 rsol|Q8Y0L5
+OG6_100559 	 Synechocystis sp. (strain PCC 6803 / Kazusa) 	 Core 	 syne|P73443
+OG6_100559 	 Vibrio cholerae serotype O1 (strain ATCC 39315 / El Tor Inaba N16961) 	 Peripheral 	 vcho|Q9KU60
+OG6_100559 	 Dictyocoela muelleri Ou54 	 Peripheral 	 dmue|DMUE_4233
+OG6_100559 	 Trachipleistophora hominis Unknown strain 	 Peripheral 	 thom|THOM_3114
+OG6_100559 	 Vavraia culicis subsp. floridensis 	 Peripheral 	 vcul|VCUG_00396
+OG6_100559 	 Theileria orientalis strain Shintoku 	 Peripheral 	 tori|TOT_030000464
+OG6_100559 	 Vittaforma corneae ATCC 50505 	 Peripheral 	 vcor|VICG_00904
+OG6_100559 	 Wolinella succinogenes (strain ATCC 29543 / DSM 1740 / LMG 7466 / NCTC 11488 / FDC 602W) (Vibrio succinogenes) 	 Peripheral 	 wsuc|Q7MAR1
+OG6_100559 	 Malassezia globosa CBS 7966 	 Peripheral 	 mglo|MGL_1659
+OG6_100559 	 Nosema apis BRL 01 	 Peripheral 	 napi|NAPIS_ORF01826
+OG6_100559 	 Escherichia coli (strain K12) 	 Core 	 ecol|P0A8N3
+OG6_100559 	 Escherichia coli (strain K12) 	 Core 	 ecol|P0A8N5
+OG6_100559 	 Mycobacterium tuberculosis (strain ATCC 25618 / H37Rv) 	 Core 	 mtub|P9WFU9
+OG6_100559 	 Shigella flexneri 	 Peripheral 	 shfl|Q83JU6
+OG6_100559 	 Yersinia pestis 	 Peripheral 	 yepe|Q8ZHK5
+OG6_100559 	 Mucor circinelloides 1006PhL 	 Peripheral 	 mcic|HMPREF1544_12000
+OG6_100559 	 Neisseria meningitidis serogroup B (strain MC58) 	 Core 	 nmen|Q9JYU6
+OG6_100559 	 Nematocida displodere strain JUm2807 	 Peripheral 	 ndij|NEDG_01940
+OG6_100559 	 Thermotoga maritima (strain ATCC 43589 / DSM 3109 / JCM 10099 / NBRC 100826 / MSB8) 	 Core 	 ther|Q9X231
+OG6_100559 	 Thalassiosira pseudonana (Marine diatom) (Cyclotella nana) 	 Core 	 tpse|B8BX26
+OG6_100559 	 Uncinocarpus reesii 1704 	 Peripheral 	 uree|UREG_01233
+OG6_100559 	 Campylobacter jejuni subsp. jejuni serotype O:2 (strain ATCC 700819 / NCTC 11168) 	 Peripheral 	 cjej|P41258
+OG6_100559 	 Clostridium perfringens (strain 13 / Type A) 	 Peripheral 	 cper|Q8XHL8
+OG6_100559 	 Helicobacter pylori (strain ATCC 700392 / 26695) (Campylobacter pylori) 	 Core 	 hpyl|P56126
+OG6_100559 	 Pseudomonas aeruginosa (strain ATCC 15692 / DSM 22644 / CIP 104116 / JCM 14847 / LMG 12228 / 1C / PRS 101 / PAO1) 	 Core 	 psae|Q9HXU0
+OG6_100559 	 Sulfolobus acidocaldarius (strain ATCC 33909 / DSM 639 / JCM 8929 / NBRC 15157 / NCIMB 11770) 	 Core 	 saci|Q4JCI5
+OG6_100559 	 Agrobacterium fabrum (strain C58 / ATCC 33970) (Agrobacterium tumefaciens (strain C58)) 	 Peripheral 	 atum|Q8U7H6
+OG6_100559 	 Bacillus anthracis 	 Core 	 bant|Q81VW3
+OG6_100559 	 Bacillus subtilis (strain 168) 	 Peripheral 	 bsub|P37477
+OG6_100559 	 Coxiella burnetii (strain RSA 493 / Nine Mile phase I) 	 Peripheral 	 cbur|Q83E97
+OG6_100559 	 Dehalococcoides mccartyi (strain ATCC BAA-2266 / KCTC 15142 / 195) (Dehalococcoides ethenogenes (strain 195)) 	 Peripheral 	 deth|Q3Z8X9
+OG6_100559 	 Desulfurispirillum indicum (strain ATCC BAA-1389 / DSM 22839 / S5) 	 Core 	 dind|E6W5Q2
+OG6_100559 	 Listeria monocytogenes serovar 1/2a (strain ATCC BAA-679 / EGD-e) 	 Peripheral 	 lmon|Q8YAB8
+OG6_100559 	 Cyclospora cayetanensis strain CHN_HEN01 	 Peripheral 	 ccay|cyc_04495
+OG6_100559 	 Caldimicrobium thiodismutans 	 Core 	 cthi|A0A0U5AYZ9
+OG6_100559 	 Gloeobacter violaceus (strain ATCC 29082 / PCC 7421) 	 Core 	 gvio|Q7NG18
+OG6_100559 	 Thermobaculum terrenum (strain ATCC BAA-798 / YNP1) 	 Core 	 tter|D1CDC5
+OG6_100559 	 Metallosphaera sedula (strain ATCC 51363 / DSM 5348 / JCM 9185 / NBRC 15509 / TH2) 	 Core 	 msed|A4YIP8
+OG6_100559 	 Leptospira interrogans serogroup Icterohaemorrhagiae serovar Lai (strain 56601) 	 Core 	 lint|Q8F4P5
+OG6_100559 	 Acidianus hospitalis (strain W1) 	 Core 	 ahos|F4B7F9
+OG6_100559 	 Saccharolobus solfataricus (strain ATCC 35092 / DSM 1617 / JCM 11322 / P2) (Sulfolobus solfataricus) 	 Peripheral 	 ssol|P95970
+OG6_100559 	 Thermodesulfovibrio yellowstonii (strain ATCC 51303 / DSM 11347 / YP87) 	 Core 	 tyel|B5YLD6
+OG6_100559 	 Caldivirga maquilingensis (strain ATCC 700844 / DSM 13496 / JCM 10307 / IC-167) 	 Peripheral 	 cmaq|A8ME08
+OG6_100559 	 Fusobacterium nucleatum subsp. nucleatum (strain ATCC 25586 / DSM 15643 / BCRC 10681 / CIP 101130 / JCM 8532 / KCTC 2640 / LMG 13131 / VPI 4355) 	 Core 	 fnuc|Q8RG52
+OG6_100559 	 Volvox carteri f. nagariensis 	 Peripheral 	 vcar|D8U1I6
+OG6_100559 	 Chloroflexus aurantiacus (strain ATCC 29366 / DSM 635 / J-10-fl) 	 Core 	 chau|A9WK04
+OG6_100559 	 Geobacter sulfurreducens (strain ATCC 51573 / DSM 12127 / PCA) 	 Core 	 gsul|Q74AT0
+OG6_100559 	 Calditerrivibrio nitroreducens (strain DSM 19672 / NBRC 101217 / Yu37-1) 	 Core 	 cnit|E4TEE7
+OG6_100559 	 Mycoplasma genitalium (strain ATCC 33530 / DSM 19775 / NCTC 10195 / G37) (Mycoplasmoides genitalium) 	 Core 	 mgen|P47382
+OG6_100559 	 Globisporangium ultimum var. sporangiiferum BR650 	 Peripheral 	 pulu|PUG3_G004389
+OG6_100559 	 Verrucomicrobium sp. GAS474 	 Core 	 verr|A0A1H2H143
+OG6_100559 	 Eimeria mitis Houghton 	 Peripheral 	 emit|EMH_0035690
+OG6_100559 	 Enterocytozoon hepatopenaei strain TH1 	 Peripheral 	 ehep|EHP00_1378
+OG6_100559 	 Anopheles maculatus maculatus3 	 Peripheral 	 amam|AMAM021947
+OG6_100559 	 Chitinivibrio alkaliphilus ACht1 	 Core 	 calk|U7D8G9
+OG6_100559 	 Pyrobaculum aerophilum (strain ATCC 51768 / DSM 7523 / JCM 9630 / CIP 104966 / NBRC 100827 / IM2) 	 Core 	 paer|Q8ZWD4
+OG6_100559 	 Phycomyces blakesleeanus NRRL 1555(-) 	 Peripheral 	 pbla|PHYBL_154757
+OG6_100559 	 Toxoplasma gondii GAB2-2007-GAL-DOM2 	 Peripheral 	 tggd|TGDOM2_205710A
+OG6_100559 	 Blumeria graminis f. sp. tritici 96224 	 Peripheral 	 bgra|BGT96224V316_LOCUS2052
+OG6_100559 	 Anopheles merus MAF 2021 	 Peripheral 	 amem|AMEM21_000791
+OG6_100559 	 Paramecium tetraurelia 	 Core 	 ptet|A0CM83
+OG6_100559 	 Theileria annulata strain Ankara (old build 2015-02-27) 	 Core 	 tann-old|TA04275
+OG6_100559 	 Theileria annulata strain Ankara 	 Peripheral 	 tann|TA04275
+OG6_100559 	 Anopheles funestus FUMOZ 	 Peripheral 	 afun|AFUN007189
+OG6_100559 	 Cenococcum geophilum 1.58 	 Peripheral 	 cgeo|K441DRAFT_674885
+OG6_100559 	 Macrophomina phaseolina MS6 	 Peripheral 	 mpha|MPH_10036
+OG6_100559 	 Encephalitozoon romaleae SJ-2008 	 Peripheral 	 erom|EROM_040520
+OG6_100559 	 Angomonas deanei strain Cavalho ATCC PRA-265 	 Peripheral 	 adea|ADEAN_000578800
+OG6_100559 	 Cryptosporidium tyzzeri isolate UGA55 	 Peripheral 	 ctyz|CTYZ_00001991
+OG6_100559 	 Glossina fuscipes IAEA 	 Peripheral 	 gfus|GFUI002630
+OG6_100559 	 Anopheles merus MAF 	 Peripheral 	 amer|AMEM009795
+OG6_100559 	 Batrachochytrium dendrobatidis JEL423 (old build 1) 	 Core 	 bden-old|BDEG_05628
+OG6_100559 	 Batrachochytrium dendrobatidis JEL423 	 Peripheral 	 bden|BDEG_25601
+OG6_100559 	 Glossina palpalis IAEA 	 Peripheral 	 gpap|GPPI037677
+OG6_100559 	 Hepatospora eriocheir strain GB1 	 Peripheral 	 heri|HERIO_2470
+OG6_100559 	 Leptotrombidium deliense UoL-UT 	 Peripheral 	 ldel|LDEU009232
+OG6_100559 	 Eimeria falciformis Bayer Haberkorn 1970 	 Peripheral 	 efal|EfaB_PLUS_1101.g154
+OG6_100559 	 Trypanosoma cruzi strain CL 	 Peripheral 	 tccl|TcCL_ESM06362
+OG6_100559 	 Aphanomyces astaci strain APO3 (old build 2014-01-14) 	 Core 	 aast-old|H257_10418
+OG6_100559 	 Aphanomyces astaci strain APO3 	 Peripheral 	 aast|H257_10418
+OG6_100559 	 Theileria orientalis Goon Nure 	 Peripheral 	 togn|MACK_002097
+OG6_100559 	 Paramecium tetraurelia 	 Core 	 ptet|A0D6A7
+OG6_100559 	 Agrobacterium fabrum (strain C58 / ATCC 33970) (Agrobacterium tumefaciens (strain C58)) 	 Peripheral 	 atum|Q7CWS8
+OG6_100559 	 Bradyrhizobium diazoefficiens (strain JCM 10833 / BCRC 13528 / IAM 13628 / NBRC 14792 / USDA 110) 	 Core 	 bdia|Q89M06
+OG6_100559 	 Theileria orientalis Fish Creek 	 Peripheral 	 tofc|MACJ_002156
+OG6_100559 	 Treponema pallidum (strain Nichols) 	 Peripheral 	 tpal|O84002
+OG6_100559 	 Anopheles coluzzii Mali-NIH 	 Peripheral 	 acom|ACOM040305
+OG6_100559 	 Zea mays (Maize) 	 Core 	 zmay|A0A1D6LAP1
+OG6_100559 	 Trypanosoma cruzi Brazil A4 	 Peripheral 	 tcba|TcBrA4_0038480
+OG6_100559 	 Hamiltosporidium tvaerminnensis FI-OER-3-3 	 Peripheral 	 htvf|CWI37_2648p0010
+OG6_100559 	 Brachionus plicatilis (Marine rotifer) (Brachionus muelleri) 	 Core 	 bpli|A0A3M7QT28
+OG6_100559 	 Hamiltosporidium tvaerminnensis FI-OER-3-3 	 Peripheral 	 htvf|CWI37_0874p0010
+OG6_100559 	 Nematostella vectensis (Starlet sea anemone) 	 Core 	 nvec|A8DW21
+OG6_100559 	 Albugo candida 2VRR 	 Peripheral 	 acan|evm.TU.AC2VRR_s00116g84
+OG6_100559 	 Pseudoloma neurophilia strain MK1 	 Peripheral 	 pneu|M153_12698000833
+OG6_100559 	 Pseudoloma neurophilia strain MK1 	 Peripheral 	 pneu|M153_2289000809
+OG6_100559 	 Nematostella vectensis (Starlet sea anemone) 	 Core 	 nvec|A8DWH4
+OG6_100559 	 Pseudoloma neurophilia strain MK1 	 Peripheral 	 pneu|M153_814000782
+OG6_100559 	 Trichomonas vaginalis G3 	 Peripheral 	 tvag|TVAG_205400
+OG6_100559 	 Trichomonas vaginalis G3 2022 	 Peripheral 	 tvgg|TVAGG3_0488900
+OG6_100559 	 Glossina morsitans Yale 	 Peripheral 	 gmor|GMOY010702
+OG6_100559 	 Toxoplasma gondii GAB2-2007-GAL-DOM2 	 Peripheral 	 tggd|TGDOM2_205710B
+OG6_100559 	 Glossina fuscipes IAEA 	 Peripheral 	 gfus|GFUI024495
+OG6_100559 	 Glossina pallidipes IAEA 	 Peripheral 	 gpal|GPAI000844
+OG6_100559 	 Alternaria alternata SRC1lrK2f 	 Peripheral 	 aalt|CC77DRAFT_1018247
+OG6_100559 	 Trypanosoma cruzi Sylvio X10/1 	 Peripheral 	 tcrs|TcSYL_0166880
+OG6_100559 	 Histoplasma capsulatum H143 	 Peripheral 	 hcap|HCDG_04089
+OG6_100559 	 Trypanosoma cruzi Sylvio X10/1 	 Peripheral 	 tcrs|TcSYL_0202360
+OG6_100559 	 Trypanosoma cruzi strain CL 	 Peripheral 	 tccl|TcCL_ESM06363
+OG6_100559 	 Schistosoma haematobium Egypt 	 Peripheral 	 shae|MS3_11247
+OG6_100559 	 Trypanosoma cruzi strain CL 	 Peripheral 	 tccl|TcCL_NonESM07366
+OG6_100559 	 Globisporangium iwayamae DAOM BR242034 	 Peripheral 	 piwa|PIW_G003466
+OG6_100559 	 Anncaliia algerae PRA109 	 Peripheral 	 aalp|H311_03353
+OG6_100559 	 Albugo candida 2VRR 	 Peripheral 	 acan|evm.TU.AC2VRR_s00116g83
+OG6_100559 	 Schistosoma haematobium Egypt 	 Peripheral 	 shae|MS3_11149
+OG6_100559 	 Leptotrombidium deliense UoL-UT 	 Peripheral 	 ldel|LDEU010262
+OG6_100559 	 Trypanosoma cruzi strain CL 	 Peripheral 	 tccl|TcCL_NonESM12213
+OG6_100559 	 Glossina pallidipes IAEA 	 Peripheral 	 gpal|GPAI005751
+OG6_100559 	 Dictyocoela roeselum Ou19 	 Peripheral 	 droe|EQH57_1186
+OG6_100559 	 Anopheles christyi ACHKN1017 	 Peripheral 	 achr|ACHR008369
+OG6_100559 	 Anopheles atroparvus EBRO 	 Peripheral 	 aatr|AATE004096
+OG6_100559 	 Leptotrombidium deliense UoL-UT 	 Peripheral 	 ldel|LDEU012052
+OG6_100559 	 Theileria orientalis Fish Creek 	 Peripheral 	 tofc|MACJ_002155
+OG6_100559 	 Theileria orientalis Goon Nure 	 Peripheral 	 togn|MACK_002096
+OG6_100559 	 Brachionus plicatilis (Marine rotifer) (Brachionus muelleri) 	 Core 	 bpli|A0A3M7P6D9
+OG6_100559 	 Macaca fascicularis REF 	 Peripheral 	 mfas|ENSMFAG00000019344
+OG6_100559 	 Macaca mulatta isolate AG07107 	 Peripheral 	 mmua|ENSMMUG00000002518
+OG6_100559 	 Dictyocoela roeselum Ou19 	 Peripheral 	 droe|EQH57_1159
+OG6_100559 	 Aspergillus uvarum CBS 121591 	 Peripheral 	 auva|BO82DRAFT_38096
+OG6_100559 	 Histoplasma capsulatum H143 	 Peripheral 	 hcap|HCDG_04088
+OG6_100559 	 Blumeria graminis f. sp. tritici 96224 	 Peripheral 	 bgra|BGT96224V316_LOCUS2053
+OG6_100559 	 Strongylocentrotus purpuratus (Purple sea urchin) 	 Peripheral 	 spur|W4YTD6
+OG6_100559 	 Glossina pallidipes IAEA 	 Peripheral 	 gpal|GPAI005753
+OG6_100559 	 Ricinus communis (Castor bean) 	 Peripheral 	 rcom|B9T475
+OG6_100559 	 Pseudoloma neurophilia strain MK1 	 Peripheral 	 pneu|M153_65170001
+OG6_100559 	 Pseudoloma neurophilia strain MK1 	 Peripheral 	 pneu|M153_11240003342

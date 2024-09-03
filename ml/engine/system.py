@@ -16,7 +16,7 @@ class DEEPScreenClassifier(L.LightningModule):
     def __init__(self,fully_layer_1, fully_layer_2, drop_rate, learning_rate, batch_size, experiment_result_path, target):
         super(DEEPScreenClassifier, self).__init__()
         self.save_hyperparameters()
-        logger.info(f"Using hyperparameters {[i for i in self.hparams.items()]}") 
+        logger.debug(f"Using hyperparameters {[i for i in self.hparams.items()]}") 
 
         # Model architecture
         self.conv1 = nn.Conv2d(3, 32, 2)

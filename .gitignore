@@ -159,10 +159,10 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
-.experiments/*
-.data/raw/*
+experiments/*
+data/raw/*
 *log*
 *ray_results*
 *.zip
-
-src/analysis/ensamble_models/*.csv
+*.csv
+*.pkl
