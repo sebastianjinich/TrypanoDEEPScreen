@@ -72,7 +72,7 @@ def compid_target_desduplication_binary_bioact(df):
 
     return df_clean
 
-def gat_tanimoto_similarity_triangle(df):
+def get_tanimoto_similarity_triangle(df):
     df_internal = df.copy()
 
     if "fps" not in df_internal.columns:
@@ -101,6 +101,7 @@ def gat_tanimoto_similarity_triangle(df):
     return similarity_triangle_df
 
 
+
 def plot_similarity_histogram(similarity_triangle, target_name: str, export_folder="data_plots", width=6, height=4):
     flat_similarities = similarity_triangle.values.flatten()
 
@@ -121,7 +122,24 @@ def plot_similarity_histogram(similarity_triangle, target_name: str, export_fold
     plt.show()
     plt.close()
 
-def plot_histogram_with_two_y_axes(actives, inactives, target_name: str, export_folder="data_plots", width=6, height=4):
+def get_actives_inactives_similarity_flat(whole_df,similarity_triangle):
+    
+    actives = whole_df.loc[whole_df["binary_bioactivity"]==1,"comp_id"]
+    inactives = whole_df.loc[whole_df["binary_bioactivity"]==0,"comp_id"]
+    
+    similarity_actives = similarity_triangle.loc[actives,actives]
+    similarity_inactives = similarity_triangle.loc[inactives,inactives]
+    
+    similarity_actives_flat = similarity_actives.values.flatten()
+    similarity_inactives_flat = similarity_inactives.values.flatten()
+
+    actives_df = pd.DataFrame(zip(similarity_actives_flat,["Active"]*len(similarity_actives_flat)),columns=["Tanimoto","Bioactivity"])
+    inactives_df = pd.DataFrame(zip(similarity_inactives_flat,["Inactive"]*len(similarity_inactives_flat)),columns=["Tanimoto","Bioactivity"])
+
+    return actives_df, inactives_df
+
+
+def plot_histogram_with_two_y_axes(actives, inactives, full_df, target_name: str, export_folder="data_plots", width=6, height=4, position_pie = (0.5,0.3,0.36,0.36), pie_text = 8):
     
     title = f"Similitud entre activos e inactivos de {target_name}"
 
@@ -135,15 +153,18 @@ def plot_histogram_with_two_y_axes(actives, inactives, target_name: str, export_
     bioactivity_positive = actives.dropna()
     bioactivity_negative = inactives.dropna()
 
+    color_activos = "blue"
+    color_inactivos = "#40c365"
+
     # Graficar el histograma para bioactividad positiva en el primer eje
-    sns.histplot(bioactivity_positive["Tanimoto"], bins=50, ax=ax1, color="blue", kde=False, alpha=0.5, label="Active")
-    ax1.set_ylabel("Cantidad (Activas)", color="blue")
-    ax1.tick_params(axis='y', labelcolor="blue")
+    sns.histplot(bioactivity_positive["Tanimoto"], bins=50, ax=ax1, color=color_activos, kde=False, alpha=0.5, label="Active")
+    ax1.set_ylabel("Cantidad normalizada de tanimotos")
+    ax1.tick_params(axis='y')
 
     # Graficar el histograma para bioactividad negativa en el segundo eje
-    sns.histplot(bioactivity_negative["Tanimoto"], bins=50, ax=ax2, color="#40c365", kde=False, alpha=0.5, label="Inactive")
-    ax2.set_ylabel("Cantidad (Inactivas)", color="#40c365")
-    ax2.tick_params(axis='y', labelcolor="#40c365")
+    sns.histplot(bioactivity_negative["Tanimoto"], bins=50, ax=ax2, color=color_inactivos, kde=False, alpha=0.5, label="Inactive")
+    ax2.set_ylabel("", color=color_inactivos)
+    ax2.tick_params(axis='y', labelcolor=color_inactivos)
 
     # Configurar el título y las etiquetas
     ax1.set_xlabel("Tanimoto")
@@ -153,6 +174,26 @@ def plot_histogram_with_two_y_axes(actives, inactives, target_name: str, export_
     handles_1, labels_1 = ax1.get_legend_handles_labels()
     handles_2, labels_2 = ax2.get_legend_handles_labels()
     ax1.legend(handles=handles_1 + handles_2, labels=labels_1 + labels_2, loc="upper right")
+
+    proportions = full_df["binary_bioactivity"].value_counts()
+    proportions_df = pd.DataFrame({"Actives":{"proportions":proportions.loc[1],"color":color_activos},"Inactives":{"proportions":proportions.loc[0],"color":color_inactivos}})
+
+
+    inset_ax = fig.add_axes(position_pie)  # Ajusta estas coordenadas según sea necesario
+    inset_ax.pie(proportions_df.loc["proportions",:], labels=proportions_df.loc["proportions",:], labeldistance=0.5, colors=proportions_df.loc["color",:], startangle=90, wedgeprops={'edgecolor': 'black', 'linewidth': 0.5, 'alpha': 0.5}, textprops={'fontsize': pie_text}, pctdistance=0.7)
+    inset_ax.axis('equal')  # Asegura que el diagrama de torta sea circular
+    inset_ax.set_title("Balance de Bioactividad", fontsize=pie_text, y=-0.13)
+
+     # Ocultar números de los ejes y marcas (ticks) en el histograma
+    #ax1.set_xticks([])  # Oculta las marcas del eje X
+    #ax1.set_yticks([])  # Oculta las marcas del eje Y
+    #ax1.xaxis.set_ticklabels([])  # Oculta las etiquetas del eje X
+    ax1.yaxis.set_ticklabels([])  # Oculta las etiquetas del eje Y
+    
+    #ax2.set_xticks([])  # Oculta las marcas del eje X para el segundo eje Y
+    ax2.set_yticks([])  # Oculta las marcas del eje Y para el segundo eje Y
+    #ax2.xaxis.set_ticklabels([])  # Oculta las etiquetas del eje X para el segundo eje Y
+    ax2.yaxis.set_ticklabels([])  # Oculta las etiquetas del eje Y para el segundo eje Y
 
     # Guardar la imagen
     file_name = "_".join(title.lower().split(" ")) + ".png"
