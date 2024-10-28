@@ -156,10 +156,10 @@ class DEEPScreenClassifier(L.LightningModule):
         batch_predictions = pd.concat([comp_id_pd,label_pd,pred_pd,pred_0_pd,pred_1_pd],axis=1)
         self.test_predictions = pd.concat([self.test_predictions,batch_predictions],axis=0)
 
-    def on_test_end(self):
+    #def on_test_end(self):
     #    self.test_predictions["abs_prob_diff"] =  self.test_predictions["0_inactive_probability"] - self.test_predictions["1_active_probability"]
     #    self.test_predictions["abs_prob_diff"] = abs(self.test_predictions["abs_prob_diff"])
-        self.test_predictions.to_csv(os.path.join(self.hparams.experiment_result_path,f"test_{self.hparams.target}_{self.hparams.fully_layer_1}-{self.hparams.fully_layer_2}-{self.hparams.learning_rate}-{self.hparams.drop_rate}-{self.hparams.batch_size}.csv"),index=False)
+    #    self.test_predictions.to_csv(os.path.join(self.hparams.experiment_result_path,f"test_{self.hparams.target}_{self.hparams.fully_layer_1}-{self.hparams.fully_layer_2}-{self.hparams.learning_rate}-{self.hparams.drop_rate}-{self.hparams.batch_size}.csv"),index=False)
     
     #def on_test_epoch_end(self):
     #    self.log_dict(self.test_metrics.compute(), on_step=False, on_epoch=True, batch_size=self.hparams.batch_size)
@@ -181,5 +181,5 @@ class DEEPScreenClassifier(L.LightningModule):
     def on_predict_epoch_end(self):
         return self.predictions
     
-    def on_predict_end(self):
-        self.predictions.to_csv(os.path.join(self.hparams.experiment_result_path,f"predictions_{self.hparams.target}_{self.hparams.fully_layer_1}-{self.hparams.fully_layer_2}-{self.hparams.learning_rate}-{self.hparams.drop_rate}-{self.hparams.batch_size}.csv"),index=False)
+    #def on_predict_end(self):
+    #    self.predictions.to_csv(os.path.join(self.hparams.experiment_result_path,f"predictions_{self.hparams.target}_{self.hparams.fully_layer_1}-{self.hparams.fully_layer_2}-{self.hparams.learning_rate}-{self.hparams.drop_rate}-{self.hparams.batch_size}.csv"),index=False)
