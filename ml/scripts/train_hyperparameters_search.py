@@ -37,14 +37,14 @@ def main_raytune_search_train(data_train_val_test:str, target_name_experiment:st
     result_df = result.get_dataframe()
     result_df_path = os.path.join(experiment_result_path,f"raytune_result_{target_name_experiment}.pkl")
     result_df.to_pickle(result_df_path)
-
-    trainer = Trainer()
-    model = DEEPScreenClassifier.load_from_checkpoint(best_checkpoint_path,experiment_result_path=experiment_result_path)
-    datamodule = DEEPscreenDataModule(data=data,
-                                      batch_size=best_result_hparams["batch_size"],
-                                      experiment_result_path=experiment_result_path,
-                                      data_split_mode=data_split_mode,
-                                      tmp_imgs=False)
-    
-    trainer.test(model,datamodule=datamodule)
+#
+    #trainer = Trainer()
+    #model = DEEPScreenClassifier.load_from_checkpoint(best_checkpoint_path,experiment_result_path=experiment_result_path)
+    #datamodule = DEEPscreenDataModule(data=data,
+    #                                  batch_size=best_result_hparams["batch_size"],
+    #                                  experiment_result_path=experiment_result_path,
+    #                                  data_split_mode=data_split_mode,
+    #                                  tmp_imgs=False)
+    #
+    #trainer.test(model,datamodule=datamodule)
 
