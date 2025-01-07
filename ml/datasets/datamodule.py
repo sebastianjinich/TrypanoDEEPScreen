@@ -61,6 +61,11 @@ class DEEPscreenDataModule(L.LightningDataModule):
                 self.train = dataset["train"]
                 self.validate = dataset["validation"]
                 self.test = dataset["test"]
+                self.training_dataset = DEEPScreenDatasetTrain(self.imgs_path, self.train)
+                self.validation_dataset = DEEPScreenDatasetTest(self.imgs_path, self.validate)
+                self.test_dataset = DEEPScreenDatasetTest(self.imgs_path, self.test)
+
+
 
             if self.data_split == "scaffold_split":
                 #TODO
@@ -69,6 +74,8 @@ class DEEPscreenDataModule(L.LightningDataModule):
         
         if stage == "predict":
             self.predict = self.data
+            self.predict_dataset = DEEPScreenDatasetPredict(self.imgs_path, self.predict)
+
     
     def get_number_training_batches(self):
         if self.data_split == "non_random_split":
@@ -102,18 +109,14 @@ class DEEPscreenDataModule(L.LightningDataModule):
 
 
     def train_dataloader(self):
-        self.training_dataset = DEEPScreenDatasetTrain(self.imgs_path, self.train)
-        return DataLoader(self.training_dataset,batch_size=self.hparams.batch_size,shuffle=True)
+        return DataLoader(self.training_dataset,batch_size=self.hparams.batch_size,shuffle=True,drop_last=True)
     
     def val_dataloader(self):
-        self.validation_dataset = DEEPScreenDatasetTest(self.imgs_path, self.validate)
-        return DataLoader(self.validation_dataset,batch_size=self.hparams.batch_size)
+        return DataLoader(self.validation_dataset,batch_size=self.hparams.batch_size,drop_last=True)
     
     def test_dataloader(self):
-        self.test_dataset = DEEPScreenDatasetTest(self.imgs_path, self.test)
-        return DataLoader(self.test_dataset,batch_size=self.hparams.batch_size)
+        return DataLoader(self.test_dataset,batch_size=self.hparams.batch_size,drop_last=True)
     
     def predict_dataloader(self):
-        self.predict_dataset = DEEPScreenDatasetPredict(self.imgs_path, self.predict)
         return DataLoader(self.predict_dataset,batch_size=self.hparams.batch_size)
         
