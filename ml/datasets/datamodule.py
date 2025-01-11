@@ -25,7 +25,8 @@ class DEEPscreenDataModule(L.LightningDataModule):
         self.batch_size = batch_size
 
         if tmp_imgs:
-            self.imgs_path = tempfile.TemporaryDirectory().name
+            self.temp_dir = tempfile.TemporaryDirectory()
+            self.imgs_path = self.temp_dir.name
         else:
             self.imgs_path = os.path.join(self.result_path,"imgs")
         
@@ -39,6 +40,7 @@ class DEEPscreenDataModule(L.LightningDataModule):
         if data_split_mode != "predict" and not {"comp_id","smiles","bioactivity"}.issubset(set(self.data.columns)):
             logger.error("invalid columns of df")
             raise InvalidDataframeException("must contain the following columns {'comp_id','smiles','bioactivity'}")
+        
 
     def setup(self,stage:str):
         
@@ -106,7 +108,12 @@ class DEEPscreenDataModule(L.LightningDataModule):
             raise RuntimeError("non_random_split dataloader type generator failed")
 
         return dataset
-
+    
+    def teardown(self, stage: str = None):
+        # Limpiar el directorio temporal si se utilizó
+        if self.temp_dir is not None:
+            self.temp_dir.cleanup()
+            logger.info("Temporary directory cleaned up")
 
     def train_dataloader(self):
         return DataLoader(self.training_dataset,batch_size=self.hparams.batch_size,shuffle=True,drop_last=True)
@@ -118,5 +125,5 @@ class DEEPscreenDataModule(L.LightningDataModule):
         return DataLoader(self.test_dataset,batch_size=self.hparams.batch_size,drop_last=True)
     
     def predict_dataloader(self):
-        return DataLoader(self.predict_dataset,batch_size=self.hparams.batch_size)
+        return DataLoader(self.predict_dataset,batch_size=self.hparams.batch_size,num_workers=1)
         

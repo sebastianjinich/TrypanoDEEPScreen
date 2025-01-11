@@ -144,13 +144,10 @@ class DEEPScreenClassifier(L.LightningModule):
     def predict_step(self, batch, batch_idx, dataloader_idx=None):
         img_arrs, comp_id = batch
         y_pred = self.forward(img_arrs)
-        _, preds = torch.max(y_pred,1)
         comp_id_pd = pd.Series(comp_id,name="comp_id")
-        pred_pd = pd.Series(preds.cpu(),name="prediction")
         y_pred_soft_max = F.softmax(y_pred,dim=1) 
-        pred_0_pd = pd.Series(y_pred_soft_max[:,0].cpu(),name="0_inactive_probability")
         pred_1_pd = pd.Series(y_pred_soft_max[:,1].cpu(),name="1_active_probability")
-        batch_predictions = pd.concat([comp_id_pd,pred_pd,pred_0_pd,pred_1_pd],axis=1)
+        batch_predictions = pd.concat([comp_id_pd,pred_1_pd],axis=1)
         self.predictions = pd.concat([self.predictions,batch_predictions],axis=0)
         return batch_predictions
 
